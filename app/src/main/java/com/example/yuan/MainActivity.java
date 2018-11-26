@@ -28,11 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TextView tv_title;
     private LinearLayout ll_point_group;
-    private TextView textView1;
-    private TextView textView2;
-    private TextView textView3;
-    private TextView textView4;
-//    private ImageView textView1,textView2,textView3,textView4;
+
+    private ImageView textView1,textView2,textView3,textView4;
 
     private ArrayList<ImageView> imageViews;
     private final int[] imageIds={R.drawable.a,
@@ -57,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView1 = (TextView)findViewById(R.id.textview1);
-        textView2 = (TextView)findViewById(R.id.textview2);
-        textView3 = (TextView)findViewById(R.id.textview3);
-        textView4 = (TextView)findViewById(R.id.textview4);
+        textView1 = (ImageView) findViewById(R.id.textview1);
+        textView2 = (ImageView) findViewById(R.id.textview2);
+        textView3 = (ImageView) findViewById(R.id.textview3);
+        textView4 = (ImageView) findViewById(R.id.textview4);
 
 //        textView1 = (ImageView)findViewById(R.id.textview1);
 //        textView2 = (ImageView)findViewById(R.id.textview2);

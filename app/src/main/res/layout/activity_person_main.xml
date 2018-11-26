@@ -5,10 +5,109 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".person.PersonMain">
-    <ImageView
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/person"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/fanhui" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="400dp"
+            android:src="@mipmap/zhuye" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="121dp"
+        android:layout_height="116dp"
         android:layout_alignParentTop="true"
-        app:srcCompat="?attr/colorButtonNormal" />
+        android:layout_marginTop="40dp"
+        android:background="@color/person"
+        app:srcCompat="?attr/colorButtonNormal">
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="300dp"
+            android:text="登录" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="54dp"
+            android:text="未登录" />
+    </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="160dp">
+
+    </ListView>
+    <LinearLayout
+        android:id="@+id/tab_menu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/MENU"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/textview1"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/shouye"
+            android:drawablePadding="6dp"
+
+            />
+
+        <ImageView
+            android:id="@+id/textview2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/anli"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:text="案例"
+            />
+
+        <ImageView
+            android:id="@+id/textview3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/threed"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:text="3D"
+            />
+        <ImageView
+            android:id="@+id/textview4"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/wode"
+            android:drawablePadding="6dp"
+
+            />
+
+    </LinearLayout>
 </RelativeLayout>

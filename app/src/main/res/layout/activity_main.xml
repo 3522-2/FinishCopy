@@ -84,29 +84,26 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/image_activity"
             android:layout_width="match_parent"
-            android:layout_height="112dp"
-            android:layout_marginTop="1dp"
-            android:background="@drawable/a"/>
+            android:layout_height="130dp"
+            android:layout_marginTop="13dp"
+            android:background="@mipmap/activity"/>
+
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="112dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/a"/>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="112dp"
+            android:layout_height="130dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/a"/>
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="112dp"
+            android:layout_height="130dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/a"/>
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="112dp"
+            android:layout_height="130dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="60dp"
             android:background="@drawable/a"/>
@@ -117,51 +114,50 @@
     <LinearLayout
         android:id="@+id/tab_menu"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
+        android:background="@color/MENU"
         android:layout_alignParentBottom="true">
 
-        <TextView
+        <ImageView
             android:id="@+id/textview1"
-            android:layout_width="0dp"
+            android:layout_width="4dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/MENU"
-            android:drawablePadding="3dp"
-            android:gravity="center"
-            android:text="首页"
-           />
+            android:src="@mipmap/shouye"
+            android:drawablePadding="6dp"
 
-        <TextView
+            />
+
+        <ImageView
             android:id="@+id/textview2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/MENU"
+            android:src="@mipmap/anli"
             android:drawablePadding="3dp"
             android:gravity="center"
             android:text="案例"
            />
 
-        <TextView
+        <ImageView
             android:id="@+id/textview3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/MENU"
+            android:src="@mipmap/threed"
             android:drawablePadding="3dp"
             android:gravity="center"
             android:text="3D"
           />
-        <TextView
+        <ImageView
             android:id="@+id/textview4"
-            android:layout_width="0dp"
+            android:layout_width="4dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@mipmap/person"
-            android:drawablePadding="3dp"
-            android:gravity="center"
-            android:text="我的"
+            android:src="@mipmap/wode"
+            android:drawablePadding="6dp"
+
            />
 
     </LinearLayout>
