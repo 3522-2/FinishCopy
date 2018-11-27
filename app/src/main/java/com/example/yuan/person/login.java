@@ -81,9 +81,9 @@ public class login extends AppCompatActivity {
                      * 参数1：resultCode返回码，跳转之前的activity根据是这个resultCode，区分是哪一个activity返回的
                      * 参数2：数据源
                      */
-                    setResult(333, intent);
-                    finish();//结束当前activity
 
+                    setResult(333, intent);
+                    finish();//结束当前activityint
                 }else{
 
                     /*
