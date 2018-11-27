@@ -13,18 +13,17 @@ import java.util.List;
 
 public class UserDAO {
 
-    public class AdministratorDAO {
         private DBOpenHelper helper;// 创建DBOpenHelper对象
         private SQLiteDatabase db;// 创建SQLiteDatabase对象
         ContentValues values;
 
-        public AdministratorDAO(Context context) {// 定义构造函数
+        public UserDAO(Context context) {// 定义构造函数
             helper = new DBOpenHelper(context,1);// 初始化DBOpenHelper对象
             db = helper.getReadableDatabase();// 初始化SQLiteDatabase对象
             values = new ContentValues();
         }
         /**
-         * 添加活动信息
+         * 添加用户信息
          * @Data
          * @param user
          */
@@ -38,7 +37,7 @@ public class UserDAO {
             values.put("user_adr",user.getUser_adr());
             values.put("user_houseType",user.getUser_houseType());
             values.put("user_houseArea",user.getUser_houseArea());
-            db.insert("activity",null,values);
+            db.insert("user",null,values);
             db.close();
 
         }
@@ -124,6 +123,18 @@ public class UserDAO {
             return null;// 如果没有信息，则返回null
         }
 
+
+        public boolean CheckIsDataAlreadyInDBorNot(String value) {
+            String Query = "Select * from user where user_name =?";
+            Cursor cursor = db.rawQuery(Query, new String[]{value});
+            if (cursor.getCount() > 0) {
+                cursor.close();
+                return true;
+            }
+            cursor.close();
+            return false;
+        }
+
         public long getCount() {
 //		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
             Cursor cursor = db.rawQuery("select count(user_id) from user", null);// 获取活动信息的记录数
@@ -134,6 +145,5 @@ public class UserDAO {
             return 0;// 如果没有数据，则返回0
         }
     }
-}
 
 

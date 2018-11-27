@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="provice">
+        <item>1室1厅</item>
+        <item>1室2厅</item>
+        <item>2室1厅</item>
+        <item>3室1厅</item>
+        <item>2室2厅</item>
+        <item>3室2厅</item>
+        <item>其他</item>
+
+    </string-array>
+</resources>
