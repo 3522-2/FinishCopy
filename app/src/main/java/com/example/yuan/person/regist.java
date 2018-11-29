@@ -77,7 +77,7 @@ public class regist extends AppCompatActivity {
                 String regAer1 = regAer.getText().toString();
                 UserDAO userDAO = new UserDAO(regist.this);
                 User user = new User();
-                if(userDAO.CheckIsDataAlreadyInDBorNot(regUsername1)){
+                if(userDAO.CheckIsDataAlreadyInDBorNot(regUsername1)==1){
                     Toast.makeText(regist.this,"该用户名已存在",Toast.LENGTH_SHORT).show();
 
                 }else if(regUsername1.equals("") || regPwd1.equals("") || regIsPwd1.equals("") || regTel1.equals("")||regAdr1.equals("")||regAer1.equals("")){

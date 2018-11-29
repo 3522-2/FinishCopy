@@ -54,7 +54,10 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="54dp"
             android:text="未登录" />
+
+
     </RelativeLayout>
+
 
     <ListView
         android:id="@+id/ListView"

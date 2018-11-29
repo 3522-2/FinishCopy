@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/person"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/re"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/fanhui" />
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="310dp"
+            android:src="@mipmap/zhuye" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_menu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/MENU"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/textview1"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/shouye"
+            android:drawablePadding="6dp"
+
+            />
+
+        <ImageView
+            android:id="@+id/textview2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/anli"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:text="案例"
+            />
+
+        <ImageView
+            android:id="@+id/textview3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/threed"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:text="3D"
+            />
+        <ImageView
+            android:id="@+id/textview4"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/wode"
+            android:drawablePadding="6dp"
+
+            />
+
+    </LinearLayout>
+<LinearLayout
+    android:layout_marginTop="50dp"
+    android:layout_width="match_parent"
+    android:layout_height="70dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="管理员管理"
+        android:gravity="center"
+        android:textSize="25dp"/>
+
+</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/r1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="120dp"
+        android:background="@color/person">
+        <Button
+            android:id="@+id/addxiaoguotu"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:text="增加效果图"
+            />
+        <Button
+            android:id="@+id/updatexiaoguotu"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="120dp"
+            android:text="修改效果图"
+            />
+        <Button
+            android:id="@+id/deletxiaoguotu"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="240dp"
+            android:text="删除效果图"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/r2"
+        android:layout_below="@+id/r1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/person">
+        <Button
+            android:id="@+id/addCL"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:text="增加材料"
+            />
+        <Button
+            android:id="@+id/updateCL"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="120dp"
+            android:text="修改材料"
+            />
+        <Button
+            android:id="@+id/deletCL"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="240dp"
+            android:text="删除材料"
+            />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/r3"
+        android:layout_below="@+id/r2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/person">
+        <Button
+            android:id="@+id/addS"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:text="增加方案"
+            />
+        <Button
+            android:id="@+id/updateS"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="120dp"
+            android:text="修改方案"
+            />
+        <Button
+            android:id="@+id/deletS"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="240dp"
+            android:text="删除方案"
+            />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
+

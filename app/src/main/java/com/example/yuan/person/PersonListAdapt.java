@@ -49,7 +49,6 @@ public class PersonListAdapt extends BaseAdapter {
         if (convertView == null) {
             myListItemView = new ListItemView();
             // 由于我们只需要将XML转化为View，并不涉及到具体的布局，所以第二个参数通常设置为null
-
             convertView = layoutInflater.inflate(R.layout.personitem, null);
             myListItemView.setTv_title((ImageView) convertView.findViewById(R.id.item_image));
             myListItemView.setTv_data((TextView) convertView.findViewById(R.id.item_title));

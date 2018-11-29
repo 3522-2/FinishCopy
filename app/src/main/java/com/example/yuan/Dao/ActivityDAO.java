@@ -31,7 +31,7 @@ public class ActivityDAO {
      */
    public void add(Activity activity)
    {
-       //执行nsert into activity(activity_id,activity_name,activity_StartTime" +
+       //执行insert into activity(activity_id,activity_name,activity_StartTime" +
        //           ",activity_FinishTime,activity_people,activity_content) values (?,?,?,?,?,?)"
        values.put("activity_name",activity.getActivity_name());
        values.put("activity_StartTime",activity.getActivity_StartTime());

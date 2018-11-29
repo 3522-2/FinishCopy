@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 import com.example.yuan.modle.Project;
 import com.example.yuan.modle.Scheme;
@@ -47,7 +48,7 @@ public class SchemeDAO {
         values.put("scheme_pirceFivework",scheme.getScheme_pirceFivework());
         values.put("scheme_pirceFiveMaterial",scheme.getScheme_pirceFiveMaterial());
         values.put("scheme_pirceSum",scheme.getScheme_pirceSum());
-        db.insert("activity",null,values);
+        db.insert("scheme",null,values);
         db.close();
 
     }
@@ -57,7 +58,7 @@ public class SchemeDAO {
      */
     public void deleteById(int id){
         //执行delete from  activity where activity_id
-        db.delete("activity","activity_id=?",new String[]{id+""});
+        db.delete("scheme","_id=?",new String[]{id+""});
         db.close();
     }
     /**
@@ -81,6 +82,7 @@ public class SchemeDAO {
         values.put("scheme_pirceSum",scheme.getScheme_pirceSum());
         db.update("scheme",values,"scheme_id="+scheme.getScheme_id(),null);
         db.close();
+
     }
 
     /**
@@ -134,19 +136,18 @@ public class SchemeDAO {
             // 将遍历到的支出信息存储到Activity类中
             return new Scheme(
                     cursor.getString(cursor.getColumnIndex("scheme_houseType")),
-                    cursor.getDouble(cursor.getColumnIndex("scheme_houseArea")),
+                    cursor.getString(cursor.getColumnIndex("scheme_houseArea")),
                     cursor.getString(cursor.getColumnIndex("scheme_houseStyle")),
-                    cursor.getDouble(cursor.getColumnIndex("scheme_pirceOne")),
-                    cursor.getDouble(cursor.getColumnIndex("scheme_pirceTwoWork")),
-                    cursor.getDouble(cursor.getColumnIndex("scheme_pirceTwoMaterial")),
-                    cursor.getDouble(cursor.getColumnIndex("scheme_pirceThreeWork")),
-                    cursor.getDouble(cursor.getColumnIndex("scheme_pirceThreeMaterial")),
-                    cursor.getDouble(cursor.getColumnIndex("scheme_pirceFourWork")),
-                    cursor.getDouble(cursor.getColumnIndex("scheme_pirceFourMaterial")),
-                    cursor.getDouble(cursor.getColumnIndex("scheme_pirceFivework")),
-                    cursor.getDouble(cursor.getColumnIndex("scheme_pirceFiveMaterial")),
-                    cursor.getDouble(cursor.getColumnIndex("scheme_pirceSum")),
-                    cursor.getInt(cursor.getColumnIndex("scheme_id")));
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceOne")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceTwoWork")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceTwoMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceThreeWork")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceThreeMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFourWork")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFourMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFivework")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFiveMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceSum")));
         }
         cursor.close();// 关闭游标
         return null;// 如果没有信息，则返回null

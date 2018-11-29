@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="用户名"
+                android:text="账   号"
                 android:textColor="#000"
                 android:textSize="17sp" />
 
@@ -59,7 +59,7 @@
                 android:layout_marginLeft="130dp"
 
                 android:background="@null"
-                android:hint="输入用户名"
+                android:hint="管理员账号"
                 android:textSize="15sp" />
         </RelativeLayout>
 
@@ -108,7 +108,7 @@
                 android:text="登录"
                 android:textColor="#ffffff" />
             <Button
-                android:id="@+id/login_in1"
+                android:id="@+id/reg"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="80dp"
@@ -118,14 +118,6 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/guanliyuan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dip"
-        android:layout_marginLeft="15dip"
-        android:text="管理员登录"
-        android:textColor="#29981A" />
 
 </LinearLayout>
 

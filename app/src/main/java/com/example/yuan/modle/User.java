@@ -11,8 +11,8 @@ public class User {
     private String user_houseArea;//	房屋面积
 
     public User(){};
-    public User(int administrator_id, String administrator_name, String user_password, String administrator_password, String user_adr, String user_houseType, String administrator_telephone){
-    }
+    public User(String user_name){};
+    public User(int user_id, String user_name, String user_password, String administrator_password, String user_adr, String user_houseType, String administrator_telephone){}
 
     public int getUser_id() {
         return user_id;

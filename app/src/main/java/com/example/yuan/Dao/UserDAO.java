@@ -22,6 +22,8 @@ public class UserDAO {
             db = helper.getReadableDatabase();// 初始化SQLiteDatabase对象
             values = new ContentValues();
         }
+
+
         /**
          * 添加用户信息
          * @Data
@@ -97,8 +99,18 @@ public class UserDAO {
             db.close();
             return  list;
         }
+        public String findPwd(String name){
+            Cursor cursor=db.rawQuery("select user_password from user where user_name=?",
+                    new String[]{String.valueOf(name)});
+            if(cursor.moveToNext()){
+                cursor.getString(cursor.getColumnIndex("user_password"));
+            }
+            cursor.close();// 关闭游标
+
+            return name;
+        }
         /**
-         * 根据查找管理员信息
+         * 根据id查找管理员信息
          *
          * @return
          */
@@ -124,15 +136,15 @@ public class UserDAO {
         }
 
 
-        public boolean CheckIsDataAlreadyInDBorNot(String value) {
+        public int CheckIsDataAlreadyInDBorNot(String value) {
             String Query = "Select * from user where user_name =?";
             Cursor cursor = db.rawQuery(Query, new String[]{value});
             if (cursor.getCount() > 0) {
                 cursor.close();
-                return true;
+                return 1;
             }
             cursor.close();
-            return false;
+            return -1;
         }
 
         public long getCount() {

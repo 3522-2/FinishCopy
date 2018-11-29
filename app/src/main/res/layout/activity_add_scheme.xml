@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/person"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/re"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/fanhui" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/editRel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/accountRel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="户型"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/accountEdittext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:layout_toRightOf="@id/account"
+                android:background="@null"
+                android:hint="输入户型"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pwdRel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/accountRel"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="面积"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/pwdEdittext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/pwd"
+                android:background="@null"
+                android:hint="输入面积"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pwdRe2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pwdRel"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/pwd1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="风格"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/ispwdEdittext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/pwd1"
+                android:background="@null"
+                android:hint="输入风格"
+
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pwdRe3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pwdRe2"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/pwd2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="第一阶段费用"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/telephone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/pwd2"
+                android:background="@null"
+                android:hint="费用"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pwdRe4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pwdRe3"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/adr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="第二阶段工钱"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/adr1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/adr"
+                android:background="@null"
+                android:hint="第二阶段工钱"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pwdRe5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pwdRe4"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/Stytle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="第二阶段材料钱"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+
+                android:id="@+id/HouseStytle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/Stytle"
+                android:hint="第二阶段材料钱"
+                android:background="@null"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/pwdRe6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pwdRe5"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/Three1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="第三阶段工钱"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/threeP"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/Three1"
+                android:background="@null"
+                android:hint="第三阶段工钱"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/pwdR7"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pwdRe6"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/are"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="第三阶段材料钱"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/threeC"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/are"
+                android:background="@null"
+                android:hint="第三阶段材料钱"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/pwdRe7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pwdR7"
+        android:clickable="true"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/ThreeP1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:padding="8dp"
+            android:text="第四阶段工钱"
+            android:textColor="#000"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/threeP1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/ThreeP1"
+            android:background="@null"
+            android:hint="第四阶段工钱"
+            android:textSize="15sp" />
+    </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/pwdRe8"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pwdRe7"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/FoureP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="第四阶段材料钱"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/FoureP1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/FoureP"
+                android:background="@null"
+                android:hint="第四阶段材料"
+                android:textSize="15sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/pwdRe9"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pwdRe8"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/FoureP2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="第五阶段工钱"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/FourePm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/FoureP2"
+                android:background="@null"
+                android:hint="第五阶段工钱"
+                android:textSize="15sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/pwdRe10"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pwdRe9"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/FP2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="第五阶段材料钱"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/FineP"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/FP2"
+                android:background="@null"
+                android:hint="第五阶段材料钱"
+                android:textSize="15sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/pwdRe11"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pwdRe10"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/FP3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:padding="8dp"
+                android:text="总费用"
+                android:textColor="#000"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/Sum"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/FP3"
+                android:background="@null"
+                android:hint="总费用"
+                android:textSize="15sp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="500dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/login_in"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="80dp"
+                android:gravity="center_horizontal"
+                android:text="添加 "
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+

@@ -7,6 +7,7 @@ public class Administrator {
     private String administrator_telephone;//管理员手机号
 
     public Administrator(){}
+    public Administrator(String administrator_name){}
     public Administrator(int administrator_id, String administrator_name, String administrator_password, String administrator_telephone){
         super();
     }

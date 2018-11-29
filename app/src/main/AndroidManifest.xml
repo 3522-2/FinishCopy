@@ -27,7 +27,11 @@
         </activity>
         <activity android:name=".person.PersonMain" />
         <activity android:name=".person.login" />
-        <activity android:name=".person.regist"></activity>
+        <activity android:name=".person.regist" />
+        <activity android:name=".person.guanliyuanLogin" />
+        <activity android:name=".person.gaunliyuanReg" />
+        <activity android:name=".person.gaunliyuanMain" />
+        <activity android:name=".person.AddScheme"></activity>
     </application>
 
 </manifest>

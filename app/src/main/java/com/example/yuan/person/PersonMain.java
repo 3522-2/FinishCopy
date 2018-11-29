@@ -1,6 +1,8 @@
 package com.example.yuan.person;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,23 +21,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonMain extends AppCompatActivity {
+    private SharedPreferences sp;
     private TextView textView;
     private ListView listView;
-    private int[] title = new int[]{R.mipmap.person1,R.mipmap.person3,R.mipmap.person4,R.mipmap.person5};
-    private String[] Data = new String[]{"我的装修","更新装修进度","联系我们","设置"};
-    private int[] imageld = new int[]{R.mipmap.person2,R.mipmap.person2,R.mipmap.person2,R.mipmap.person2};
+    private int[] title = new int[]{R.mipmap.person1,R.mipmap.person3,R.mipmap.person4,R.mipmap.person5,R.mipmap.canal};
+    private String[] Data = new String[]{"我的装修","更新装修进度","联系我们","设置","注销登录"};
+    private int[] imageld = new int[]{R.mipmap.person2,R.mipmap.person2,R.mipmap.person2,R.mipmap.person2,R.mipmap.person2};
     private List<PersonListAdapt.ListItemModel> myListItem;
     private PersonListAdapt adApter;
     private ImageView fanhui,home;
-    private Button reg1;
+    private Button reg1,canal;
     private ImageView imageView1,imageView2,imageView4;//底部导航栏
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person_main);
 
+
+
         textView = (TextView) findViewById(R.id.textView) ;
+        SharedPreferences sharedPreferences = this.getSharedPreferences("yonghu", MODE_PRIVATE);
+        textView.setText(sharedPreferences.getString("用户名",""));
+
         reg1 = (Button)findViewById(R.id.reg);
+        SharedPreferences sharedPreferences1 = this.getSharedPreferences("yonghu", MODE_PRIVATE);
+        reg1.setText(sharedPreferences1.getString("是否登录",""));
+
         home = (ImageView)findViewById(R.id.home);
         fanhui = (ImageView)findViewById(R.id.re);
         listView=(ListView)findViewById(R.id.ListView);
@@ -51,6 +62,7 @@ public class PersonMain extends AppCompatActivity {
         adApter.setListItems(myListItem);
         listView.setAdapter(adApter);
 
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -65,6 +77,23 @@ public class PersonMain extends AppCompatActivity {
                 }
                 if(id == 3) {
                     Toast.makeText(PersonMain.this, "设置" + position, Toast.LENGTH_SHORT).show();
+                }
+                if(id == 4) {
+                   // 1：得到sp对象
+                            sp = getSharedPreferences("yonghu", Context.MODE_PRIVATE);
+                    //2：得到editor对象
+                    SharedPreferences.Editor editor = sp.edit();
+                    //3：得到输入的key/vaule
+                    String key = "用户名";
+                    String value = "请登录";
+                    String key3 = "是否登录";
+                    String value3 = "未登录";
+                    //4:用editor保存key/vaule
+                    editor.putString(key,value).commit();
+                    editor.putString(key3,value3).commit();
+                    Intent intent = new Intent();
+                    intent.setClass(PersonMain.this,PersonMain.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -91,7 +120,7 @@ public class PersonMain extends AppCompatActivity {
             }
         });
         /**
-         * 进入登录页面
+         * 进入选择登录页面
          */
         reg1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,15 +165,16 @@ public class PersonMain extends AppCompatActivity {
         });
 
     }
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        // 判断请求码和返回码是不是正确的，这两个码都是我们自己设置的
-        if (requestCode == 222 && resultCode == 333) {
-            String name = data.getStringExtra("name");// 拿到返回过来的输入的账号
-            String btn = data.getStringExtra("button");
-            // 把得到的数据显示到输入框内
-            textView.setText(name);
-            reg1.setText(btn);
-        }
-    }
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        // 判断请求码和返回码是不是正确的，这两个码都是我们自己设置的
+//        if (requestCode == 222 && resultCode == 333) {
+//            String name = data.getStringExtra("name");// 拿到返回过来的输入的账号
+//            String btn = data.getStringExtra("button");
+//            // 把得到的数据显示到输入框内
+//            textView.setText(name);
+//            reg1.setText(btn);
+//
+//        }
+//    }
 }

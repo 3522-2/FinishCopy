@@ -22,6 +22,17 @@ public class AdministratorDAO {
         values = new ContentValues();
     }
 
+
+    public int CheckIsDataAlreadyInDBorNot(String value) {
+        String Query = "Select * from administrator where administrator_name =?";
+        Cursor cursor = db.rawQuery(Query, new String[]{value});
+        if (cursor.getCount() > 0) {
+            cursor.close();
+            return 1;
+        }
+        cursor.close();
+        return -1;
+    }
     /**
      * 添加管理员
      * @param administrator
@@ -30,13 +41,25 @@ public class AdministratorDAO {
     {
         //执行insert into administrator(administrator_id,administrator_name,administrator_password" +
         ////                        ",administrator_telephone) values (?,?,?,?)"
-        values.put("activity_name",administrator.getAdministrator_name());
-        values.put("activity_StartTime",administrator.getAdministrator_password());
-        values.put("activity_StartTime",administrator.getAdministrator_telephone());
+        values.put("administrator_name",administrator.getAdministrator_name());
+        values.put("administrator_password",administrator.getAdministrator_password());
+        values.put("administrator_telephone",administrator.getAdministrator_telephone());
 
         db.insert("administrator",null,values);
         db.close();
     }
+    public String findPwd(String name){
+        Cursor cursor = db.rawQuery(
+                "select administrator_password from administrator where administrator_name=? ",
+                new String[]{String.valueOf(name)});// 根据编号查找支出信息，并存储到Cursor类中
+
+        if(cursor.moveToNext()){
+            cursor.getString(cursor.getColumnIndex("administrator_password"));
+        }
+        cursor.close();// 关闭游标
+        return name;
+    }
+
 
     /**
      * 根据id删除一条纪录

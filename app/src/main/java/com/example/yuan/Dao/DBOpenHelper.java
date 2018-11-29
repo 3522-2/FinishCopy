@@ -16,7 +16,8 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
         super(context, DBNAME, null, VERSION);// 重写基类的构造函数
     }
-    public  DBOpenHelper(Context context,int VERSION){
+
+    public DBOpenHelper(Context context, int VERSION) {
         super(context, DBNAME, null, VERSION);// 重写基类的构造函数
     }
 
@@ -24,12 +25,12 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL("create table scheme(scheme_id integer  PRIMARY KEY AUTOINCREMENT,\n" +
-                "                scheme_houseType varchar(100) NOT NULL,\n" +
-                "                scheme_houseArea varchar(100) NOT NULL,\n" +
-                "                scheme_houseStyle varchar(100)NOT NULL,\n" +
+                "                scheme_houseType varchar(100),\n" +
+                "                scheme_houseArea varchar(100) ,\n" +
+                "                scheme_houseStyle varchar(100),\n" +
                 "                scheme_pirceOne varchar(100),\n" +
                 "                scheme_pirceTwoWork varchar(100),\n" +
-                "                scheme_pirceTwoMateria varchar(100),\n" +
+                "                scheme_pirceTwoMaterial varchar(100),\n" +
                 "                scheme_pirceThreeWork varchar(100),\n" +
                 "                scheme_pirceThreeMaterial varchar(100),\n" +
                 "                scheme_pirceFourWork varchar(100),\n" +
@@ -112,48 +113,5 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-    private static DBOpenHelper penHelper;
-
 
 }
-//    private static final int VERSION = 1;// 定义数据库版本号
-//    private static final String DBNAME = "account.db";// 定义数据库名
-//
-//
-//    @Override
-//    public void onCreate(SQLiteDatabase db) {// 创建数据库
-//
-//        db.execSQL("create table tb_outaccount (_id integer primary key,money decimal,time varchar(10),"
-//                + "type varchar(10),address varchar(100),mark varchar(200))");// 创建支出信息表
-//        db.execSQL("create table tb_inaccount (_id integer primary key,money decimal,time varchar(10),"
-//                + "type varchar(10),handler varchar(100),mark varchar(200))");// 创建收入信息表
-//        db.execSQL("create table tb_pwd (password varchar(20))");// 创建密码表
-//        db.execSQL("create table tb_flag (_id integer primary key,flag varchar(200))");// 创建便签信息表
-//        db.execSQL("create table User(id integer primary key autoincrement,username varchar(10),userpwd varchar(10))");
-//    }
-//        public  DBOpenHelper(Context context,int VERSION){
-//        super(context, DBNAME, null, VERSION);// 重写基类的构造函数
-//    }
-//    public DBOpenHelper(Context context) {// 定义构造函数
-//
-//        super(context, DBNAME, null, VERSION);// 重写基类的构造函数
-//    }
-//
-//    @Override
-//    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {// 覆写基类的onUpgrade方法，以便数据库版本更新
-//    }
-//
-//    /**
-//     * 获取SqliteDB实例
-//     *
-//     * @param
-//     */
-//    private static DBOpenHelper penHelper;
-//
-//    public synchronized static DBOpenHelper getInstance(Context context) {
-//        if (penHelper == null) {
-//            penHelper = new DBOpenHelper(context);
-//        }
-//        return penHelper;
-//    }
-//}
