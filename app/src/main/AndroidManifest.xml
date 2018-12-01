@@ -31,7 +31,9 @@
         <activity android:name=".person.guanliyuanLogin" />
         <activity android:name=".person.gaunliyuanReg" />
         <activity android:name=".person.gaunliyuanMain" />
-        <activity android:name=".person.AddScheme"></activity>
+        <activity android:name=".person.AddScheme" />
+        <activity android:name=".person.ChangeSchem" />
+        <activity android:name=".person.EditScheme"></activity>
     </application>
 
 </manifest>

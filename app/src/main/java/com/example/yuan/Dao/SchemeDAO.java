@@ -4,9 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.widget.Toast;
 
-import com.example.yuan.modle.Project;
 import com.example.yuan.modle.Scheme;
 
 import java.util.ArrayList;
@@ -56,9 +54,9 @@ public class SchemeDAO {
      * 根据id删除一条纪录
      * @param id
      */
-    public void deleteById(int id){
-        //执行delete from  activity where activity_id
-        db.delete("scheme","_id=?",new String[]{id+""});
+    public void deleteById(String id){
+        db.delete("scheme","scheme_id=?",new String[]{id+""});
+
         db.close();
     }
     /**
@@ -95,7 +93,7 @@ public class SchemeDAO {
         Cursor cursor = db.query("scheme",null,null,null,
                 null,null,null);
         while (cursor.moveToNext()){
-            int scheme_id = cursor.getInt(0);
+            String scheme_id = cursor.getString(0);
             String scheme_houseType = cursor.getString(1);
             String scheme_houseArea = cursor.getString(2);
             String scheme_houseStyle = cursor.getString(3);
@@ -122,19 +120,16 @@ public class SchemeDAO {
      * 根据id查找方案信息
      *
      * @return
+     * @param id
      */
-    public Scheme find(int id) {
+    public  Scheme find(String id) {
 //		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
         Cursor cursor = db.rawQuery(
-                "select scheme_houseType,scheme_houseArea,scheme_houseStyle,scheme_pirceOne,scheme_pirceTwoWork," +
-                        "scheme_pirceTwoMaterial,scheme_pirceThreeWork" +
-                        ",scheme_pirceThreeMaterial,scheme_pirceFourWork,scheme_pirceFourMaterial,scheme_pirceFivework," +
-                        "scheme_pirceFiveMaterial,scheme_pirceSum" +
-                        "from eccect where scheme_id=? ",
+                "select * from scheme where scheme_id=? ",
                 new String[] { String.valueOf(id) });// 根据编号查找支出信息，并存储到Cursor类中
         if (cursor.moveToNext()){// 遍历查找到的支出信息
             // 将遍历到的支出信息存储到Activity类中
-            return new Scheme(
+            return new Scheme(cursor.getString(cursor.getColumnIndex("scheme_id")),
                     cursor.getString(cursor.getColumnIndex("scheme_houseType")),
                     cursor.getString(cursor.getColumnIndex("scheme_houseArea")),
                     cursor.getString(cursor.getColumnIndex("scheme_houseStyle")),
@@ -160,6 +155,49 @@ public class SchemeDAO {
         }
         cursor.close();// 关闭游标
         return 0;// 如果没有数据，则返回0
+    }
+
+    public List<Scheme> getScrollData(int start, int count) {
+
+        List<Scheme> scheme = new ArrayList<Scheme>();// 创建集合对象
+//		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
+        // 获取所有收入信息
+        Cursor cursor = db.rawQuery("select * from scheme limit ? , ?",//limit表示范围
+                new String[] { String.valueOf(start), String.valueOf(count) });
+        while (cursor.moveToNext()){// 遍历所有的收入信息
+            // 将遍历到的收入信息添加到集合中
+            scheme.add(new Scheme(cursor.getString(cursor.getColumnIndex("scheme_id")),
+                    cursor.getString(cursor.getColumnIndex("scheme_houseArea")),
+                    cursor.getString(cursor.getColumnIndex("scheme_houseStyle")),
+                    cursor.getString(cursor.getColumnIndex("scheme_houseType")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceOne")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceTwoWork")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceTwoMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceThreeWork")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceThreeMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFourWork")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFourMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFivework")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFiveMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceSum"))));
+
+        }
+        cursor.close();// 关闭游标
+        return scheme;// 返回集合
+    }
+    /**
+     * 获取收入最大编号
+     *
+     * @return
+     */
+    public String getMaxId() {
+//		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
+        Cursor cursor = db.rawQuery("select max(scheme_id) from scheme", null);// 获取收入信息表中的最大编号
+        while (cursor.moveToLast()) {// 访问Cursor中的最后一条数据
+            return cursor.getString(0);// 获取访问到的数据，即最大编号
+        }
+        cursor.close();// 关闭游标
+        return "wu";
     }
 }
 

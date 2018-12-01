@@ -47,7 +47,7 @@ public class PersonMain extends AppCompatActivity {
         SharedPreferences sharedPreferences1 = this.getSharedPreferences("yonghu", MODE_PRIVATE);
         reg1.setText(sharedPreferences1.getString("是否登录",""));
 
-        home = (ImageView)findViewById(R.id.home);
+
         fanhui = (ImageView)findViewById(R.id.re);
         listView=(ListView)findViewById(R.id.ListView);
         myListItem = new ArrayList<PersonListAdapt.ListItemModel>();
@@ -108,17 +108,7 @@ public class PersonMain extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        /**
-         * 返回首页
-         */
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(PersonMain.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+
         /**
          * 进入选择登录页面
          */

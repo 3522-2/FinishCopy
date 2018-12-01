@@ -29,7 +29,7 @@ public class AddScheme extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(AddScheme.this, guanliyuanLogin.class);
+                intent.setClass(AddScheme.this, gaunliyuanMain.class);
                 startActivity(intent);
             }
         });
@@ -46,47 +46,60 @@ public class AddScheme extends AppCompatActivity {
         priceFiveW=(EditText)findViewById(R.id.FourePm);
         priceFiveC=(EditText)findViewById(R.id.FineP);
         priceSum = (EditText)findViewById(R.id.Sum);
-        final SchemeDAO schemeDAO = new SchemeDAO(AddScheme.this);
-        final Scheme scheme = new Scheme();
 
         add = (Button)findViewById(R.id.login_in);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String style1=style.getText().toString();
-                String area1 = area.getText().toString();
+                 SchemeDAO schemeDAO = new SchemeDAO(AddScheme.this);
+                 Scheme scheme = new Scheme();
+
+                 String area1 = area.getText().toString();
+                 scheme.setScheme_houseArea(area1);//面积
+
                 String type1 = type.getText().toString();
+                scheme.setScheme_houseType(type1);//户型
+
+                String style1 = style.getText().toString();
+                scheme.setScheme_houseStyle(style1);//风格
+
                 String priceOne1 = priceOne.getText().toString();
-                String priceTwoW1=priceTwoW.getText().toString();
-                String priceTwoC1=priceTwoC.getText().toString();
-                String priceThreeW1=priceThreeW.getText().toString();
-                String priceThreeC1=priceThreeC.getText().toString();
-                String priceFourW1=priceFourW.getText().toString();
-                String priceFourC1=priceFourC.getText().toString();
-                String priceFiveW1=priceFiveW.getText().toString();
-                String priceFiveC1=priceFiveC.getText().toString();
-                String priceSum1 =priceSum.getText().toString();
-                scheme.setScheme_houseStyle(style1);
-                scheme.setScheme_houseArea(area1);
-                scheme.setScheme_houseType(type1);
                 scheme.setScheme_pirceOne(priceOne1);
+
+                String priceTwoW1 = priceTwoW.getText().toString();
                 scheme.setScheme_pirceTwoWork(priceTwoW1);
+
+                String priceTwoC1 = priceTwoC.getText().toString();
                 scheme.setScheme_pirceTwoMaterial(priceTwoC1);
+
+                String priceThreeW1 = priceThreeW.getText().toString();
                 scheme.setScheme_pirceThreeWork(priceThreeW1);
+
+                String priceThreeC1 = priceThreeC.getText().toString();
                 scheme.setScheme_pirceThreeMaterial(priceThreeC1);
+
+
+                String priceFourW1 = priceFourW.getText().toString();
                 scheme.setScheme_pirceFourWork(priceFourW1);
+
+                String priceFourC1 = priceFourC.getText().toString();
                 scheme.setScheme_pirceFourMaterial(priceFourC1);
+
+                String priceFiveW1 = priceFiveW.getText().toString();
                 scheme.setScheme_pirceFivework(priceFiveW1);
-                scheme.setScheme_pirceFiveMaterial(priceFiveC1);
+
+                String priceFiveC1 = priceFiveC.getText().toString();
+               scheme.setScheme_pirceFiveMaterial(priceFiveC1);
+
+                String priceSum1 = priceSum.getText().toString();
                 scheme.setScheme_pirceSum(priceSum1);
                 schemeDAO.add(scheme);
-                if(style1==null || ("").equals(style1) || area1==null || area1.equals(area1)||type1==null||("").equals(type1)){
-                    Toast.makeText(AddScheme.this,"请检查前三栏是否为空",Toast.LENGTH_SHORT).show();
-                }
-               Toast.makeText(AddScheme.this,"添加成功",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent();
-                intent.setClass(AddScheme.this,AddScheme.class);
-                startActivity(intent);
+
+                    Toast.makeText(AddScheme.this, "添加成功", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent();
+                    intent.setClass(AddScheme.this, AddScheme.class);
+                    startActivity(intent);
+
 
             }
         });

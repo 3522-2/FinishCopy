@@ -1,30 +1,49 @@
 package com.example.yuan.modle;
 
+/**
+ * create by YUAN
+ * on 2018/12/1
+ */
 public class Scheme {
-    private int scheme_id;//	方案编号
-    private String scheme_houseType;//	户型
-    private String scheme_houseArea;//	面积
-    private String scheme_houseStyle;//	风格
-    private String scheme_pirceOne;//	第一阶段工钱
-    private String scheme_pirceTwoWork;//	第二阶段工钱
-    private String scheme_pirceTwoMaterial;//	第二阶段材料材料钱
-    private String scheme_pirceThreeWork;//	第三阶段材料工钱
-    private String scheme_pirceThreeMaterial;//第三阶段材料材料钱
-    private String scheme_pirceFourWork;//	第四阶段材料工钱
-    private String scheme_pirceFourMaterial;//	第四阶段材料材料钱
-    private String scheme_pirceFivework;//第五阶段材料工钱
-    private String scheme_pirceFiveMaterial;//	第五阶段材料材料钱
-    private String scheme_pirceSum;//	总价
-    public  Scheme(){}
-    public  Scheme(String scheme_houseType, String scheme_houseArea, String scheme_houseStyle, String scheme_pirceOne, String scheme_pirceTwoWork, String scheme_pirceTwoMaterial, String scheme_pirceThreeWork, String scheme_pirceThreeMaterial, String scheme_pirceFourWork, String scheme_pirceFourMaterial, String scheme_pirceFivework, String scheme_pirceFiveMaterial, String scheme_pirceSum){}
-    public Scheme(int scheme_id, String scheme_houseType, String scheme_houseArea, String scheme_houseStyle, String scheme_pirceOne, String scheme_pirceTwoWork, String scheme_pirceTwoMaterial, String scheme_pirceThreeWork, String scheme_pirceThreeMaterial, String scheme_pirceFourWork, String scheme_pirceFourMaterial, String scheme_pirceFivework, String scheme_pirceFiveMaterial, String scheme_pirceSum){}
+    private String scheme_id;
+    private String scheme_houseType;
+    private String scheme_houseArea;
+    private String scheme_houseStyle;
+    private String scheme_pirceOne;
+    private String scheme_pirceTwoWork;
+    private String scheme_pirceTwoMaterial;
+    private String scheme_pirceThreeWork;
+    private String scheme_pirceThreeMaterial;
+    private String scheme_pirceFourWork;
+    private String scheme_pirceFourMaterial;
+    private String scheme_pirceFivework;
+    private String scheme_pirceFiveMaterial;
+    private String scheme_pirceSum;
+    public Scheme(){super();}
+    public Scheme(String scheme_id, String scheme_houseType, String scheme_houseArea, String scheme_houseStyle, String scheme_pirceOne, String scheme_pirceTwoWork, String scheme_pirceTwoMaterial, String scheme_pirceThreeWork, String scheme_pirceThreeMaterial, String scheme_pirceFourWork, String scheme_pirceFourMaterial, String scheme_pirceFivework, String scheme_pirceFiveMaterial, String scheme_pirceSum){
+        super();
+        this.scheme_id = scheme_id;
+        this.scheme_houseType = scheme_houseType;
+        this.scheme_houseArea = scheme_houseArea;
+        this.scheme_houseStyle = scheme_houseStyle;
+        this.scheme_pirceOne = scheme_pirceOne;
+        this.scheme_pirceTwoWork=scheme_pirceTwoWork;
+        this.scheme_pirceTwoMaterial=scheme_pirceTwoMaterial;
+        this.scheme_pirceThreeWork=scheme_pirceThreeWork;
+        this.scheme_pirceThreeMaterial=scheme_pirceThreeMaterial;
+        this.scheme_pirceFourWork=scheme_pirceFourWork;
+        this.scheme_pirceFourMaterial=scheme_pirceFourMaterial;
+        this.scheme_pirceFivework=scheme_pirceFivework;
+        this.scheme_pirceFiveMaterial=scheme_pirceFiveMaterial;
+        this.scheme_pirceSum=scheme_pirceSum;
+    }
 
 
-    public int getScheme_id() {
+    public String getScheme_id() {
         return scheme_id;
     }
 
-    public void setScheme_id(int scheme_id) {
+    public void setScheme_id(String scheme_id) {
         this.scheme_id = scheme_id;
     }
 
@@ -43,13 +62,7 @@ public class Scheme {
     public void setScheme_houseArea(String scheme_houseArea) {
         this.scheme_houseArea = scheme_houseArea;
     }
-    public String getScheme_pirceTwoMaterial() {
-        return scheme_pirceTwoMaterial;
-    }
 
-    public void setScheme_pirceTwoMaterial(String scheme_pirceTwoMaterial) {
-        this.scheme_pirceTwoMaterial = scheme_pirceTwoMaterial;
-    }
     public String getScheme_houseStyle() {
         return scheme_houseStyle;
     }
@@ -74,7 +87,13 @@ public class Scheme {
         this.scheme_pirceTwoWork = scheme_pirceTwoWork;
     }
 
+    public String getScheme_pirceTwoMaterial() {
+        return scheme_pirceTwoMaterial;
+    }
 
+    public void setScheme_pirceTwoMaterial(String scheme_pirceTwoMaterial) {
+        this.scheme_pirceTwoMaterial = scheme_pirceTwoMaterial;
+    }
 
     public String getScheme_pirceThreeWork() {
         return scheme_pirceThreeWork;

@@ -27,56 +27,7 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/tab_menu"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:background="@color/MENU"
-        android:layout_alignParentBottom="true">
 
-        <ImageView
-            android:id="@+id/textview1"
-            android:layout_width="4dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@mipmap/shouye"
-            android:drawablePadding="6dp"
-
-            />
-
-        <ImageView
-            android:id="@+id/textview2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@mipmap/anli"
-            android:drawablePadding="3dp"
-            android:gravity="center"
-            android:text="案例"
-            />
-
-        <ImageView
-            android:id="@+id/textview3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@mipmap/threed"
-            android:drawablePadding="3dp"
-            android:gravity="center"
-            android:text="3D"
-            />
-        <ImageView
-            android:id="@+id/textview4"
-            android:layout_width="4dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@mipmap/wode"
-            android:drawablePadding="6dp"
-
-            />
-
-    </LinearLayout>
 <LinearLayout
     android:layout_marginTop="50dp"
     android:layout_width="match_parent"
@@ -100,6 +51,7 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginTop="25dp"
+            android:layout_marginLeft="50dp"
             android:text="增加效果图"
             />
         <Button
@@ -107,17 +59,10 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginTop="25dp"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="170dp"
             android:text="修改效果图"
             />
-        <Button
-            android:id="@+id/deletxiaoguotu"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="240dp"
-            android:text="删除效果图"
-            />
+
     </RelativeLayout>
 
 
@@ -133,6 +78,7 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginTop="25dp"
+            android:layout_marginLeft="50dp"
             android:text="增加材料"
             />
         <Button
@@ -140,17 +86,10 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginTop="25dp"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="170dp"
             android:text="修改材料"
             />
-        <Button
-            android:id="@+id/deletCL"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="240dp"
-            android:text="删除材料"
-            />
+
     </RelativeLayout>
 
 
@@ -167,6 +106,7 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginTop="25dp"
+            android:layout_marginLeft="50dp"
             android:text="增加方案"
             />
         <Button
@@ -174,17 +114,10 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginTop="25dp"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="170dp"
             android:text="修改方案"
             />
-        <Button
-            android:id="@+id/deletS"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="240dp"
-            android:text="删除方案"
-            />
+
     </RelativeLayout>
 
 

@@ -14,14 +14,16 @@ import com.example.yuan.R;
 public class gaunliyuanMain extends AppCompatActivity {
 
     private ImageView fanhui;
-    private Button addCL,updateCL,deletCL;
-    private Button addX,updateX,deletX;
-    private Button addF,updateF,deletF;
+    private Button addCL,updateCL;
+    private Button addX,updateX;
+    private Button addF,updateF;
+    private  ImageView home1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gaunliyuan_main);
+
         /**
          * 返回上一页
          */
@@ -35,6 +37,15 @@ public class gaunliyuanMain extends AppCompatActivity {
             }
         });
 
+        home1 = (ImageView)findViewById(R.id.home) ;
+        home1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(gaunliyuanMain.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
         /**
          * addX，增加效果图
          */
@@ -45,16 +56,7 @@ public class gaunliyuanMain extends AppCompatActivity {
 
             }
         });
-        /**
-         * deletX，删除效果图
-         */
-        deletX = (Button)findViewById(R.id.deletxiaoguotu);
-        deletX.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
         /**
          * updateX修改效果图
          */
@@ -75,16 +77,7 @@ public class gaunliyuanMain extends AppCompatActivity {
 
             }
         });
-        /**
-         * deletC,删除材料
-         */
-        deletCL = (Button)findViewById(R.id.addCL);
-        deletCL.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
         /**
          * 更新材料
          */
@@ -109,16 +102,7 @@ public class gaunliyuanMain extends AppCompatActivity {
 
             }
         });
-        /**
-         * deletC,删除方案
-         */
-        deletF = (Button)findViewById(R.id.deletS);
-        deletF.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
 
         /**
          * updateC,更新方案
@@ -127,7 +111,9 @@ public class gaunliyuanMain extends AppCompatActivity {
         updateF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent();
+                intent.setClass(gaunliyuanMain.this,ChangeSchem.class);
+                startActivity(intent);
             }
         });
     }
