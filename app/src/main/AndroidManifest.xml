@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="false"
@@ -33,7 +34,10 @@
         <activity android:name=".person.gaunliyuanMain" />
         <activity android:name=".person.AddScheme" />
         <activity android:name=".person.ChangeSchem" />
-        <activity android:name=".person.EditScheme"></activity>
+        <activity android:name=".person.EditScheme" />
+        <activity android:name=".person.AddXiao" />
+        <activity android:name=".person.ExitXiao" />
+        <activity android:name=".person.ChangeXiao"></activity>
     </application>
 
 </manifest>

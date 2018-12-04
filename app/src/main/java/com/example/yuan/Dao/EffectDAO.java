@@ -38,13 +38,13 @@ public class EffectDAO {
         values.put("effect_area",effect.getEffect_area());
         values.put("effect_type",effect.getEffect_type());
         values.put("effect_photo",effect.getEffect_photo());
-        values.put("effect_recommand",effect.getEffect_recommand());
         values.put("effect_PriceOne",effect.getEffect_PriceOne());
         values.put("effect_PriceTwo",effect.getEffect_PriceTwo());
         values.put("effect_PriceThree",effect.getEffect_PriceThree());
         values.put("effect_PriceFour",effect.getEffect_PriceFour());
         values.put("effect_PriceFive",effect.getEffect_PriceFive());
         values.put("effect_PriceSum",effect.getEffect_PriceSum());
+        values.put("effect_describe",effect.getEffect_describe());
         db.insert("effect",null,values);
         db.close();
 
@@ -64,7 +64,7 @@ public class EffectDAO {
      * 根据id删除一条纪录
      * @param id
      */
-    public void deleteById(int id){
+    public void deleteById(String id){
         //执行delete from  activity where activity_id
         db.delete("effect","effect_id=?",new String[]{id+""});
         db.close();
@@ -83,13 +83,12 @@ public class EffectDAO {
         values.put("effect_area",effect.getEffect_area());
         values.put("effect_type",effect.getEffect_type());
         values.put("effect_photo",effect.getEffect_photo());
-        values.put("effect_recommand",effect.getEffect_recommand());
         values.put("effect_PriceOne",effect.getEffect_PriceOne());
         values.put("effect_PriceTwo",effect.getEffect_PriceTwo());
         values.put("effect_PriceThree",effect.getEffect_PriceThree());
         values.put("effect_PriceFour",effect.getEffect_PriceFour());
         values.put("effect_PriceFive",effect.getEffect_PriceFive());
-        values.put("effect_PriceSum",effect.getEffect_PriceSum());
+        values.put("effect_describe",effect.getEffect_describe());
         db.update("effect",values,"effect_id="+effect.getEffect_id(),null);
         db.close();
     }
@@ -143,15 +142,11 @@ public class EffectDAO {
      * 根据id查找效果图信息
      *
      * @return
+     * @param id
      */
-    public Effect find(int id) {
+    public Effect find(String id) {
 //		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
-        Cursor cursor = db.rawQuery(
-                "select effect_name,effect_stytle,effect_area," +
-                        "effect_type,effect_describe,effect_photo," +
-                        "effect_recommand,effect_UserSee,effect_PriceOne," +
-                        "effect_PriceTwo,effect_PriceThree,effect_PriceFour,effect_PriceFive,effect_PriceSum" +
-                        "from eccect where effect_id=? ",
+        Cursor cursor = db.rawQuery("select * from effect where effect_id=? ",
                 new String[] { String.valueOf(id) });// 根据编号查找支出信息，并存储到Cursor类中
         // 遍历查找到的支出信息
 // 将遍历到的支出信息存储到Activity类中
@@ -160,18 +155,18 @@ public class EffectDAO {
                     cursor.getInt(cursor.getColumnIndex("effect_id")),
                     cursor.getString(cursor.getColumnIndex("effect_name")),
                     cursor.getString(cursor.getColumnIndex("effect_stytle")),
-                    cursor.getDouble(cursor.getColumnIndex("effect_area")),
+                    cursor.getString(cursor.getColumnIndex("effect_area")),
                     cursor.getString(cursor.getColumnIndex("effect_type")),
                     cursor.getString(cursor.getColumnIndex("effect_describe")),
                     cursor.getBlob(cursor.getColumnIndex("effect_photo")),
                     cursor.getString(cursor.getColumnIndex("effect_recommand")),
                     cursor.getString(cursor.getColumnIndex("effect_UserSee")),
-                    cursor.getDouble(cursor.getColumnIndex("effect_PriceOne")),
-                    cursor.getDouble(cursor.getColumnIndex("effect_PriceTwo")),
-                    cursor.getDouble(cursor.getColumnIndex("effect_PriceThree")),
-                    cursor.getDouble(cursor.getColumnIndex("effect_PriceFour")),
-                    cursor.getDouble(cursor.getColumnIndex("effect_PriceFive")),
-                    cursor.getDouble(cursor.getColumnIndex("effect_PriceSum")));
+                    cursor.getString(cursor.getColumnIndex("effect_PriceOne")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceTwo")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceThree")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceFour")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceFive")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceSum")));
         }
         cursor.close();// 关闭游标
         return null;// 如果没有信息，则返回null
@@ -184,5 +179,34 @@ public class EffectDAO {
         }
         cursor.close();// 关闭游标
         return 0;// 如果没有数据，则返回0
+    }
+    public List<Effect> getScrollData(int start, int count) {
+
+        List<Effect> scheme = new ArrayList<Effect>();// 创建集合对象
+//		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
+        // 获取所有收入信息
+        Cursor cursor = db.rawQuery("select * from effect limit ? , ?",//limit表示范围
+                new String[] { String.valueOf(start), String.valueOf(count) });
+        while (cursor.moveToNext()){// 遍历所有的收入信息
+            // 将遍历到的收入信息添加到集合中
+            scheme.add(new Effect( cursor.getInt(cursor.getColumnIndex("effect_id")),
+                    cursor.getString(cursor.getColumnIndex("effect_name")),
+                    cursor.getString(cursor.getColumnIndex("effect_stytle")),
+                    cursor.getString(cursor.getColumnIndex("effect_area")),
+                    cursor.getString(cursor.getColumnIndex("effect_type")),
+                    cursor.getString(cursor.getColumnIndex("effect_describe")),
+                    cursor.getBlob(cursor.getColumnIndex("effect_photo")),
+                    cursor.getString(cursor.getColumnIndex("effect_recommand")),
+                    cursor.getString(cursor.getColumnIndex("effect_UserSee")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceOne")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceTwo")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceThree")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceFour")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceFive")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceSum"))));
+
+        }
+        cursor.close();// 关闭游标
+        return scheme;// 返回集合
     }
 }

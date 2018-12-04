@@ -86,6 +86,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                 "                effect_photo blob,\n" +
                 "                effect_recommand boolean,\n" +
                 "                effect_UserSee boolean,\n" +
+                "                effect_describe varchar(100),\n" +
                 "                effect_PriceOne varchar(100),\n" +
                 "                effect_PriceTwo varchar(100),\n" +
                 "                effect_PriceThree varchar(100),\n" +

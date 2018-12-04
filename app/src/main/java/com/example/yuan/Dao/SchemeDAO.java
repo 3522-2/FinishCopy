@@ -165,7 +165,7 @@ public class SchemeDAO {
         Cursor cursor = db.rawQuery("select * from scheme limit ? , ?",//limit表示范围
                 new String[] { String.valueOf(start), String.valueOf(count) });
         while (cursor.moveToNext()){// 遍历所有的收入信息
-            // 将遍历到的收入信息添加到集合中
+            // 将遍历到的方案信息添加到集合中
             scheme.add(new Scheme(cursor.getString(cursor.getColumnIndex("scheme_id")),
                     cursor.getString(cursor.getColumnIndex("scheme_houseArea")),
                     cursor.getString(cursor.getColumnIndex("scheme_houseStyle")),

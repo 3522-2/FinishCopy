@@ -43,6 +43,10 @@ public class ChangeSchem extends AppCompatActivity {
 
             ShowInfo();// 调用自定义方法显示方案信息
 
+
+            /**
+             * listview点击事件，将id打包送到下一个页面
+             */
             lvinfo.setOnItemClickListener(new AdapterView.OnItemClickListener(){// 为ListView添加项单击事件
                 // 重写onItemClick方法
                 @Override
@@ -69,7 +73,7 @@ public class ChangeSchem extends AppCompatActivity {
         strInfos = new String[listinfos.size()];// 设置字符串数组的长度
         int m = 0;// 定义一个开始标识
         for (Scheme scheme : listinfos) {// 遍历List泛型集合
-            // 将收入相关信息组合成一个字符串，存储到字符串数组的相应位置
+            // 将收入相关信息组合成一个字符串，存储数组的相应位置
             strInfos[m] =  scheme.getScheme_id()+"|    "
             +scheme.getScheme_houseArea() +"      "+scheme.getScheme_houseStyle()
             +"      " +scheme.getScheme_houseType();
