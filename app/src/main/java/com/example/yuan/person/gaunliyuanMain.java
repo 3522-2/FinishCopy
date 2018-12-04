@@ -78,7 +78,9 @@ public class gaunliyuanMain extends AppCompatActivity {
         addCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent();
+                intent.setClass(gaunliyuanMain.this,AddCl.class);
+                startActivity(intent);
             }
         });
 
@@ -89,7 +91,9 @@ public class gaunliyuanMain extends AppCompatActivity {
         updateCL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+               Intent intent  = new Intent();
+               intent.setClass(gaunliyuanMain.this,ChangeCl.class);
+               startActivity(intent);
             }
         });
 

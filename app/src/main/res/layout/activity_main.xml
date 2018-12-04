@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/xgt"
+            android:src="@drawable/a"
             android:text="效果图" />
 
         <ImageView
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/cl"
+            android:src="@drawable/a"
             android:text="材料" />
 
         <ImageView
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ys"
+            android:src="@drawable/a"
             android:text="预算" />
     </LinearLayout>
 

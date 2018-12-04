@@ -36,8 +36,11 @@
         <activity android:name=".person.ChangeSchem" />
         <activity android:name=".person.EditScheme" />
         <activity android:name=".person.AddXiao" />
-        <activity android:name=".person.ExitXiao" />
-        <activity android:name=".person.ChangeXiao"></activity>
+        <activity android:name=".person.EditXiao" />
+        <activity android:name=".person.ChangeXiao" />
+        <activity android:name=".person.AddCl" />
+        <activity android:name=".person.ChangeCl" />
+        <activity android:name=".person.EditCl"></activity>
     </application>
 
 </manifest>

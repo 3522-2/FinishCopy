@@ -13,7 +13,7 @@ import com.example.yuan.Dao.EffectDAO;
 import com.example.yuan.R;
 import com.example.yuan.modle.Effect;
 
-public class ExitXiao extends AppCompatActivity {
+public class EditXiao extends AppCompatActivity {
     private Button XiuGai,ShanChu;
     private ImageView fanhui;
     private EditText XiaoName,XiaoFeng,XiaoMian,XiaoHu,
@@ -22,7 +22,7 @@ public class ExitXiao extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exit_xiao);
+        setContentView(R.layout.activity_edit_xiao);
         /**
          * 返回上一页
          */
@@ -31,7 +31,7 @@ public class ExitXiao extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(ExitXiao.this, ChangeXiao.class);
+                intent.setClass(EditXiao.this, ChangeXiao.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class ExitXiao extends AppCompatActivity {
         final Intent intent = getIntent();
         final String id = intent.getStringExtra("id");
 //        Log.i("解析后的id",id);
-        final EffectDAO effectDAO = new EffectDAO(ExitXiao.this);
+        final EffectDAO effectDAO = new EffectDAO(EditXiao.this);
         final Effect effect = effectDAO.find(id);
         XiaoName.setText(effect.getEffect_name());
         XiaoFeng.setText(effect.getEffect_stytle());
@@ -93,9 +93,9 @@ public class ExitXiao extends AppCompatActivity {
                 effectDAO.update(effect);
 
                 Intent intent1 = new Intent();
-                intent1.setClass(ExitXiao.this ,ChangeXiao.class);
+                intent1.setClass(EditXiao.this ,ChangeXiao.class);
                 startActivity(intent1);
-                Toast.makeText(ExitXiao.this,"修改成功",Toast.LENGTH_SHORT);
+                Toast.makeText(EditXiao.this,"修改成功",Toast.LENGTH_SHORT);
             }
         });
 
@@ -109,9 +109,9 @@ public class ExitXiao extends AppCompatActivity {
                 effectDAO.deleteById(id);
                 Intent intent1 = new Intent();
 
-                intent1.setClass(ExitXiao.this ,ChangeXiao.class);
+                intent1.setClass(EditXiao.this ,ChangeXiao.class);
                 startActivity(intent1);
-                Toast.makeText(ExitXiao.this,"修改成功",Toast.LENGTH_SHORT);
+                Toast.makeText(EditXiao.this,"修改成功",Toast.LENGTH_SHORT);
             }
         });
     }
