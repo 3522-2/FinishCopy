@@ -51,27 +51,27 @@
 
         <ImageView
             android:id="@+id/effect_picture"
-            android:layout_width="69dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="效果图"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            android:src="@drawable/xgt"
+            android:text="效果图" />
 
         <ImageView
             android:id="@+id/meterials_picture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="材料"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            android:src="@drawable/cl"
+            android:text="材料" />
 
         <ImageView
             android:id="@+id/budget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="预算"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            android:src="@drawable/ys"
+            android:text="预算" />
     </LinearLayout>
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
