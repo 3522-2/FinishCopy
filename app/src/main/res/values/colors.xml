@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="MENU">#fcfcfc</color>
     <color name="person">#CFCFCF</color>
+    <color name="black" >#0a0a0a</color>
 </resources>

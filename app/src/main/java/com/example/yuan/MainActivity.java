@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.yuan.CL.cl;
 import com.example.yuan.Dao.DBOpenHelper;
 import com.example.yuan.modle.User;
 import com.example.yuan.person.PersonMain;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout ll_point_group;
 
     private ImageView textView1,textView2,textView3,textView4;
+    private ImageView CL;
 
     private ArrayList<ImageView> imageViews;
     private final int[] imageIds={R.drawable.a,
@@ -58,11 +60,25 @@ public class MainActivity extends AppCompatActivity {
         textView2 = (ImageView) findViewById(R.id.textview2);
         textView3 = (ImageView) findViewById(R.id.textview3);
         textView4 = (ImageView) findViewById(R.id.textview4);
-
+        CL= (ImageView)findViewById(R.id.meterials_picture);
 //        textView1 = (ImageView)findViewById(R.id.textview1);
 //        textView2 = (ImageView)findViewById(R.id.textview2);
 //        textView3 = (ImageView) findViewById(R.id.textview3);
 //        textView4 = (ImageView) findViewById(R.id.textview4);
+
+
+        /**
+         * 跳转到CL
+         */
+        CL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,cl.class);
+                startActivity(intent);
+            }
+        });
+
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
