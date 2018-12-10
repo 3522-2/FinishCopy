@@ -23,11 +23,28 @@
             </intent-filter>
         </activity>
         <activity android:name=".person.PersonMain" />
-        <activity
-            android:name=".CL.cl"
-            android:label="@string/title_activity_cl"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".CL.boardActivity"></activity>
+        <activity android:name=".CL.boardActivity" />
+        <activity android:name=".person.GengXinJinDu" />
+        <activity android:name=".person.AddCl" />
+        <activity android:name=".person.AddScheme" />
+        <activity android:name=".person.AddXiao" />
+        <activity android:name=".person.ChangeCl" />
+        <activity android:name=".person.ChangeSchem" />
+        <activity android:name=".person.ChangeXiao" />
+        <activity android:name=".person.EditCl" />
+        <activity android:name=".person.EditScheme" />
+        <activity android:name=".person.EditXiao" />
+        <activity android:name=".person.gaunliyuanMain" />
+        <activity android:name=".person.gaunliyuanReg" />
+        <activity android:name=".person.guanliyuanLogin" />
+        <activity android:name=".person.login" />
+        <activity android:name=".person.JiaoLiu" />
+        <activity android:name=".person.My_ZhuangXiuList" />
+        <activity android:name=".person.Show_ZhuangXiu" />
+        <activity android:name=".person.User_JiaoLiu" />
+        <activity android:name=".person.LianXi" />
+        <activity android:name=".ThreeD.ThreeShow" />
+        <activity android:name=".ThreeD.Show0ne"></activity>
     </application>
 
 </manifest>

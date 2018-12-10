@@ -104,16 +104,16 @@ public class login extends AppCompatActivity {
                     intent.setClass(login.this,PersonMain.class);
                     startActivity(intent);
 
-//                    intent.putExtra("name", "你好："+ name);
-//                    intent.putExtra("button","已登录");
-//                    /*
-//                     * 调用setResult方法表示我将Intent对象返回给之前的那个Activity，这样就可以在onActivityResult方法中得到Intent对象，
-//                     * 参数1：resultCode返回码，跳转之前的activity根据是这个resultCode，区分是哪一个activity返回的
-//                     * 参数2：数据源
-//                     */
-//
-//                    setResult(333, intent);
-//                    finish();//结束当前activityint
+                    intent.putExtra("name", "你好："+ name);
+                    intent.putExtra("button","已登录");
+                    /*
+                     * 调用setResult方法表示我将Intent对象返回给之前的那个Activity，这样就可以在onActivityResult方法中得到Intent对象，
+                     * 参数1：resultCode返回码，跳转之前的activity根据是这个resultCode，区分是哪一个activity返回的
+                     * 参数2：数据源
+                     */
+
+                    setResult(333, intent);
+                    finish();//结束当前activityint
                 }else if (userDAO.CheckIsDataAlreadyInDBorNot(name)==-1){
 
                     /*

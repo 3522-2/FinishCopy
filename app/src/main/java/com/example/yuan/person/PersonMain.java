@@ -37,8 +37,6 @@ public class PersonMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person_main);
 
-
-
         textView = (TextView) findViewById(R.id.textView) ;
         SharedPreferences sharedPreferences = this.getSharedPreferences("yonghu", MODE_PRIVATE);
         textView.setText(sharedPreferences.getString("用户名",""));
@@ -67,13 +65,19 @@ public class PersonMain extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(id == 0) {
-                    Toast.makeText(PersonMain.this, "我的装修" , Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent();
+                    intent.setClass(PersonMain.this,My_ZhuangXiuList.class);
+                    startActivity(intent);
                 }
                 if(id == 1) {
-                    Toast.makeText(PersonMain.this, "更新装修进度" + position, Toast.LENGTH_SHORT).show();
+                   Intent intent = new Intent();
+                   intent.setClass(PersonMain.this,GengXinJinDu.class);
+                   startActivity(intent);
                 }
                 if(id == 2) {
-                  Toast.makeText(PersonMain.this, "联系我们" + position, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent();
+                    intent.setClass(PersonMain.this,LianXi.class);
+                    startActivity(intent);
                 }
                 if(id == 3) {
                     Toast.makeText(PersonMain.this, "设置" + position, Toast.LENGTH_SHORT).show();
@@ -117,7 +121,7 @@ public class PersonMain extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(PersonMain.this,login.class);
-                startActivityForResult(intent, 222);
+                startActivityForResult(intent, 777);
             }
         });
         /**
@@ -155,16 +159,16 @@ public class PersonMain extends AppCompatActivity {
         });
 
     }
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        // 判断请求码和返回码是不是正确的，这两个码都是我们自己设置的
-//        if (requestCode == 222 && resultCode == 333) {
-//            String name = data.getStringExtra("name");// 拿到返回过来的输入的账号
-//            String btn = data.getStringExtra("button");
-//            // 把得到的数据显示到输入框内
-//            textView.setText(name);
-//            reg1.setText(btn);
-//
-//        }
-//    }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // 判断请求码和返回码是不是正确的，这两个码都是我们自己设置的
+        if (requestCode == 777 && resultCode == 333) {
+            String name = data.getStringExtra("name");// 拿到返回过来的输入的账号
+            String btn = data.getStringExtra("button");
+            // 把得到的数据显示到输入框内
+            textView.setText(name);
+            reg1.setText(btn);
+
+        }
+    }
 }

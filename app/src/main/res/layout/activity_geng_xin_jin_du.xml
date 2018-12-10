@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".person.GengXinJinDu">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/person"
+        android:layout_alignParentTop="true">
+
+    <ImageView
+        android:id="@+id/re"
+        android:layout_width="25dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/fanhui" />
+
+    </LinearLayout>
+   <RelativeLayout
+       android:layout_width="350dp"
+       android:layout_height="160dp"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:layout_marginTop="35dp"
+       >
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_alignParentTop="true"
+           android:orientation="horizontal">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="项目阶段:" />
+
+           <EditText
+               android:id="@+id/jieduan"
+               android:layout_width="100dp"
+               android:layout_height="wrap_content" />
+
+           <Spinner
+               android:entries="@array/jieduan"
+               android:id="@+id/spinner1"
+               android:layout_width="40dp"
+               android:layout_height="match_parent"
+               android:layout_marginLeft="10dp"
+                />
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="40dp"
+           android:orientation="horizontal">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="项目负责人:"/>
+           <EditText
+               android:id="@+id/people"
+               android:layout_width="100dp"
+               android:layout_height="wrap_content" />
+
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="80dp"
+           android:orientation="horizontal">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="项目阶段开始的时间:"/>
+           <EditText
+               android:id="@+id/StartET"
+               android:layout_width="150dp"
+               android:layout_height="wrap_content" />
+           <ImageView
+               android:id="@+id/StartTime"
+               android:layout_width="20dp"
+               android:layout_height="match_parent"
+               android:src="@mipmap/xiala"/>
+
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="120dp"
+           android:orientation="horizontal">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="项目阶段结束的时间:"/>
+           <EditText
+               android:id="@+id/FinishET"
+               android:layout_width="150dp"
+               android:layout_height="wrap_content" />
+           <ImageView
+               android:id="@+id/FinishTime"
+               android:layout_width="20dp"
+               android:layout_height="match_parent"
+               android:src="@mipmap/xiala"/>
+
+       </LinearLayout>
+
+   </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:background="@drawable/shape"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="208dp">
+        <TextView
+            android:id="@+id/leftnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="220dp"
+            android:text="剩余字数:500" />
+
+        <EditText
+            android:id="@+id/jindu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="进度描述"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:background="@drawable/shape"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="350dp">
+
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:hint="添加图片"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="450dp">
+        <ImageView
+            android:id="@+id/Tianjia"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/tupian"
+            android:layout_marginLeft="220dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="500dp">
+        <Button
+            android:id="@+id/button"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="32dp"
+            android:text="更新进度" />
+
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/button"
+            android:layout_marginLeft="177dp"
+            android:text="装修交流" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

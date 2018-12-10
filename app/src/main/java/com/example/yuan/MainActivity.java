@@ -1,8 +1,6 @@
 package com.example.yuan;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.PagerAdapter;
@@ -17,9 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.yuan.CL.cl;
-import com.example.yuan.Dao.DBOpenHelper;
-import com.example.yuan.modle.User;
+import com.example.yuan.ThreeD.ThreeShow;
 import com.example.yuan.person.PersonMain;
 
 import java.util.ArrayList;
@@ -55,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         textView1 = (ImageView) findViewById(R.id.textview1);
         textView2 = (ImageView) findViewById(R.id.textview2);
         textView3 = (ImageView) findViewById(R.id.textview3);
@@ -73,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
         CL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this,cl.class);
-                startActivity(intent);
+//                Intent intent = new Intent();
+//                intent.setClass(MainActivity.this,cl.class);
+//                startActivity(intent);
             }
         });
 
@@ -95,7 +90,9 @@ public class MainActivity extends AppCompatActivity {
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"3D", Toast.LENGTH_SHORT).show();
+               Intent intent = new Intent();
+               intent.setClass(MainActivity.this, ThreeShow.class);
+               startActivity(intent);
             }
         });
         textView4.setOnClickListener(new View.OnClickListener() {

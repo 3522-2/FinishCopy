@@ -58,9 +58,7 @@ public class AddXiao extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_xiao);
-        /**
-         * 返回上一页
-         */
+
 
         /**
          * 返回上一页

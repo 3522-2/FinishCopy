@@ -48,13 +48,15 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                 "                material_photo blob)");
 
         db.execSQL("create table project(project_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,\n" +
-                "                project_StartTime data,\n" +
-                "                project_FinishTime data,\n" +
+                "                project_Name varchar(100),\n" +
+                "                project_StartTime varchar(100),\n" +
+                "                project_FinishTime varchar(100),\n" +
                 "                proiect_photo blob,\n" +
                 "                project_principle varchar(100) ,\n" +
                 "                project_UserEvaluation varchar(100),\n" +
                 "                project_UserAcceptance varchar(100),\n" +
-                "                 project_address varchar(100))");
+                "                 project_address varchar(100),\n" +
+                "                 project_Des varchar(100))");
 
         db.execSQL("create table administrator(administrator_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,\n" +
                 "                administrator_name varchar(100),\n" +
