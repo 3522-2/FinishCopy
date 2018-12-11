@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yuan.Dao.AdministratorDAO;
@@ -20,7 +21,7 @@ public class guanliyuanLogin extends AppCompatActivity {
     private SharedPreferences sp;
     private ImageView fanhui1;
     private ImageView home;
-    private Button btn1,btn2;
+    private TextView btn1,btn2;
     private EditText regname,regpwd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class guanliyuanLogin extends AppCompatActivity {
         /**
          * 管理员跳转注册页面
          */
-        btn2 = (Button)findViewById(R.id.reg);
+        btn2 = (TextView) findViewById(R.id.reg);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +69,7 @@ public class guanliyuanLogin extends AppCompatActivity {
          */
         regname= (EditText)findViewById(R.id.accountEdittext);
         regpwd= (EditText)findViewById(R.id.pwdEdittext);
-        btn1 = (Button)findViewById(R.id.login_in) ;
+        btn1 = (TextView) findViewById(R.id.login_in) ;
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

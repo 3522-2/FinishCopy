@@ -47,30 +47,30 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="198dp"
         android:orientation="horizontal"
-        android:weightSum="3">
+       >
 
         <ImageView
             android:id="@+id/effect_picture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/a"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/xgt"
             android:text="效果图" />
 
         <ImageView
             android:id="@+id/meterials_picture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/a"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/cl"
             android:text="材料" />
 
         <ImageView
             android:id="@+id/budget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/a"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ys"
             android:text="预算" />
     </LinearLayout>
 
@@ -164,80 +164,4 @@
 
 
 </RelativeLayout>
-    <!--<LinearLayout-->
-        <!--android:id="@+id/tab_menu"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="56dp"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_alignParentBottom="true">-->
-        <!--<LinearLayout-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="match_parent"-->
-           <!--&gt;-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/textview1"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:background="@color/MENU"-->
-            <!--android:drawablePadding="3dp"-->
-            <!--android:drawableTop="@color/MENU"-->
-            <!--android:gravity="center"-->
-            <!--android:textColor="@color/colorAccent"-->
-            <!--android:text="首页"/>-->
-        <!--</LinearLayout>-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/textview2"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_weight="1"-->
-        <!--android:background="@color/MENU"-->
-        <!--android:drawablePadding="3dp"-->
-        <!--android:drawableTop="@color/MENU"-->
-        <!--android:gravity="center"-->
-        <!--android:textColor="@color/colorAccent"-->
-        <!--android:text="案例"/>-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textview3"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_weight="1"-->
-        <!--android:background="@color/MENU"-->
-        <!--android:drawablePadding="3dp"-->
-        <!--android:drawableTop="@color/MENU"-->
-        <!--android:gravity="center"-->
-        <!--android:textColor="@color/colorAccent"-->
-        <!--android:text="3D"/>-->
-
-
-    <!--<TextView-->
-        <!--android:id="@+id/textview4"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_weight="1"-->
-        <!--android:background="@color/MENU"-->
-        <!--android:drawablePadding="3dp"-->
-        <!--android:drawableTop="@color/colorPrimary"-->
-        <!--android:gravity="center"-->
-        <!--android:textColor="@color/colorAccent"-->
-        <!--android:text="我的"/>-->
-
-<!--</LinearLayout>-->
-
-<!--<View-->
-<!--android:id="@+id/div_tab_bar"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="2px"-->
-<!--android:background="@color/MENU"-->
-<!--/>-->
-
-
-
-<!--</RelativeLayout>-->
-
-
-
 

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yuan.Dao.AdministratorDAO;
@@ -17,7 +18,7 @@ import com.example.yuan.modle.Administrator;
 public class gaunliyuanReg extends AppCompatActivity {
     private EditText regName;
     private EditText regPwd, regIsPwd, regTel;
-    private Button button;
+    private TextView button;
     private ImageView fanhui1;
     private ImageView shouye1;
 
@@ -45,11 +46,11 @@ public class gaunliyuanReg extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(gaunliyuanReg.this, MainActivity.class);
+                intent.setClass(gaunliyuanReg.this, guanliyuanLogin.class);
                 startActivity(intent);
             }
         });
-        button = (Button)findViewById(R.id.login_in) ;
+        button = (TextView) findViewById(R.id.login_in) ;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

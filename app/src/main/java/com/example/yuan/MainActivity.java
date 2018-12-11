@@ -15,8 +15,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.yuan.Budge.ShowBudge;
 import com.example.yuan.CL.cl;
 import com.example.yuan.ThreeD.ThreeShow;
+import com.example.yuan.XGT.XgtMain;
 import com.example.yuan.person.PersonMain;
 
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout ll_point_group;
 
     private ImageView textView1,textView2,textView3,textView4;
-    private ImageView CL;
+    private ImageView CL,budge,XGT;
 
     private ArrayList<ImageView> imageViews;
     private final int[] imageIds={R.drawable.a,
@@ -56,13 +58,24 @@ public class MainActivity extends AppCompatActivity {
         textView2 = (ImageView) findViewById(R.id.textview2);
         textView3 = (ImageView) findViewById(R.id.textview3);
         textView4 = (ImageView) findViewById(R.id.textview4);
-        CL= (ImageView)findViewById(R.id.meterials_picture);
-
+        /**
+         * 跳转到效果图
+         */
+        XGT = (ImageView)findViewById(R.id.effect_picture) ;
+        XGT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,XgtMain.class);
+                startActivity(intent);
+            }
+        });
 
 
         /**
          * 跳转到CL
          */
+        CL= (ImageView)findViewById(R.id.meterials_picture);
         CL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +84,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        /**
+         * 跳转到预算
+         */
+        budge = (ImageView)findViewById(R.id.budget);
+        budge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,ShowBudge.class);
+                startActivity(intent);
+            }
+        });
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

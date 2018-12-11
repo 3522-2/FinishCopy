@@ -9,8 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.yuan.Adapter.BoardAdapter;
-import com.example.yuan.Board;
+import com.example.yuan.CL.BoardAdapter;
+import com.example.yuan.CL.Board;
 import com.example.yuan.R;
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar;
 

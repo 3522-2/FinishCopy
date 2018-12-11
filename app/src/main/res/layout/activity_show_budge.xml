@@ -1,9 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Budge.ShowBudge">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/person">
+
+        <ImageView
+            android:id="@+id/re"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/fanhui" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/budge">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:orientation="horizontal"
+        android:background="@drawable/budgef">
+
+        <TextView
+
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="户型:"/>
+        <TextView
+            android:id="@+id/huxing"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="四室一厅"
+            android:textColor="#CD3700"/>
+        <Spinner
+            android:entries="@array/housetype"
+            android:id="@+id/spinnerT"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp">
+
+        </Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:orientation="horizontal"
+        android:background="@drawable/budgef">
+
+        <TextView
+
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="风格:"/>
+        <TextView
+            android:id="@+id/fengge"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="欧式"
+            android:textColor="#CD3700"/>
+        <Spinner
+            android:entries="@array/fengGe"
+            android:id="@+id/spinnerS"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp">
+
+        </Spinner>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:orientation="horizontal"
+        android:background="@drawable/budgef">
+
+        <TextView
+
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="面积:"/>
+        <TextView
+            android:id="@+id/mian"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="欧式"
+            android:textColor="#CD3700"/>
+        <Spinner
+            android:entries="@array/area"
+            android:id="@+id/spinnerA"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp">
+
+        </Spinner>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Get"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:background="#EEEE00"
+        android:src="@drawable/budgef">
+
+
+        <TextView
+            android:id="@+id/Get1"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="50dp"
+            android:text="点击获取报价"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+</LinearLayout>

@@ -21,7 +21,8 @@ public class login extends AppCompatActivity {
 
     private ImageView fanhui1;
     private ImageView home;
-    private Button login,login1;
+    private TextView login1;
+    private TextView login;
     private  EditText username;
     private EditText userpwd;
     private TextView textView;
@@ -60,33 +61,16 @@ public class login extends AppCompatActivity {
         username= (EditText)findViewById(R.id.accountEdittext);
         userpwd= (EditText)findViewById(R.id.pwdEdittext);
 
-
-        login = (Button)findViewById(R.id.login_in);
+/**
+ * 登录
+ */
+        login = (TextView) findViewById(R.id.login_in);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String name = username.getText().toString();
                 String pwd = userpwd.getText().toString();
-
-                //1：得到sp对象
-                sp = getSharedPreferences("yonghu", Context.MODE_PRIVATE);
-
-
-                //2：得到editor对象
-                SharedPreferences.Editor editor = sp.edit();
-                //3：得到输入的key/vaule
-                String key = "用户名";
-                String value = name;
-                String key2 = "密码";
-                String value2 = pwd;
-                String key3 = "是否登录";
-                String value3 = "已登录";
-                //4:用editor保存key/vaule
-
-                editor.putString(key,value).commit();
-                editor.putString(key2,value2).commit();
-                editor.putString(key3,value3).commit();
 
                 UserDAO userDAO = new UserDAO(login.this);
                 String ispwd = userDAO.findPwd(name);
@@ -100,20 +84,28 @@ public class login extends AppCompatActivity {
 
                     Toast.makeText(login.this, "登录成功", Toast.LENGTH_SHORT).show();
                     //拿到一个intent把需要返回的值放进去
+                   //1：得到sp对象
+                   sp = getSharedPreferences("yonghu", Context.MODE_PRIVATE);
+
+
+                   //2：得到editor对象
+                   SharedPreferences.Editor editor = sp.edit();
+                   //3：得到输入的key/vaule
+                   String key = "用户名";
+                   String value = name;
+                   String key2 = "密码";
+                   String value2 = pwd;
+                   String key3 = "是否登录";
+                   String value3 = "已登录";
+                   //4:用editor保存key/vaule
+
+                   editor.putString(key,value).commit();
+                   editor.putString(key2,value2).commit();
+                   editor.putString(key3,value3).commit();
                     Intent intent = new Intent();
                     intent.setClass(login.this,PersonMain.class);
                     startActivity(intent);
 
-                    intent.putExtra("name", "你好："+ name);
-                    intent.putExtra("button","已登录");
-                    /*
-                     * 调用setResult方法表示我将Intent对象返回给之前的那个Activity，这样就可以在onActivityResult方法中得到Intent对象，
-                     * 参数1：resultCode返回码，跳转之前的activity根据是这个resultCode，区分是哪一个activity返回的
-                     * 参数2：数据源
-                     */
-
-                    setResult(333, intent);
-                    finish();//结束当前activityint
                 }else if (userDAO.CheckIsDataAlreadyInDBorNot(name)==-1){
 
                     /*
@@ -128,7 +120,10 @@ public class login extends AppCompatActivity {
                 }
 
         });
-        login1 = (Button)findViewById(R.id.login_in1);
+        /**
+         * 注册
+         */
+        login1 = (TextView) findViewById(R.id.login_in1);
         login1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,6 +133,9 @@ public class login extends AppCompatActivity {
 
             }
         });
+        /**
+         * 管理员登录
+         */
         textView = (TextView)findViewById(R.id.guanliyuan);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -34,18 +34,17 @@
 
         <RelativeLayout
             android:id="@+id/accountRel"
-            android:layout_width="fill_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-
-            android:clickable="true"
-            android:gravity="center_vertical">
+            android:layout_marginTop="70dp"
+            android:background="@drawable/shape"
+            android:clickable="true">
 
             <TextView
                 android:id="@+id/account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
                 android:text="用 户 名"
                 android:textColor="#000"
@@ -65,17 +64,20 @@
 
         <RelativeLayout
             android:id="@+id/pwdRel"
-            android:layout_width="fill_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/accountRel"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape"
             android:clickable="true"
+            android:layout_below="@id/accountRel"
+
             android:gravity="center_vertical">
 
             <TextView
                 android:id="@+id/pwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
                 android:text="密       码"
                 android:textColor="#000"
@@ -97,17 +99,20 @@
 
         <RelativeLayout
             android:id="@+id/pwdRe2"
-            android:layout_width="fill_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/pwdRel"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape"
             android:clickable="true"
+            android:layout_below="@id/pwdRel"
             android:gravity="center_vertical">
 
             <TextView
                 android:id="@+id/pwd1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
+
                 android:padding="8dp"
                 android:text="确认密码"
                 android:textColor="#000"
@@ -129,17 +134,19 @@
 
         <RelativeLayout
             android:id="@+id/pwdRe3"
-            android:layout_width="fill_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/pwdRe2"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape"
             android:clickable="true"
+            android:layout_below="@id/pwdRe2"
             android:gravity="center_vertical">
 
             <TextView
                 android:id="@+id/pwd2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
                 android:text="手机号码"
                 android:textColor="#000"
@@ -163,18 +170,19 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="350dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/login_in"
-                android:layout_width="200dp"
+                android:background="#CDCD00"
+                android:layout_width="300dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="80dp"
-                android:gravity="center_horizontal"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
                 android:text="注册"
-                android:textColor="#ffffff" />
+                android:textColor="#000000" />
         </LinearLayout>
 
     </RelativeLayout>

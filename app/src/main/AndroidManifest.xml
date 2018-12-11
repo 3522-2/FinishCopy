@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".person.PersonMain" />
         <activity android:name=".person.GengXinJinDu" />
+        <activity android:name=".person.regist"/>
         <activity android:name=".person.AddCl" />
         <activity android:name=".person.AddScheme" />
         <activity android:name=".person.AddXiao" />

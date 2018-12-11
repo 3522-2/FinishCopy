@@ -1,4 +1,4 @@
-package com.example.yuan.Adapter;
+package com.example.yuan.CL;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.yuan.Board;
+import com.example.yuan.CL.Board;
 import com.example.yuan.R;
 
 import java.util.ArrayList;

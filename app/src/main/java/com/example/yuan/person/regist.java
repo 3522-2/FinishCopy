@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yuan.Dao.UserDAO;
@@ -23,7 +24,7 @@ public class regist extends AppCompatActivity {
     private ImageView fanhui1;
     private ImageView shouye1;
 
-    private Button reg;
+    private TextView reg;
     private String stytle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +57,7 @@ public class regist extends AppCompatActivity {
         });
 
 
-        reg = (Button)findViewById(R.id.login_in) ;
+        reg = (TextView)findViewById(R.id.login_in) ;
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
