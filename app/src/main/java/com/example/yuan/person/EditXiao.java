@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.yuan.Dao.EffectDAO;
@@ -19,6 +21,7 @@ public class EditXiao extends AppCompatActivity {
     private EditText XiaoName,XiaoFeng,XiaoMian,XiaoHu,
             XiaoOne,XiaoTwo,XiaoThree,XiaoFour,XiaoFive,
             XiaoSum,XiaoDes;
+//    private Spinner spinnerH,spinnerA,spinnerT;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +58,47 @@ public class EditXiao extends AppCompatActivity {
         XiaoSum.setText(effect.getEffect_PriceSum());
         XiaoDes.setText(effect.getEffect_describe());
 
+//        spinnerH = (Spinner)findViewById(R.id.spinnerT);
+//        spinnerH.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                String resule = parent.getItemAtPosition(position).toString();
+//                XiaoHu.setText(resule);
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+//
+//        spinnerA = (Spinner)findViewById(R.id.spinnerA);
+//        spinnerA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                String resule = parent.getItemAtPosition(position).toString();
+//                XiaoMian.setText(resule);
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+//
+//        spinnerT = (Spinner)findViewById(R.id.spinnerF);
+//        spinnerT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                String resule = parent.getItemAtPosition(position).toString();
+//                XiaoFeng.setText(resule);
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
         /**
          * 修改
          */

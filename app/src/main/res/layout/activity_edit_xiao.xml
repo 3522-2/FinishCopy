@@ -31,166 +31,236 @@
 
             android:orientation="vertical">
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/shape"
+                android:clickable="true"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="效果图名"
-                    android:layout_marginLeft="50dp"
+                    android:text="效果图名:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="输入效果图名"/>
+                    android:background="@null"
+                    android:hint="效果图名"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/shape"
+                android:clickable="true"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="效果图风格"
-                    android:layout_marginLeft="50dp"
+                    android:text="效果图风格:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoFeng"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="输入效果图风格"/>
+                    android:background="@null"
+                    android:hint="效果图风格"/>
+                <!--<Spinner-->
+                    <!--android:entries="@array/fengGe"-->
+                    <!--android:id="@+id/spinnerF"-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_marginLeft="20dp"/>-->
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/shape"
+                android:clickable="true"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="效果图面积"
-                    android:layout_marginLeft="50dp"
+                    android:text="效果图面积:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoMian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="输入效果图面积"/>
+                    android:background="@null"
+                    android:hint="效果图面积"/>
+                <!--<Spinner-->
+                    <!--android:entries="@array/area"-->
+                    <!--android:id="@+id/spinnerA"-->
+
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_marginLeft="20dp"/>-->
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/shape"
+                android:clickable="true"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="效果图户型"
-                    android:layout_marginLeft="50dp"
+
+                    android:text="效果图户型:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoHu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="输入效果图户型"/>
+                    android:background="@null"
+                    android:hint="效果图户型"/>
+                <!--<Spinner-->
+                    <!--android:entries="@array/housetype"-->
+                    <!--android:id="@+id/spinnerT"-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_marginLeft="20dp"/>-->
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/shape"
+                android:clickable="true"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="第一阶段费用"
-                    android:layout_marginLeft="50dp"
+                    android:text="第一阶段费用:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoOne"
                     android:layout_width="wrap_content"
+                    android:background="@null"
                     android:layout_height="wrap_content"
-                    android:hint="输入第一阶段费用"/>
+                    android:hint="第一阶段费用"/>
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/shape"
+                android:clickable="true"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="第二阶段费用"
-                    android:layout_marginLeft="50dp"
+                    android:text="第二阶段费用:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoTwo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="输入第二阶段费用"/>
+                    android:background="@null"
+                    android:hint="第二阶段费用"/>
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/shape"
+                android:clickable="true"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="第三阶段费用"
-                    android:layout_marginLeft="50dp"
+                    android:text="第三阶段费用:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoThree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="输入第三阶段费用"/>
+                    android:background="@null"
+                    android:hint="第三阶段费用"/>
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/shape"
+                android:clickable="true"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="第四阶段费用"
-                    android:layout_marginLeft="50dp"
+                    android:text="第四阶段费用:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoFour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="输入第四阶段费用"/>
+                    android:background="@null"
+                    android:hint="第四阶段费用"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/shape"
+                android:clickable="true"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="第五阶段费用"
-                    android:layout_marginLeft="50dp"
+                    android:text="第五阶段费用:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoFive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="输入第五阶段费用"/>
+                    android:background="@null"
+                    android:hint="第五阶段费用"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/shape"
+                android:clickable="true"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="总费用"
-                    android:layout_marginLeft="50dp"
+                    android:text="总费用:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoSum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@null"
                     android:hint="总费用"/>
             </LinearLayout>
 
@@ -255,16 +325,19 @@
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="80dp"
-                    android:gravity="center_horizontal"
+                    android:gravity="center"
                     android:text="修改 "
-                    android:textColor="#ffffff" />
+                    android:background="#CDCD00"
+                    android:textColor="#000" />
                 <Button
                     android:id="@+id/shanchu"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
-                    android:gravity="center_horizontal"
+                    android:gravity="center"
+                    android:background="#CDCD00"
                     android:text="删除"
-                    android:textColor="#ffffff" />
+                    android:textColor="#000" />
             </LinearLayout>
 
         </LinearLayout>
