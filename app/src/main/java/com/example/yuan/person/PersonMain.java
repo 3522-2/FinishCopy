@@ -39,11 +39,11 @@ public class PersonMain extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.textView) ;
         SharedPreferences sharedPreferences = this.getSharedPreferences("yonghu", MODE_PRIVATE);
-        textView.setText(sharedPreferences.getString("用户名",""));
+        textView.setText(sharedPreferences.getString("用户名","未登录"));
 
         reg1 = (Button)findViewById(R.id.reg);
         SharedPreferences sharedPreferences1 = this.getSharedPreferences("yonghu", MODE_PRIVATE);
-        reg1.setText(sharedPreferences1.getString("是否登录",""));
+        reg1.setText(sharedPreferences1.getString("是否登录","请登录"));
 
 
         fanhui = (ImageView)findViewById(R.id.re);

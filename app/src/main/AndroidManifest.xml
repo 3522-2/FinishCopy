@@ -23,7 +23,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".person.PersonMain" />
-        <activity android:name=".CL.boardActivity" />
         <activity android:name=".person.GengXinJinDu" />
         <activity android:name=".person.AddCl" />
         <activity android:name=".person.AddScheme" />
@@ -44,7 +43,10 @@
         <activity android:name=".person.User_JiaoLiu" />
         <activity android:name=".person.LianXi" />
         <activity android:name=".ThreeD.ThreeShow" />
-        <activity android:name=".ThreeD.Show0ne"></activity>
+        <activity android:name=".ThreeD.Show0ne" />
+        <activity android:name=".ThreeD.ShowTwo" />
+        <activity android:name=".ThreeD.ShowThree" />
+        <activity android:name=".Budge.ShowBudge"></activity>
     </application>
 
 </manifest>

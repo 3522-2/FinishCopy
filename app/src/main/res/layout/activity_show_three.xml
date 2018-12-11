@@ -26,21 +26,12 @@
         android:layout_marginLeft="10dp"
         android:layout_width="320dp"
         android:layout_height="250dp"
+
         android:layout_marginRight="0dp">
+
     </com.example.yuan.ThreeD.Custom3DView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FF0000"
-        android:layout_marginLeft="100dp"
-        android:text="（点击图片查看相关介绍）"/>
-    <TextView
-        android:id="@+id/TV"
-        android:layout_marginLeft="10dp"
-        android:layout_width="320dp"
-        android:layout_height="250dp"
-        android:textColor="#ffff"
-        android:layout_marginRight="0dp"/>
+
+
 
 
 </LinearLayout>

@@ -12,7 +12,7 @@ import com.example.yuan.R;
 
 public class ThreeShow extends AppCompatActivity {
 private ImageView fanhui;
-private RelativeLayout R1;
+private RelativeLayout R1,R2,R3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +39,30 @@ private RelativeLayout R1;
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(ThreeShow.this,Show0ne.class);
+                startActivity(intent);
+            }
+        });
+        /**
+         * 第er个3d展示
+         */
+        R2 = (RelativeLayout)findViewById(R.id.R2);
+        R2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(ThreeShow.this,ShowTwo.class);
+                startActivity(intent);
+            }
+        });
+        /**
+         * 第er个3d展示
+         */
+        R3 = (RelativeLayout)findViewById(R.id.R3);
+        R3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(ThreeShow.this,ShowThree.class);
                 startActivity(intent);
             }
         });

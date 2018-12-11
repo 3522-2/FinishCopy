@@ -56,10 +56,7 @@ public class MainActivity extends AppCompatActivity {
         textView3 = (ImageView) findViewById(R.id.textview3);
         textView4 = (ImageView) findViewById(R.id.textview4);
         CL= (ImageView)findViewById(R.id.meterials_picture);
-//        textView1 = (ImageView)findViewById(R.id.textview1);
-//        textView2 = (ImageView)findViewById(R.id.textview2);
-//        textView3 = (ImageView) findViewById(R.id.textview3);
-//        textView4 = (ImageView) findViewById(R.id.textview4);
+
 
 
         /**
