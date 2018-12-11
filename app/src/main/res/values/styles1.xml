@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="fengGe">
+        <item>风格</item>
+        <item>欧式</item>
+        <item>美式</item>
+        <item>现代</item>
+        <item>中式</item>
+        <item>日式</item>
+        <item>田园</item>
+        <item>地中海</item>
+    </string-array>
+</resources>

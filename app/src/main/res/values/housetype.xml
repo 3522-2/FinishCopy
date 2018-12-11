@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="housetype">
+        <item>户型</item>
+        <item>一室</item>
+        <item>二室</item>
+        <item>三室</item>
+        <item>四室</item>
+        <item>公寓</item>
+        <item>别墅</item>
+        <item>复式</item>
+    </string-array>
+</resources>

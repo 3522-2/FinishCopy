@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="area">
+        <item>面积</item>
+        <item>60平米以下</item>
+        <item>60-75平米</item>
+        <item>75-90平米</item>
+        <item>90-120平米</item>
+        <item>120-144平米</item>
+        <item>144-200平米</item>
+        <item>200平米以上</item>
+    </string-array>
+</resources>
