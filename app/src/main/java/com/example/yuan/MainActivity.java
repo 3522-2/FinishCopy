@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.yuan.CL.cl;
 import com.example.yuan.ThreeD.ThreeShow;
 import com.example.yuan.person.PersonMain;
 
@@ -65,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
         CL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent();
-//                intent.setClass(MainActivity.this,cl.class);
-//                startActivity(intent);
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,cl.class);
+                startActivity(intent);
             }
         });
 

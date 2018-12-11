@@ -43,7 +43,7 @@ private RelativeLayout R1,R2,R3;
             }
         });
         /**
-         * 第er个3d展示
+         * 第二个3d展示
          */
         R2 = (RelativeLayout)findViewById(R.id.R2);
         R2.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +55,7 @@ private RelativeLayout R1,R2,R3;
             }
         });
         /**
-         * 第er个3d展示
+         * 第三个3d展示
          */
         R3 = (RelativeLayout)findViewById(R.id.R3);
         R3.setOnClickListener(new View.OnClickListener() {

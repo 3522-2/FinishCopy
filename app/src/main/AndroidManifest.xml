@@ -46,7 +46,15 @@
         <activity android:name=".ThreeD.Show0ne" />
         <activity android:name=".ThreeD.ShowTwo" />
         <activity android:name=".ThreeD.ShowThree" />
-        <activity android:name=".Budge.ShowBudge"></activity>
+        <activity android:name=".CL.boardActivity" />
+        <activity android:name=".Budge.ShowBudge" />
+        <activity android:name=".CL.brickActivity" />
+        <activity android:name=".CL.cl" />
+        <activity android:name=".CL.lampActivity"></activity>
+        <activity android:name=".CL.oilActivity"></activity>
+        <activity android:name=".CL.cl_child_Activity">
+
+        </activity>
     </application>
 
 </manifest>

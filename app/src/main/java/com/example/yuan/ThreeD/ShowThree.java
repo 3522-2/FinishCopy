@@ -20,7 +20,6 @@ public class ShowThree extends AppCompatActivity {
     private ImageView fanhui;
     private Custom3DView custom3DView;
     private TextView tv;
-    private List<ThreeAdapt.ListItemModel> myListItem;
 
     private String[] title = new String[]{"客厅:\n" +
             "\n" +
