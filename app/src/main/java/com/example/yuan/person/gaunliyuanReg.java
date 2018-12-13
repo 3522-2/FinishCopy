@@ -54,6 +54,8 @@ public class gaunliyuanReg extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 regName = (EditText) findViewById(R.id.accountEdittext);//管理员名
                 regPwd = (EditText) findViewById(R.id.pwdEdittext);//密码
                 regIsPwd = (EditText) findViewById(R.id.ispwdEdittext);//确认密码

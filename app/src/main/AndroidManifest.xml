@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".person.PersonMain" />
         <activity android:name=".person.GengXinJinDu" />
-        <activity android:name=".person.regist"/>
+        <activity android:name=".person.regist" />
         <activity android:name=".person.AddCl" />
         <activity android:name=".person.AddScheme" />
         <activity android:name=".person.AddXiao" />
@@ -51,11 +51,11 @@
         <activity android:name=".Budge.ShowBudge" />
         <activity android:name=".CL.brickActivity" />
         <activity android:name=".CL.cl" />
-        <activity android:name=".CL.lampActivity"></activity>
-        <activity android:name=".CL.oilActivity"></activity>
-        <activity android:name=".CL.cl_child_Activity">
-
-        </activity>
+        <activity android:name=".CL.lampActivity" />
+        <activity android:name=".CL.oilActivity" />
+        <activity android:name=".CL.cl_child_Activity" />
+        <activity android:name=".XGT.XgtMain" />
+        <activity android:name=".Budge.XiangBudge"></activity>
     </application>
 
 </manifest>

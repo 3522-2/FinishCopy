@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.yuan.Budge.ShowBudge;
 import com.example.yuan.CL.cl;
 import com.example.yuan.ThreeD.ThreeShow;
+
 import com.example.yuan.XGT.XgtMain;
 import com.example.yuan.person.PersonMain;
 
@@ -65,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
         XGT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this,XgtMain.class);
-                startActivity(intent);
+                Intent intent1 = new Intent();
+                intent1.setClass(MainActivity.this,XgtMain.class);
+                startActivity(intent1);
             }
         });
 

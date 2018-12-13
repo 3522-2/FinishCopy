@@ -117,6 +117,34 @@ public class SchemeDAO {
         return  list;
     }
     /**
+     * 根据户型，风格，面积查询
+     */
+    public Scheme find1(String houseType,String houseStyle,String houseArea){
+
+        Cursor cursor = db.rawQuery("select * from scheme where scheme_houseType=?" +
+                "and scheme_houseStyle=? and scheme_houseArea=?",new String[]{
+                String.valueOf(houseType),String.valueOf(houseStyle),String.valueOf(houseArea)});
+        if (cursor.moveToNext()){
+            return new Scheme(cursor.getString(cursor.getColumnIndex("scheme_id")),
+                    cursor.getString(cursor.getColumnIndex("scheme_houseType")),
+                    cursor.getString(cursor.getColumnIndex("scheme_houseArea")),
+                    cursor.getString(cursor.getColumnIndex("scheme_houseStyle")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceOne")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceTwoWork")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceTwoMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceThreeWork")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceThreeMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFourWork")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFourMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFivework")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceFiveMaterial")),
+                    cursor.getString(cursor.getColumnIndex("scheme_pirceSum")));
+        }
+        cursor.close();// 关闭游标
+        return null;// 如果没有信息，则返回null
+
+    }
+    /**
      * 根据id查找方案信息
      *
      * @return

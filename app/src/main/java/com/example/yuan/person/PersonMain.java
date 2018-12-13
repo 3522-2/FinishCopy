@@ -43,7 +43,7 @@ public class PersonMain extends AppCompatActivity {
 
         reg1 = (Button)findViewById(R.id.reg);
         SharedPreferences sharedPreferences1 = this.getSharedPreferences("yonghu", MODE_PRIVATE);
-        reg1.setText(sharedPreferences1.getString("是否登录","请登录"));
+        reg1.setText(sharedPreferences1.getString("是否登录","点此登录"));
 
 
         fanhui = (ImageView)findViewById(R.id.re);
@@ -64,15 +64,29 @@ public class PersonMain extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SharedPreferences sharedPreferences = getSharedPreferences("yonghu", 0);
+                String zhuangTai = sharedPreferences.getString("用户名","");
+
                 if(id == 0) {
-                    Intent intent = new Intent();
-                    intent.setClass(PersonMain.this,My_ZhuangXiuList.class);
-                    startActivity(intent);
+                    if(zhuangTai.equals("未登录") || zhuangTai==null){
+                        Toast.makeText(PersonMain.this,"请登录后查看",Toast.LENGTH_SHORT).show();
+                    }else{
+                        Intent intent = new Intent();
+                        intent.setClass(PersonMain.this,My_ZhuangXiuList.class);
+                        startActivity(intent);
+                    }
+
                 }
                 if(id == 1) {
-                   Intent intent = new Intent();
-                   intent.setClass(PersonMain.this,GengXinJinDu.class);
-                   startActivity(intent);
+
+                    if(zhuangTai.equals("你好，管理员")){
+                        Intent intent = new Intent();
+                        intent.setClass(PersonMain.this,GengXinJinDu.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(PersonMain.this,"您不是管理员，或者请管理员登录后查看",Toast.LENGTH_SHORT).show();
+                    }
+
                 }
                 if(id == 2) {
                     Intent intent = new Intent();
@@ -89,9 +103,9 @@ public class PersonMain extends AppCompatActivity {
                     SharedPreferences.Editor editor = sp.edit();
                     //3：得到输入的key/vaule
                     String key = "用户名";
-                    String value = "请登录";
+                    String value = "未登录";
                     String key3 = "是否登录";
-                    String value3 = "未登录";
+                    String value3 = "点此登录";
                     //4:用editor保存key/vaule
                     editor.putString(key,value).commit();
                     editor.putString(key3,value3).commit();
