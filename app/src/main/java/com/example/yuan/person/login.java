@@ -96,6 +96,8 @@ public class login extends AppCompatActivity {
                    String key2 = "密码";
                    String value2 = pwd;
                    String key3 = "是否登录";
+
+
                    String value3 = "已登录";
                    //4:用editor保存key/vaule
 

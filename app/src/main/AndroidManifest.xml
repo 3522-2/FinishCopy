@@ -56,6 +56,7 @@
         <activity android:name=".CL.cl_child_Activity">
 
         </activity>
+        <activity android:name=".CL.Search_Activity"/>
     </application>
 
 </manifest>

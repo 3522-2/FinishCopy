@@ -25,6 +25,7 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/brick_first"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
@@ -33,6 +34,7 @@
                 android:textColor="@color/black"
                 android:textSize="30sp" />
             <TextView
+                android:id="@+id/brick_second"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="通体砖"
@@ -41,6 +43,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/brick_third"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="釉面砖"
@@ -49,6 +52,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/brick_fourth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="仿古砖"
@@ -57,6 +61,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/brick_fifth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="抛光砖"
@@ -65,6 +70,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/brick_sixth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="马赛克"

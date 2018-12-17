@@ -24,6 +24,7 @@
             android:orientation="vertical"
             android:gravity="center">
             <TextView
+                android:id="@+id/lamp_first"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="吸顶灯"
@@ -32,6 +33,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/lamp_second"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="吊灯"
@@ -40,6 +42,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/lamp_third"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="壁灯"
@@ -48,6 +51,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/lamp_fourth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="射灯"
@@ -56,6 +60,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/lamp_fifth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="台灯"
@@ -64,6 +69,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/lamp_sixth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="落地灯"

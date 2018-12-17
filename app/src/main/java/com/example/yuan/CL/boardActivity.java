@@ -58,47 +58,65 @@ public class boardActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0){
                     Intent intent=new Intent(boardActivity.this,cl_child_Activity.class);
-                    intent.putExtra("number",1+"");
+                    intent.putExtra("picture",R.drawable.xigong);
+                    intent.putExtra("introduce",R.string.xigong);
+                    intent.putExtra("title","细工板");
                     startActivity(intent);
                 }
                 if(position==1){
                     Intent intent=new Intent(boardActivity.this,cl_child_Activity.class);
-                    intent.putExtra("number",2+"");
+                    intent.putExtra("picture",R.drawable.zhuangshi);
+                    intent.putExtra("introduce",R.string.zhuangshi);
+                    intent.putExtra("title","装饰板");
                     startActivity(intent);
                 }
                 if(position==2){
                     Intent intent=new Intent(boardActivity.this,cl_child_Activity.class);
-                    intent.putExtra("number",3+"");
+                    intent.putExtra("picture",R.drawable.jiaohe);
+                    intent.putExtra("introduce",R.string.jiaohe);
+                    intent.putExtra("title","胶合板");
                     startActivity(intent);
                 }
                 if(position==3){
                     Intent intent=new Intent(boardActivity.this,cl_child_Activity.class);
-                    intent.putExtra("number",4+"");
+                    intent.putExtra("picture",R.drawable.jihe);
+                    intent.putExtra("introduce",R.string.jihe);
+                    intent.putExtra("title","集合板");
                     startActivity(intent);
                 }
                 if(position==4){
                     Intent intent=new Intent(boardActivity.this,cl_child_Activity.class);
-                    intent.putExtra("number",5+"");
+                    intent.putExtra("picture",R.drawable.fanhuo);
+                    intent.putExtra("introduce",R.string.fanghuo);
+                    intent.putExtra("title","防火板");
                     startActivity(intent);
                 }
                 if(position==5){
                     Intent intent=new Intent(boardActivity.this,cl_child_Activity.class);
-                    intent.putExtra("number",6+"");
+                    intent.putExtra("picture",R.drawable.paohua);
+                    intent.putExtra("introduce",R.string.paohua);
+                    intent.putExtra("title","刨花板");
                     startActivity(intent);
                 }
                 if(position==6){
                     Intent intent=new Intent(boardActivity.this,cl_child_Activity.class);
-                    intent.putExtra("number",7+"");
+                    intent.putExtra("picture",R.drawable.shigao);
+                    intent.putExtra("introduce",R.string.shigao);
+                    intent.putExtra("title","石膏板");
                     startActivity(intent);
                 }
                 if(position==7){
                     Intent intent=new Intent(boardActivity.this,cl_child_Activity.class);
-                    intent.putExtra("number",8+"");
+                    intent.putExtra("picture",R.drawable.lvkou);
+                    intent.putExtra("introduce",R.string.lvkou);
+                    intent.putExtra("title","铝扣板");
                     startActivity(intent);
                 }
                 if(position==8){
                     Intent intent=new Intent(boardActivity.this,cl_child_Activity.class);
-                    intent.putExtra("number",9+"");
+                    intent.putExtra("picture",R.drawable.lvshuo);
+                    intent.putExtra("introduce",R.string.lvsu);
+                    intent.putExtra("title","铝塑板");
                     startActivity(intent);
                 }
             }

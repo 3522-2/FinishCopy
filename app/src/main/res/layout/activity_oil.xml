@@ -24,6 +24,7 @@
             android:orientation="vertical"
             android:gravity="center">
             <TextView
+                android:id="@+id/oil_first"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="木器漆"
@@ -32,6 +33,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/oil_second"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="内墙漆"
@@ -40,6 +42,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/oil_third"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="外墙漆"
@@ -48,6 +51,7 @@
                 android:textSize="30sp"
                 android:layout_marginBottom="20dp"/>
             <TextView
+                android:id="@+id/oil_fourth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="防火漆"
