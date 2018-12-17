@@ -25,8 +25,8 @@ private RelativeLayout R1,R2,R3;
         fanhui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(ThreeShow.this, MainActivity.class);
+                Intent intent = new Intent();//建立意图
+                intent.setClass(ThreeShow.this, MainActivity.class);//跳转的位置
                 startActivity(intent);
             }
         });
