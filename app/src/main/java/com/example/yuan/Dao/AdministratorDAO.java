@@ -48,16 +48,15 @@ public class AdministratorDAO {
         db.insert("administrator",null,values);
         db.close();
     }
-    public String findPwd(String name){
-        Cursor cursor = db.rawQuery(
-                "select administrator_password from administrator where administrator_name=? ",
-                new String[]{String.valueOf(name)});// 根据编号查找支出信息，并存储到Cursor类中
-
-        if(cursor.moveToNext()){
-            cursor.getString(cursor.getColumnIndex("administrator_password"));
+    //验证登录
+    public boolean findPwd(String username,String password) {
+        String sql = "select * from administrator where administrator_name=? and administrator_password=?";
+        Cursor cursor = db.rawQuery(sql, new String[] {username, password});
+        if (cursor.moveToFirst()) {
+            cursor.close();
+            return true;
         }
-        cursor.close();// 关闭游标
-        return name;
+        return false;
     }
 
 

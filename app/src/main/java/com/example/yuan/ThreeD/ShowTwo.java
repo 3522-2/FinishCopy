@@ -20,7 +20,7 @@ public class ShowTwo extends AppCompatActivity {
     private ImageView fanhui;
     private Custom3DView custom3DView;
     private TextView tv;
-    private List<ThreeAdapt.ListItemModel> myListItem;
+
 
     private String[] title = new String[]{"卧室\n" +
             "\n" +

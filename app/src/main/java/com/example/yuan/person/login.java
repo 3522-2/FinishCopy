@@ -5,35 +5,84 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yuan.Dao.UserDAO;
 import com.example.yuan.MainActivity;
 import com.example.yuan.R;
+import com.example.yuan.dialog.loginDia;
 import com.example.yuan.modle.User;
 
 public class login extends AppCompatActivity {
 
     private ImageView fanhui1;
     private ImageView home;
-    private TextView login1;
     private TextView login;
     private  EditText username;
     private EditText userpwd;
-    private TextView textView;
     private SharedPreferences sp;
+    private RelativeLayout relativeLayout;
+    private loginDia myDialog;
+    private TextView reg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+/**
+ * 长按
+ */
+        relativeLayout=(RelativeLayout)findViewById(R.id.LongTouch) ;
+        relativeLayout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
 
+                myDialog=new loginDia(login.this,R.style.MyDialog);
+
+                myDialog.setYesOnclickListener("管理员登录", new loginDia.onYesOnclickListener() {
+                    @Override
+                    public void onYesOnclick() {
+                        Intent intent = new Intent();
+                        intent.setClass(login.this,guanliyuanLogin.class);
+                        startActivity(intent);
+                        finish();
+                        myDialog.dismiss();
+                    }
+                });
+
+                myDialog.show();
+                         /**
+                                  * 点击消息是否进行拦截？
+                                  * 如果是true   不会触发后续事件
+                                  * 如果是false  会触发后续事件 比如说单击事件
+                                  */
+                         return true;
+
+            }
+        });
+
+        /**
+         * 新用户注册
+         */
+        reg = (TextView)findViewById(R.id.login_in1);
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(login.this,regist.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         /**
          * 返回上一页
          */
@@ -44,6 +93,7 @@ public class login extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(login.this,PersonMain.class);
                 startActivity(intent);
+                finish();
             }
         });
         /**
@@ -55,7 +105,8 @@ public class login extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(login.this, MainActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,222);
+                finish();
             }
         });
         username= (EditText)findViewById(R.id.accountEdittext);
@@ -69,81 +120,49 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String name = username.getText().toString();
-                String pwd = userpwd.getText().toString();
-
+                String regName = username.getText().toString().trim();
+                String regPwd = userpwd.getText().toString().trim();
                 UserDAO userDAO = new UserDAO(login.this);
-                String ispwd = userDAO.findPwd(name);
-                if (name != null && pwd != null && userDAO.CheckIsDataAlreadyInDBorNot(name)==1&& ispwd.equals(pwd)==false){
-                    Toast.makeText(login.this, "密码错误，请重新输入", Toast.LENGTH_SHORT).show();
-                }
-               if (name == null || "".equals(name) || pwd == null || "".equals(pwd)){
+                boolean is= userDAO.findPwd(regName,regPwd);
+
+                if (regName == null || "".equals(regName) || regPwd == null || "".equals(regPwd)) {
                     Toast.makeText(login.this, "账号与密码不能为空", Toast.LENGTH_SHORT).show();
-
-                }else if(userDAO.CheckIsDataAlreadyInDBorNot(name)==1&& ispwd.equals(pwd)==true){
-
-                    Toast.makeText(login.this, "登录成功", Toast.LENGTH_SHORT).show();
-                    //拿到一个intent把需要返回的值放进去
-                   //1：得到sp对象
-                   sp = getSharedPreferences("yonghu", Context.MODE_PRIVATE);
-
-
-                   //2：得到editor对象
-                   SharedPreferences.Editor editor = sp.edit();
-                   //3：得到输入的key/vaule
-                   String key = "用户名";
-                   String value = name;
-                   String key2 = "密码";
-                   String value2 = pwd;
-                   String key3 = "是否登录";
-                   String value3 = "已登录";
-                   //4:用editor保存key/vaule
-
-                   editor.putString(key,value).commit();
-                   editor.putString(key2,value2).commit();
-                   editor.putString(key3,value3).commit();
-                    Intent intent = new Intent();
-                    intent.setClass(login.this,PersonMain.class);
-                    startActivity(intent);
-
-                }else if (userDAO.CheckIsDataAlreadyInDBorNot(name)==-1){
-
-                    /*
-                     * 带返回值的跳转方法，参数1：intent意图， 第二个参数请求码，是一个requestCode值，如果有多个按钮都要启动Activity，
-                     * 则requestCode标志着每个按钮所启动的Activity
-                     */
-                    Intent intent =new Intent();
-                    intent.setClass(login.this,regist.class);
-                    startActivityForResult(intent, 222);
-                    Toast.makeText(login.this, "该账户不存在,请注册", Toast.LENGTH_SHORT).show();
                 }
+                else{
+                    if(userDAO.CheckIsDataAlreadyInDBorNot(regName)==1&&is==false){
+                        Toast.makeText(login.this, "密码错误", Toast.LENGTH_SHORT).show();
+                    }
+                    if(userDAO.CheckIsDataAlreadyInDBorNot(regName)==1&&is==true){
+
+                        Toast.makeText(login.this, "登录成功", Toast.LENGTH_SHORT).show();
+                        // 1：得到sp对象
+                        sp = getSharedPreferences("yonghu", Context.MODE_PRIVATE);
+                        //2：得到editor对象
+                        SharedPreferences.Editor editor = sp.edit();
+                        //3：得到输入的key/vaule
+                        String key = "用户名";
+                        String value = regName;
+                        String key3 = "是否登录";
+                        String value3 = "已登录";
+                        //4:用editor保存key/vaule
+                        editor.putString(key,value).commit();
+                        editor.putString(key3,value3).commit();
+                        Intent intent = new Intent();
+                        intent.setClass(login.this,PersonMain.class);
+                        startActivity(intent);
+                        finish();
+                    }else if (userDAO.CheckIsDataAlreadyInDBorNot(regName)==-1){
+
+                        /*
+                         * 带返回值的跳转方法，参数1：intent意图， 第二个参数请求码，是一个requestCode值，如果有多个按钮都要启动Activity，
+                         * 则requestCode标志着每个按钮所启动的Activity
+                         */
+                        Intent intent =new Intent();
+                        intent.setClass(login.this,regist.class);
+                        startActivityForResult(intent, 222);
+                        Toast.makeText(login.this, "该账户不存在,请注册", Toast.LENGTH_SHORT).show();
+                    }
                 }
-
-        });
-        /**
-         * 注册
-         */
-        login1 = (TextView) findViewById(R.id.login_in1);
-        login1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent();
-                intent.setClass(login.this,regist.class);
-                startActivityForResult(intent, 222);
-
-            }
-        });
-        /**
-         * 管理员登录
-         */
-        textView = (TextView)findViewById(R.id.guanliyuan);
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                    Intent intent =new Intent();
-                    intent.setClass(login.this,guanliyuanLogin.class);
-                    startActivity(intent);
 
 
             }

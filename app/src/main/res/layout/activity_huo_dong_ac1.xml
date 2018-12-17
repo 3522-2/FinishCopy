@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".YouHui.HuoDongAc1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/person"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/re"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/fanhui" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="328dp"
+            android:layout_height="181dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="49dp"
+            app:srcCompat="@drawable/huodongjuan" />
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/name"
+        android:layout_marginTop="259dp"
+        android:layout_width="328dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:hint=" 输入你的名字"/>
+    <EditText
+        android:id="@+id/tel"
+        android:layout_marginTop="330dp"
+        android:layout_width="328dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:hint=" 输入你的电话号码"/>
+    <Button
+        android:id="@+id/btn"
+        android:layout_marginTop="400dp"
+        android:layout_width="328dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/free_dialog_bg"
+        android:text="点击领取"
+        android:textSize="30dp"
+        android:textColor="#FF6347"/>
+
+    <TextView
+        android:layout_marginTop="500dp"
+        android:layout_width="328dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="50dp"
+        android:text="@string/HuoDong"/>
+</RelativeLayout>

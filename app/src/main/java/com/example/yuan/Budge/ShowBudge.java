@@ -122,9 +122,9 @@ public class ShowBudge extends AppCompatActivity {
                     });
                     myDialog.show();
                 }else{
-                 String huxing = HuXing.getText().toString().trim();
-                 String fengge = FengGe.getText().toString().trim();
-                 String mianji = Main.getText().toString().trim();
+                    String huxing = HuXing.getText().toString().trim();
+                    String fengge = FengGe.getText().toString().trim();
+                    String mianji = Main.getText().toString().trim();
                     Intent intent1 = new Intent();
                     intent1.setClass(ShowBudge.this,XiangBudge.class);
                     intent1.putExtra("户型",huxing);
