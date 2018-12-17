@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.yuan.Dao.SchemeDAO;
@@ -18,6 +20,7 @@ public class EditScheme extends AppCompatActivity {
     private ImageView fanhui;
     private EditText style,area,type,priceOne,priceTwoW,priceTwoC,priceThreeW,priceThreeC,priceFourW,priceFourC,priceFiveW,priceFiveC,priceSum;
     private Button xiugai,shanchu;
+//    private Spinner spinnerH,spinnerA,spinnerT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,47 @@ public class EditScheme extends AppCompatActivity {
         priceFiveC.setText(scheme.getScheme_pirceFiveMaterial());
         priceSum.setText(scheme.getScheme_pirceSum());
 
+//        spinnerH = (Spinner)findViewById(R.id.spinnerT);
+//        spinnerH.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                String resule = parent.getItemAtPosition(position).toString();
+//                type.setText(resule);
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+//
+//        spinnerA = (Spinner)findViewById(R.id.spinnerA);
+//        spinnerA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                String resule = parent.getItemAtPosition(position).toString();
+//                area.setText(resule);
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+//
+//        spinnerT = (Spinner)findViewById(R.id.spinnerF);
+//        spinnerT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                String resule = parent.getItemAtPosition(position).toString();
+//                style.setText(resule);
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
         /**
          * 修改
          */

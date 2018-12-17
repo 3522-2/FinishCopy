@@ -10,9 +10,20 @@ public class User {
     private String user_houseType;//	用户户型
     private String user_houseArea;//	房屋面积
 
-    public User(){};
-    public User(String user_name){};
-    public User(int user_id, String user_name, String user_password, String administrator_password, String user_adr, String user_houseType, String administrator_telephone){}
+    public User(){
+        super();
+    };
+
+    public User(int user_id, String user_name, String user_password,String user_houseArea,  String user_telephone,String user_adr, String user_houseType){
+        super();
+        this.user_id = user_id;
+        this.user_name = user_name;
+        this.user_password = user_password;
+        this.user_telephone = user_telephone;
+        this.user_adr = user_adr;
+        this.user_houseType = user_houseType;
+        this.user_houseArea = user_houseArea;
+    }
 
     public int getUser_id() {
         return user_id;

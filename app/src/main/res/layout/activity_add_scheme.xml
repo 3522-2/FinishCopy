@@ -23,15 +23,17 @@
 
     <RelativeLayout
         android:id="@+id/editRel"
+
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
         <RelativeLayout
             android:id="@+id/accountRel"
-            android:layout_width="fill_parent"
+            android:background="@drawable/shape"
+            android:layout_width="300dp"
+            android:layout_marginLeft="40dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
-
             android:clickable="true"
             android:gravity="center_vertical">
 
@@ -39,9 +41,8 @@
                 android:id="@+id/account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
-                android:text="户型"
+                android:text="户型:"
                 android:textColor="#000"
                 android:textSize="17sp" />
 
@@ -55,11 +56,21 @@
                 android:background="@null"
                 android:hint="输入户型"
                 android:textSize="15sp" />
+            <Spinner
+                android:entries="@array/housetype"
+                android:id="@+id/spinnerT"
+                android:layout_marginTop="10dp"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="250dp"/>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/pwdRel"
-            android:layout_width="fill_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_width="300dp"
+            android:layout_marginLeft="40dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/accountRel"
             android:clickable="true"
@@ -69,9 +80,8 @@
                 android:id="@+id/pwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
-                android:text="面积"
+                android:text="面积:"
                 android:textColor="#000"
                 android:textSize="17sp" />
 
@@ -85,13 +95,22 @@
                 android:background="@null"
                 android:hint="输入面积"
                 android:textSize="15sp" />
-
+            <Spinner
+                android:entries="@array/area"
+                android:id="@+id/spinnerA"
+                android:layout_marginTop="10dp"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="250dp"/>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/pwdRe2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:layout_below="@id/pwdRel"
             android:clickable="true"
             android:gravity="center_vertical">
@@ -100,9 +119,8 @@
                 android:id="@+id/pwd1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
-                android:text="风格"
+                android:text="风格:"
                 android:textColor="#000"
                 android:textSize="17sp" />
 
@@ -117,13 +135,22 @@
                 android:hint="输入风格"
 
                 android:textSize="15sp" />
-
+            <Spinner
+                android:entries="@array/fengGe"
+                android:id="@+id/spinnerF"
+                android:layout_marginTop="10dp"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="250dp"/>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/pwdRe3"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:layout_below="@id/pwdRe2"
             android:clickable="true"
             android:gravity="center_vertical">
@@ -132,9 +159,8 @@
                 android:id="@+id/pwd2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
-                android:text="第一阶段费用"
+                android:text="第一阶段费用:"
                 android:textColor="#000"
                 android:textSize="17sp" />
 
@@ -153,8 +179,11 @@
 
         <RelativeLayout
             android:id="@+id/pwdRe4"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:layout_below="@id/pwdRe3"
             android:clickable="true"
             android:gravity="center_vertical">
@@ -163,7 +192,6 @@
                 android:id="@+id/adr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
                 android:text="第二阶段工钱"
                 android:textColor="#000"
@@ -183,8 +211,11 @@
 
         <RelativeLayout
             android:id="@+id/pwdRe5"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:layout_below="@+id/pwdRe4"
             android:clickable="true"
             android:gravity="center_vertical">
@@ -193,7 +224,6 @@
                 android:id="@+id/Stytle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
                 android:text="第二阶段材料钱"
                 android:textColor="#000"
@@ -214,8 +244,11 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/pwdRe6"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:layout_below="@id/pwdRe5"
             android:clickable="true"
             android:gravity="center_vertical">
@@ -224,7 +257,6 @@
                 android:id="@+id/Three1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
                 android:text="第三阶段工钱"
                 android:textColor="#000"
@@ -244,8 +276,11 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/pwdR7"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:layout_below="@id/pwdRe6"
             android:clickable="true"
             android:gravity="center_vertical">
@@ -254,7 +289,6 @@
                 android:id="@+id/are"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
                 android:text="第三阶段材料钱"
                 android:textColor="#000"
@@ -274,8 +308,11 @@
         </RelativeLayout>
     <RelativeLayout
         android:id="@+id/pwdRe7"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape"
+        android:layout_marginLeft="40dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
         android:layout_below="@id/pwdR7"
         android:clickable="true"
         android:gravity="center_vertical">
@@ -284,7 +321,6 @@
             android:id="@+id/ThreeP1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
             android:padding="8dp"
             android:text="第四阶段工钱"
             android:textColor="#000"
@@ -303,8 +339,11 @@
     </RelativeLayout>
         <RelativeLayout
             android:id="@+id/pwdRe8"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:layout_below="@id/pwdRe7"
             android:clickable="true"
             android:gravity="center_vertical">
@@ -313,7 +352,6 @@
                 android:id="@+id/FoureP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
                 android:text="第四阶段材料钱"
                 android:textColor="#000"
@@ -332,8 +370,11 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/pwdRe9"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:layout_below="@id/pwdRe8"
             android:clickable="true"
             android:gravity="center_vertical">
@@ -342,7 +383,6 @@
                 android:id="@+id/FoureP2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
                 android:padding="8dp"
                 android:text="第五阶段工钱"
                 android:textColor="#000"
@@ -361,8 +401,11 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/pwdRe10"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:layout_below="@id/pwdRe9"
             android:clickable="true"
             android:gravity="center_vertical">
@@ -390,8 +433,11 @@
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/pwdRe11"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape"
+            android:layout_marginLeft="40dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
             android:layout_below="@id/pwdRe10"
             android:clickable="true"
             android:gravity="center_vertical">
@@ -402,7 +448,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:padding="8dp"
-                android:text="总费用"
+                android:text="总费用:"
                 android:textColor="#000"
                 android:textSize="17sp" />
 
@@ -416,22 +462,24 @@
                 android:background="@null"
                 android:hint="总费用"
                 android:textSize="15sp" />
+
         </RelativeLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="650dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/login_in"
-                android:layout_width="200dp"
+                android:background="#CDCD00"
+                android:layout_width="300dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="80dp"
-                android:gravity="center_horizontal"
-                android:text="添加 "
-                android:textColor="#ffffff" />
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:text="添加"
+                android:textColor="#000000" />
         </LinearLayout>
 
     </RelativeLayout>

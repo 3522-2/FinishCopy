@@ -82,7 +82,7 @@ public class UserDAO {
         public List<User> getAll(){
             //执行select * from activity
             List<User> list = new ArrayList<User>();
-            Cursor cursor = db.query("activity",null,null,null,
+            Cursor cursor = db.query("user",null,null,null,
                     null,null,null);
             while (cursor.moveToNext()){
                 int user_id = cursor.getInt(0);
@@ -99,17 +99,17 @@ public class UserDAO {
             db.close();
             return  list;
         }
-        public String findPwd(String name){
-            Cursor cursor=db.rawQuery("select user_password from user where user_name=?",
-                    new String[]{String.valueOf(name)});
-            if(cursor.moveToNext()){
-                cursor.getString(cursor.getColumnIndex("user_password"));
-            }
-            cursor.close();// 关闭游标
-
-            return name;
+    //验证登录
+    public boolean findPwd(String username,String password) {
+        String sql = "select * from user where user_name=? and user_password=?";
+        Cursor cursor = db.rawQuery(sql, new String[] {username, password});
+        if (cursor.moveToFirst()) {
+            cursor.close();
+            return true;
         }
-        /**
+        return false;
+    }
+  /**
          * 根据id查找管理员信息
          *
          * @return

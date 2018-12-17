@@ -20,7 +20,7 @@ public class Show0ne extends AppCompatActivity {
     private ImageView fanhui;
     private Custom3DView custom3DView,custom3DView1;
     private TextView tv;
-    private List<ThreeAdapt.ListItemModel> myListItem;
+
 
     private String[] title = new String[]{"餐厅\n" +
             "\n" +

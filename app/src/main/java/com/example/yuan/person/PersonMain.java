@@ -10,10 +10,13 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.example.yuan.person.MyDialogPerson;
 import com.example.yuan.MainActivity;
 import com.example.yuan.R;
 
@@ -22,15 +25,17 @@ import java.util.List;
 
 public class PersonMain extends AppCompatActivity {
     private SharedPreferences sp;
+    private ImageView cirLog;
+    private LinearLayout Canal;
     private TextView textView;
+    private MyDialogPerson myDialog;
     private ListView listView;
-    private int[] title = new int[]{R.mipmap.person1,R.mipmap.person3,R.mipmap.person4,R.mipmap.person5,R.mipmap.canal};
-    private String[] Data = new String[]{"我的装修","更新装修进度","联系我们","设置","注销登录"};
-    private int[] imageld = new int[]{R.mipmap.person2,R.mipmap.person2,R.mipmap.person2,R.mipmap.person2,R.mipmap.person2};
+    private int[] title = new int[]{R.mipmap.person1,R.mipmap.person3,R.mipmap.person4,R.mipmap.person5,R.mipmap.youhui3};
+    private String[] Data = new String[]{"我的装修","更新装修进度","联系我们","设置","我的优惠"};
+    private int[] imageld = new int[]{R.mipmap.jiantou,R.mipmap.jiantou,R.mipmap.jiantou,R.mipmap.jiantou,R.mipmap.jiantou};
     private List<PersonListAdapt.ListItemModel> myListItem;
     private PersonListAdapt adApter;
     private ImageView fanhui,home;
-    private Button reg1,canal;
     private ImageView imageView1,imageView2,imageView4;//底部导航栏
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +46,9 @@ public class PersonMain extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("yonghu", MODE_PRIVATE);
         textView.setText(sharedPreferences.getString("用户名","未登录"));
 
-        reg1 = (Button)findViewById(R.id.reg);
+        cirLog = (ImageView) findViewById(R.id.Cirimageview);
         SharedPreferences sharedPreferences1 = this.getSharedPreferences("yonghu", MODE_PRIVATE);
-        reg1.setText(sharedPreferences1.getString("是否登录","请登录"));
+
 
 
         fanhui = (ImageView)findViewById(R.id.re);
@@ -64,15 +69,29 @@ public class PersonMain extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SharedPreferences sharedPreferences = getSharedPreferences("yonghu", 0);
+                String zhuangTai = sharedPreferences.getString("用户名","");
+
                 if(id == 0) {
-                    Intent intent = new Intent();
-                    intent.setClass(PersonMain.this,My_ZhuangXiuList.class);
-                    startActivity(intent);
+                    if(zhuangTai.equals("未登录") || zhuangTai==null){
+                        Toast.makeText(PersonMain.this,"请登录后查看",Toast.LENGTH_SHORT).show();
+                    }else{
+                        Intent intent = new Intent();
+                        intent.setClass(PersonMain.this,My_ZhuangXiuList.class);
+                        startActivity(intent);
+                    }
+
                 }
                 if(id == 1) {
-                   Intent intent = new Intent();
-                   intent.setClass(PersonMain.this,GengXinJinDu.class);
-                   startActivity(intent);
+
+                    if(zhuangTai.equals("你好，管理员")){
+                        Intent intent = new Intent();
+                        intent.setClass(PersonMain.this,GengXinJinDu.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(PersonMain.this,"您不是管理员，或者请管理员登录后查看",Toast.LENGTH_SHORT).show();
+                    }
+
                 }
                 if(id == 2) {
                     Intent intent = new Intent();
@@ -83,22 +102,50 @@ public class PersonMain extends AppCompatActivity {
                     Toast.makeText(PersonMain.this, "设置" + position, Toast.LENGTH_SHORT).show();
                 }
                 if(id == 4) {
-                   // 1：得到sp对象
-                            sp = getSharedPreferences("yonghu", Context.MODE_PRIVATE);
-                    //2：得到editor对象
-                    SharedPreferences.Editor editor = sp.edit();
-                    //3：得到输入的key/vaule
-                    String key = "用户名";
-                    String value = "请登录";
-                    String key3 = "是否登录";
-                    String value3 = "未登录";
-                    //4:用editor保存key/vaule
-                    editor.putString(key,value).commit();
-                    editor.putString(key3,value3).commit();
-                    Intent intent = new Intent();
-                    intent.setClass(PersonMain.this,PersonMain.class);
-                    startActivity(intent);
+                    Toast.makeText(PersonMain.this, "我的优惠" + position, Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        /**
+         * 注销
+         */
+        Canal = (LinearLayout)findViewById(R.id.canal) ;
+        Canal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 1：得到sp对象
+                sp = getSharedPreferences("yonghu", Context.MODE_PRIVATE);
+                //2：得到editor对象
+                SharedPreferences.Editor editor = sp.edit();
+                //3：得到输入的key/vaule
+                String key = "用户名";
+                String value = "未登录";
+                String key3 = "是否登录";
+                String value3 = "点此登录";
+                //4:用editor保存key/vaule
+                editor.putString(key,value).commit();
+                editor.putString(key3,value3).commit();
+                myDialog=new MyDialogPerson(PersonMain.this,R.style.MyDialog);
+
+                myDialog.setMessage("点击确定注销登录");
+
+                myDialog.setYesOnclickListener("确定", new MyDialogPerson.onYesOnclickListener() {
+                    @Override
+                    public void onYesOnclick() {
+                        Intent intent = new Intent();
+                        intent.setClass(PersonMain.this,PersonMain.class);
+                        startActivity(intent);
+                        myDialog.dismiss();
+                    }
+                });
+                myDialog.setNoOnclickListener("取消", new MyDialogPerson.onNoOnclickListener() {
+                    @Override
+                    public void onNoClick() {
+
+                        myDialog.dismiss();
+                    }
+                });
+                myDialog.show();
             }
         });
         /**
@@ -116,7 +163,7 @@ public class PersonMain extends AppCompatActivity {
         /**
          * 进入选择登录页面
          */
-        reg1.setOnClickListener(new View.OnClickListener() {
+        cirLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -167,7 +214,6 @@ public class PersonMain extends AppCompatActivity {
             String btn = data.getStringExtra("button");
             // 把得到的数据显示到输入框内
             textView.setText(name);
-            reg1.setText(btn);
 
         }
     }

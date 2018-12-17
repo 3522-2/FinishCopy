@@ -31,81 +31,101 @@
 
             android:orientation="vertical">
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:background="@drawable/shape"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="材料名"
-                    android:layout_marginLeft="50dp"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/CaiName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@null"
                     android:hint="输入材料名"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="材料类型"
-                    android:layout_marginLeft="50dp"
+                    android:text="材料类型:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoP"
+                    android:background="@null"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="材料类型"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="材料品牌"
-                    android:layout_marginLeft="50dp"
+                    android:text="材料品牌:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/CaiPin"
+                    android:background="@null"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="输入材料品牌"/>
+                    android:hint="材料品牌"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="材料价格"
-                    android:layout_marginLeft="50dp"
+                    android:text="材料价格:"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/CaiJ"
+                    android:background="@null"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="材料价格"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="材料供应商"
+                    android:text="材料供应商:"
                     android:layout_marginLeft="50dp"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoGong"
+                    android:background="@null"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="输入材料供应商"/>
@@ -160,16 +180,19 @@
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="80dp"
-                    android:gravity="center_horizontal"
+                    android:background="#CDCD00"
+                    android:gravity="center"
                     android:text="修改 "
-                    android:textColor="#ffffff" />
+                    android:textColor="#000000"  />
                 <Button
                     android:id="@+id/shanchu"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
-                    android:gravity="center_horizontal"
+                    android:background="#CDCD00"
+                    android:gravity="center"
                     android:text="删除"
-                    android:textColor="#ffffff" />
+                    android:textColor="#000000"  />
             </LinearLayout>
 
         </LinearLayout>

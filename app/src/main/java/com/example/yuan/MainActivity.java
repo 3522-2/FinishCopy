@@ -18,7 +18,11 @@ import android.widget.Toast;
 import com.example.yuan.Budge.ShowBudge;
 import com.example.yuan.CL.cl;
 import com.example.yuan.ThreeD.ThreeShow;
+
 import com.example.yuan.XGT.XgtMain;
+import com.example.yuan.YouHui.HuoDongAc1;
+import com.example.yuan.YouHui.HuoDongAc2;
+import com.example.yuan.YouHui.ShowYouHui;
 import com.example.yuan.person.PersonMain;
 
 import java.util.ArrayList;
@@ -30,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout ll_point_group;
 
     private ImageView textView1,textView2,textView3,textView4;
-    private ImageView CL,budge,XGT;
+    private ImageView CL,budge,XGT,HuoDong1,HuoDong2;
 
     private ArrayList<ImageView> imageViews;
     private final int[] imageIds={R.drawable.a,
@@ -65,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
         XGT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this,XgtMain.class);
-                startActivity(intent);
+                Intent intent1 = new Intent();
+                intent1.setClass(MainActivity.this,XgtMain.class);
+                startActivity(intent1);
             }
         });
 
@@ -93,6 +97,30 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this,ShowBudge.class);
+                startActivity(intent);
+            }
+        });
+        /**
+         * 跳转到优惠活动1
+         */
+        HuoDong1 = (ImageView)findViewById(R.id.huodong1);
+        HuoDong1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,HuoDongAc1.class);
+                startActivity(intent);
+            }
+        });
+/**
+ * 跳转到优惠活动2
+ */
+        HuoDong2 = (ImageView)findViewById(R.id.huodong2);
+        HuoDong2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,HuoDongAc2.class);
                 startActivity(intent);
             }
         });

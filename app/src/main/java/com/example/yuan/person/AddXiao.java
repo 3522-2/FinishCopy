@@ -31,6 +31,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,12 +55,24 @@ public class AddXiao extends AppCompatActivity {
     private EditText XiaoName,XiaoFeng,XiaoMian,XiaoHu,
             XiaoOne,XiaoTwo,XiaoThree,XiaoFour,XiaoFive,
             XiaoSum,XiaoDes;
+    private Spinner spinnerH,spinnerA,spinnerT;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_xiao);
 
-
+        XiaoName = (EditText)findViewById(R.id.XiaoName);
+        XiaoFeng=(EditText)findViewById(R.id.XiaoFeng);
+        XiaoMian=(EditText)findViewById(R.id.XiaoMian);
+        XiaoHu=(EditText)findViewById(R.id.XiaoHu);
+        XiaoOne=(EditText)findViewById(R.id.XiaoOne);
+        XiaoTwo=(EditText)findViewById(R.id.XiaoTwo);
+        XiaoThree=(EditText)findViewById(R.id.XiaoThree);
+        XiaoFour=(EditText)findViewById(R.id.XiaoFour);
+        XiaoFive=(EditText)findViewById(R.id.XiaoFive);
+        XiaoSum=(EditText)findViewById(R.id.XiaoSum);
+        gridView1=(GridView)findViewById(R.id.gridView1);
+        XiaoDes=(EditText)findViewById(R.id.XiaoDes);
         /**
          * 返回上一页
          */
@@ -139,6 +152,47 @@ public class AddXiao extends AppCompatActivity {
 
         //----------------------------------------------------------------------------------------
 
+        spinnerH = (Spinner)findViewById(R.id.spinnerT);
+        spinnerH.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String resule = parent.getItemAtPosition(position).toString();
+                XiaoHu.setText(resule);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerA = (Spinner)findViewById(R.id.spinnerA);
+        spinnerA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String resule = parent.getItemAtPosition(position).toString();
+                XiaoMian.setText(resule);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerT = (Spinner)findViewById(R.id.spinnerF);
+        spinnerT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String resule = parent.getItemAtPosition(position).toString();
+                XiaoFeng.setText(resule);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         /**
          * 添加
          */
@@ -147,18 +201,7 @@ public class AddXiao extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                XiaoName = (EditText)findViewById(R.id.XiaoName);
-                XiaoFeng=(EditText)findViewById(R.id.XiaoFeng);
-                XiaoMian=(EditText)findViewById(R.id.XiaoMian);
-                XiaoHu=(EditText)findViewById(R.id.XiaoHu);
-                XiaoOne=(EditText)findViewById(R.id.XiaoOne);
-                XiaoTwo=(EditText)findViewById(R.id.XiaoTwo);
-                XiaoThree=(EditText)findViewById(R.id.XiaoThree);
-                XiaoFour=(EditText)findViewById(R.id.XiaoFour);
-                XiaoFive=(EditText)findViewById(R.id.XiaoFive);
-                XiaoSum=(EditText)findViewById(R.id.XiaoSum);
-                gridView1=(GridView)findViewById(R.id.gridView1);
-                XiaoDes=(EditText)findViewById(R.id.XiaoDes);
+
             //获取除图片之外的资源
                 String XiaoName1= XiaoName.getText().toString();
                 String XiaoFeng1 = XiaoFeng.getText().toString();

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".YouHui.ShowYouHui">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/person"
+        android:layout_alignParentTop="true">
+
+    <ImageView
+        android:id="@+id/re"
+        android:layout_width="25dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/fanhui" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/act1"
+        android:layout_width="294dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp"
+        android:background="#CD3700">
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="100dp"
+            android:background="@drawable/youhui1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_marginLeft="180dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:text="新   人\n红   包"
+            android:textColor="#FFA500"
+            android:textSize="30dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/act2"
+        android:layout_width="294dp"
+        android:layout_height="111dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="199dp"
+        android:background="#9B30FF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="36dp"
+            android:text="年 末 钜 惠"
+            android:textColor="#FFF"
+            android:textSize="50dp" />
+
+    </RelativeLayout>
+</RelativeLayout>

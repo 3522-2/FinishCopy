@@ -64,12 +64,11 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                 "                administrator_telephone varchar(100))");
 
         db.execSQL("create table activity(activity_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,\n" +
-                "                activity_StartTime data,\n" +
-                "                activity_FinishTime data,\n" +
-                "                proiect_photo blob,\n" +
-                "                activity_name varchar(100) ,\n" +
-                "                activity_type varchar(100),\n" +
-                "                activity_people varchar(100),\n" +
+                "                activity_UserName varchar(100),\n" +
+                "                activity_name varchar(100),\n" +
+                "                activity_Three varchar(100) ,\n" +
+                "                activity_Thou varchar(100) ,\n" +
+                "                activity_UserNameTel varchar(100) ,\n" +
                 "                activity_content varchar(100))");
 
         db.execSQL("create table information(information_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,\n" +

@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.yuan.Dao.SchemeDAO;
@@ -17,6 +19,7 @@ public class AddScheme extends AppCompatActivity {
         private ImageView fanhui;
         private EditText style,area,type,priceOne,priceTwoW,priceTwoC,priceThreeW,priceThreeC,priceFourW,priceFourC,priceFiveW,priceFiveC,priceSum;
         private Button add;
+        private Spinner spinnerH,spinnerA,spinnerT;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +50,47 @@ public class AddScheme extends AppCompatActivity {
         priceFiveC=(EditText)findViewById(R.id.FineP);
         priceSum = (EditText)findViewById(R.id.Sum);
 
+        spinnerH = (Spinner)findViewById(R.id.spinnerT);
+        spinnerH.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String resule = parent.getItemAtPosition(position).toString();
+                type.setText(resule);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerA = (Spinner)findViewById(R.id.spinnerA);
+        spinnerA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String resule = parent.getItemAtPosition(position).toString();
+                area.setText(resule);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerT = (Spinner)findViewById(R.id.spinnerF);
+        spinnerT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String resule = parent.getItemAtPosition(position).toString();
+                style.setText(resule);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         add = (Button)findViewById(R.id.login_in);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
