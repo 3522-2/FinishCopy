@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:background="@color/person"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/re"
@@ -19,10 +20,21 @@
             android:src="@mipmap/fanhui" />
 
     </LinearLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
 
 
     <RelativeLayout
         android:id="@+id/editRel"
+        android:layout_marginTop="5dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
@@ -33,7 +45,7 @@
             android:layout_height="50dp"
             android:gravity="center"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="5dp"
 
             android:clickable="true"
             >
@@ -72,6 +84,7 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:gravity="center"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="40dp"
             android:layout_below="@id/accountRel"
             android:clickable="true">
@@ -105,6 +118,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/pwdRe2"
             android:background="@drawable/shape"
             android:layout_width="300dp"
@@ -145,6 +159,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/pwdRe3"
             android:background="@drawable/shape"
             android:layout_width="300dp"
@@ -177,6 +192,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/pwdRe4"
             android:background="@drawable/shape"
             android:layout_width="300dp"
@@ -209,6 +225,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/pwdRe5"
             android:background="@drawable/shape"
             android:layout_width="300dp"
@@ -240,6 +257,7 @@
 
         </RelativeLayout>
         <RelativeLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/pwdRe6"
             android:background="@drawable/shape"
             android:layout_width="300dp"
@@ -259,6 +277,7 @@
                 android:textSize="17sp" />
 
             <EditText
+
                 android:id="@+id/threeP"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -271,6 +290,7 @@
 
         </RelativeLayout>
         <RelativeLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/pwdR7"
             android:background="@drawable/shape"
             android:layout_width="300dp"
@@ -302,6 +322,7 @@
 
         </RelativeLayout>
         <RelativeLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/pwdRe7"
             android:background="@drawable/shape"
             android:layout_width="300dp"
@@ -332,6 +353,7 @@
                 android:textSize="15sp" />
         </RelativeLayout>
         <RelativeLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/pwdRe8"
             android:background="@drawable/shape"
             android:layout_width="300dp"
@@ -362,6 +384,7 @@
                 android:textSize="15sp" />
         </RelativeLayout>
         <RelativeLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/pwdRe9"
             android:background="@drawable/shape"
             android:layout_width="300dp"
@@ -392,6 +415,7 @@
                 android:textSize="15sp" />
         </RelativeLayout>
         <RelativeLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/pwdRe10"
             android:background="@drawable/shape"
             android:layout_width="300dp"
@@ -421,7 +445,8 @@
                 android:hint="第五阶段材料钱"
                 android:textSize="15sp" />
         </RelativeLayout>
-        <RelativeLayout
+        <LinearLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/pwdRe11"
             android:background="@drawable/shape"
             android:layout_width="300dp"
@@ -450,11 +475,12 @@
                 android:background="@null"
                 android:hint="总费用"
                 android:textSize="15sp" />
-        </RelativeLayout>
+        </LinearLayout>
         <LinearLayout
+
             android:layout_width="fill_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="680dp"
+            android:layout_marginTop="800dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -479,8 +505,8 @@
         </LinearLayout>
 
     </RelativeLayout>
-
-
+</LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>
 

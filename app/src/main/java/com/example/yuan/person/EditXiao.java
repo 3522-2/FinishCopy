@@ -3,6 +3,7 @@ package com.example.yuan.person;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -36,6 +37,7 @@ public class EditXiao extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(EditXiao.this, ChangeXiao.class);
                 startActivity(intent);
+                finish();
             }
         });
         item();
@@ -43,9 +45,9 @@ public class EditXiao extends AppCompatActivity {
 
         final Intent intent = getIntent();
         final String id = intent.getStringExtra("id");
-//        Log.i("解析后的id",id);
         final EffectDAO effectDAO = new EffectDAO(EditXiao.this);
         final Effect effect = effectDAO.find(id);
+
         XiaoName.setText(effect.getEffect_name());
         XiaoFeng.setText(effect.getEffect_stytle());
         XiaoMian.setText(effect.getEffect_area());
@@ -119,27 +121,38 @@ public class EditXiao extends AppCompatActivity {
                 String XiaoHu1 = XiaoHu.getText().toString();
                 effect.setEffect_type(XiaoHu1);
 
+                String XiaoOne1  = XiaoOne.getText().toString();
+                effect.setEffect_PriceOne(XiaoOne1);
+
                 String XiaoTwo1  = XiaoTwo.getText().toString();
-                effect.setEffect_PriceOne(XiaoTwo1);
+                effect.setEffect_PriceTwo(XiaoTwo1);
+
+
 
                 String XiaoTheee1  = XiaoThree.getText().toString();
-                effect.setEffect_PriceOne(XiaoTheee1);
+                effect.setEffect_PriceThree(XiaoTheee1);
 
                 String XiaoFour1  = XiaoFour.getText().toString();
-                effect.setEffect_PriceOne(XiaoFour1);
+                effect.setEffect_PriceFour(XiaoFour1);
 
                 String XiaoFive1  = XiaoFive.getText().toString();
-                effect.setEffect_PriceOne(XiaoFive1);
+                effect.setEffect_PriceFive(XiaoFive1);
 
                 String XiaoSum1  = XiaoSum.getText().toString();
-                effect.setEffect_PriceOne(XiaoSum1);
+                effect.setEffect_PriceSum(XiaoSum1);
+
+                String XiaoDes1  = XiaoDes.getText().toString();
+                effect.setEffect_describe(XiaoDes1);
+
 
                 effectDAO.update(effect);
 
+                Toast.makeText(EditXiao.this,"修改成功",Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent();
                 intent1.setClass(EditXiao.this ,ChangeXiao.class);
                 startActivity(intent1);
-                Toast.makeText(EditXiao.this,"修改成功",Toast.LENGTH_SHORT);
+                finish();
+
             }
         });
 
@@ -151,11 +164,12 @@ public class EditXiao extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 effectDAO.deleteById(id);
+                Toast.makeText(EditXiao.this,"删除成功",Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent();
-
                 intent1.setClass(EditXiao.this ,ChangeXiao.class);
                 startActivity(intent1);
-                Toast.makeText(EditXiao.this,"修改成功",Toast.LENGTH_SHORT);
+                finish();
+
             }
         });
     }

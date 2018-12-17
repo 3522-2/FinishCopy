@@ -36,6 +36,7 @@ public class EditScheme extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(EditScheme.this, ChangeSchem.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -153,6 +154,10 @@ public class EditScheme extends AppCompatActivity {
                 scheme.setScheme_pirceSum(priceSum1);
                 schemeDAO1.update(scheme);
                 Toast.makeText(EditScheme.this, "修改成功", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent();
+                intent1.setClass(EditScheme.this,ChangeSchem.class);
+                startActivity(intent1);
+                finish();
             }
         });
         /**
@@ -163,10 +168,12 @@ public class EditScheme extends AppCompatActivity {
             @Override
             public void onClick(View v) {
             schemeDAO1.deleteById(id);
+                Toast.makeText(EditScheme.this, "删除成功", Toast.LENGTH_SHORT).show();
             Intent intent1 = new Intent();
             intent1.setClass(EditScheme.this,ChangeSchem.class);
             startActivity(intent1);
-                Toast.makeText(EditScheme.this, "删除成功", Toast.LENGTH_SHORT).show();
+            finish();
+
             }
         });
     }

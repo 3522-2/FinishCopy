@@ -33,6 +33,7 @@ public class EditCl extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(EditCl.this, ChangeCl.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -74,6 +75,10 @@ public class EditCl extends AppCompatActivity {
 
                 materialDAO.update(material);
                 Toast.makeText(EditCl.this, "修改成功", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent();
+                intent1.setClass(EditCl.this,ChangeCl.class);
+                startActivity(intent1);
+                finish();
             }
         });
         /**
@@ -84,10 +89,12 @@ public class EditCl extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 materialDAO.deleteById(id);
+                Toast.makeText(EditCl.this, "删除成功", Toast.LENGTH_SHORT).show();
                 Intent intent1 = new Intent();
                 intent1.setClass(EditCl.this,ChangeCl.class);
                 startActivity(intent1);
-                Toast.makeText(EditCl.this, "删除成功", Toast.LENGTH_SHORT).show();
+                finish();
+
             }
         });
 
