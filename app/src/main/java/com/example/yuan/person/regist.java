@@ -12,9 +12,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.example.yuan.Dao.HongBaoDAO;
 import com.example.yuan.Dao.UserDAO;
 import com.example.yuan.MainActivity;
 
+
+import com.example.yuan.modle.HongBao;
 import com.example.yuan.modle.User;
 import com.example.yuan.R;
 public class regist extends AppCompatActivity {
@@ -25,7 +29,6 @@ public class regist extends AppCompatActivity {
     private ImageView shouye1;
 
     private TextView reg;
-    private String stytle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -69,13 +72,13 @@ public class regist extends AppCompatActivity {
                 regTel= (EditText)findViewById(R.id.telephone) ;//电话号码
                 regAdr= (EditText)findViewById(R.id.adr1) ;//地址
                 regAer= (EditText)findViewById(R.id.are1) ;//面积
-                String regUsername1 = regUsername.getText().toString();
-                String regPwd1 = regPwd.getText().toString();
-                String regIsPwd1 = regIsPwd.getText().toString();
-                String regTel1 = regTel.getText().toString();
-                String regAdr1 = regAdr.getText().toString();
-                String regStyle1 = regStyle.getText().toString();
-                String regAer1 = regAer.getText().toString();
+                String regUsername1 = regUsername.getText().toString().trim();
+                String regPwd1 = regPwd.getText().toString().trim();
+                String regIsPwd1 = regIsPwd.getText().toString().trim();
+                String regTel1 = regTel.getText().toString().trim();
+                String regAdr1 = regAdr.getText().toString().trim();
+                String regStyle1 = regStyle.getText().toString().trim();
+                String regAer1 = regAer.getText().toString().trim();
                 UserDAO userDAO = new UserDAO(regist.this);
                 User user = new User();
                 if(userDAO.CheckIsDataAlreadyInDBorNot(regUsername1)==1){
@@ -94,6 +97,14 @@ public class regist extends AppCompatActivity {
                     user.setUser_houseType(regStyle1);
                     user.setUser_houseArea(regAer1);
                     userDAO.add(user);
+                    HongBaoDAO hongBaoDAO = new HongBaoDAO(regist.this);
+                    HongBao hongBao = new HongBao();
+                    hongBao.setHong_name(regUsername1);
+                    hongBao.setHong_thou("0");
+                    hongBao.setHong_three("0");
+                    hongBao.setHong_nametel("0");
+                    hongBaoDAO.add(hongBao);
+
                     Toast.makeText(regist.this,"注册成功",Toast.LENGTH_SHORT).show();
                     //拿到一个intent把需要返回的值放进去
 

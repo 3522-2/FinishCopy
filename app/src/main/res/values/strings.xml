@@ -101,7 +101,7 @@
 3、选择
        选购铝扣板时，要小心用不锈铁假冒，可以使用磁铁来验证。
     </string>
-<string name="zhuyi">
+    <string name="zhuyi">
         注意：\n
         第一阶段费用：设计师的设计费用\n
         第二阶段工人费用：水电工人的工资费用\n
@@ -113,10 +113,10 @@
         第五阶段工人费用：油漆工工人的工资费用\n
         第五阶段材料费用：油漆等原料的费用\n
     </string>
-<string name="HuoDong">
+    <string name="HuoDong">
         注：\n凭此卷可优惠1000元，每位用户享受一次，并与其他线上优惠卷不可叠加、不可兑现。
     </string>
-<string name="HuoDong2">
+    <string name="HuoDong2">
         温馨提示：\n凭此卷可优惠1000元，此卷仅针对新客户使用，为线下卷，可与其他线上优惠卷叠加使用、不可兑现。
     </string>
     <string name="fanghuoqi">1、简介

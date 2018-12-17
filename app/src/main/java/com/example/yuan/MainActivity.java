@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent();
                 intent1.setClass(MainActivity.this,XgtMain.class);
                 startActivity(intent1);
+                finish();
             }
         });
 
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this,cl.class);
                 startActivity(intent);
+                finish();
             }
         });
         /**
@@ -110,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this,HuoDongAc1.class);
                 startActivity(intent);
+                finish();
             }
         });
 /**
@@ -122,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this,HuoDongAc2.class);
                 startActivity(intent);
+                finish();
             }
         });
         textView1.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
                Intent intent = new Intent();
                intent.setClass(MainActivity.this, ThreeShow.class);
                startActivity(intent);
+               finish();
             }
         });
         textView4.setOnClickListener(new View.OnClickListener() {
@@ -152,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, PersonMain.class);
                 startActivity(intent);
+                finish();
             }
         });
 
