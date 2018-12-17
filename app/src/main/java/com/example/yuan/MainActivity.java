@@ -185,7 +185,6 @@ public class MainActivity extends AppCompatActivity {
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
         }
-
         /**
          *当某个页面被选中了的时候的页面
          * @param position 被选中页面的位置
