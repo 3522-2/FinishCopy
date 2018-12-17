@@ -1,0 +1,25 @@
+package com.example.yuan.XGT;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.example.yuan.R;
+
+public class Secondactivity extends Activity {
+    private ImageView imageView;
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_xgt_example2);
+        imageView=findViewById(R.id.return1);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+}
