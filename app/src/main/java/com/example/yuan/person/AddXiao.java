@@ -239,6 +239,7 @@ public class AddXiao extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(AddXiao.this,AddXiao.class);
                 startActivity(intent);
+                finish();
 
             }
         });

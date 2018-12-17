@@ -37,6 +37,7 @@ public class ChangeSchem extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(ChangeSchem.this, gaunliyuanMain.class);
                 startActivity(intent);
+                finish();
             }
         });
             lvinfo = (ListView) findViewById(R.id.schemeinfo);// 获取布局文件中的ListView组件

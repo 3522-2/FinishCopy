@@ -54,12 +54,12 @@
         <activity android:name=".CL.cl" />
         <activity android:name=".YouHui.HuoDongAc1" />
         <activity android:name=".YouHui.HuoDongAc2" />
-        <activity android:name=".CL.Search_Activity"></activity>
-        <activity android:name=".CL.lampActivity"></activity>
-        <activity android:name=".CL.oilActivity"></activity>
-        <activity android:name=".CL.cl_child_Activity">
+        <activity android:name=".CL.Search_Activity"/>
+        <activity android:name=".CL.lampActivity"/>
+        <activity android:name=".CL.oilActivity"/>
+        <activity android:name=".CL.cl_child_Activity"/>
+        <activity android:name=".XGT.XgtMain"/>
 
-        </activity>
     </application>
 
 </manifest>

@@ -59,6 +59,7 @@ public class ChangeCl extends AppCompatActivity {
                 intent.setClass(ChangeCl.this,EditCl.class);
                 intent.putExtra("id",strid);
                 startActivity(intent);
+                finish();
             }
         });
     }

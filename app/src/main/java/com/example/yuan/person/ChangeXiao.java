@@ -61,6 +61,7 @@ public class ChangeXiao extends AppCompatActivity {
                 intent.setClass(ChangeXiao.this,EditXiao.class);
                 intent.putExtra("id",strid);
                 startActivity(intent);
+                finish();
             }
         });
     }

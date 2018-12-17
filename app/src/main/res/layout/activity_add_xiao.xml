@@ -24,12 +24,12 @@
     </LinearLayout>
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
+        android:layout_marginBottom="50dp"
         android:layout_height="match_parent">
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:orientation="vertical">
             <LinearLayout
                 android:layout_marginTop="10dp"
@@ -253,37 +253,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="总费用"
+                android:text="总费用："
                 android:layout_marginLeft="5dp"
                 android:textSize="17dp"/>
-            <EditText
-                android:id="@+id/XiaoSum"
-                android:background="@null"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="总费用"/>
+
+                <EditText
+                    android:id="@+id/XiaoSum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="总费用" />
         </LinearLayout>
 
-                <LinearLayout
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/shape"
-                    android:layout_width="300dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_height="50dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-                    <ImageView
-                        android:id="@+id/album"
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="添加图片"
-                        android:layout_marginLeft="50dp"
-                        android:textSize="17dp"/>
-                </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
                     android:orientation="horizontal">
                     <!-- 网格显示图片 行列间距5dp 每列宽度90dp -->
                     <GridView
@@ -307,19 +294,22 @@
             android:text="(友情提示:只能添加9张图片,长按图片可以删除已添加图片)"
             android:gravity="center" />
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="40dp"
+                android:orientation="vertical"
+                android:background="@drawable/shape">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="效果图描述"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="5dp"
                     android:textSize="17dp"/>
                 <EditText
                     android:id="@+id/XiaoDes"
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@null"
                     android:hint="描述"/>
             </LinearLayout>
         <LinearLayout
@@ -334,11 +324,10 @@
             <Button
                 android:id="@+id/add"
                 android:background="#CDCD00"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="注册"
+                android:text="添加"
                 android:textColor="#000000" />
         </LinearLayout>
         </LinearLayout>
