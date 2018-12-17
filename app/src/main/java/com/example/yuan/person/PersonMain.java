@@ -36,7 +36,7 @@ public class PersonMain extends AppCompatActivity {
     private List<PersonListAdapt.ListItemModel> myListItem;
     private PersonListAdapt adApter;
     private ImageView fanhui,home;
-    private ImageView imageView1,imageView2,imageView4;//底部导航栏
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +79,7 @@ public class PersonMain extends AppCompatActivity {
                         Intent intent = new Intent();
                         intent.setClass(PersonMain.this,My_ZhuangXiuList.class);
                         startActivity(intent);
+                        finish();
                     }
 
                 }
@@ -88,6 +89,7 @@ public class PersonMain extends AppCompatActivity {
                         Intent intent = new Intent();
                         intent.setClass(PersonMain.this,GengXinJinDu.class);
                         startActivity(intent);
+                        finish();
                     }else{
                         Toast.makeText(PersonMain.this,"您不是管理员，或者请管理员登录后查看",Toast.LENGTH_SHORT).show();
                     }
@@ -97,13 +99,19 @@ public class PersonMain extends AppCompatActivity {
                     Intent intent = new Intent();
                     intent.setClass(PersonMain.this,LianXi.class);
                     startActivity(intent);
+                    finish();
                 }
                 if(id == 3) {
-                    Toast.makeText(PersonMain.this, "设置" + position, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent();
+                    intent.setClass(PersonMain.this,SheZhi.class);
+                    startActivity(intent);
+                    finish();
                 }
                 if(id == 4) {
-                    Toast.makeText(PersonMain.this, "我的优惠" + position, Toast.LENGTH_SHORT).show();
-                }
+                    Intent intent = new Intent();
+                    intent.setClass(PersonMain.this,ShowHongBao.class);
+                    startActivity(intent);
+                    finish();                }
             }
         });
         /**
@@ -135,6 +143,7 @@ public class PersonMain extends AppCompatActivity {
                         Intent intent = new Intent();
                         intent.setClass(PersonMain.this,PersonMain.class);
                         startActivity(intent);
+                        finish();
                         myDialog.dismiss();
                     }
                 });
@@ -171,39 +180,7 @@ public class PersonMain extends AppCompatActivity {
                 startActivityForResult(intent, 777);
             }
         });
-        /**
-         * 底部导航栏跳转
-         */
-        //首页
-        imageView1 = (ImageView)findViewById(R.id.imageView1);
-        imageView1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(PersonMain.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-        /**
-         * 案例
-         */
-        imageView2 = (ImageView)findViewById(R.id.imageView2);
-        imageView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
-        /**
-         * 3D
-         */
-        imageView4 = (ImageView)findViewById(R.id.imageView4);
-        imageView4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

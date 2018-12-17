@@ -63,13 +63,10 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                 "                administrator_password varchar(100) ,\n" +
                 "                administrator_telephone varchar(100))");
 
-        db.execSQL("create table activity(activity_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,\n" +
-                "                activity_UserName varchar(100),\n" +
-                "                activity_name varchar(100),\n" +
-                "                activity_Three varchar(100) ,\n" +
-                "                activity_Thou varchar(100) ,\n" +
-                "                activity_UserNameTel varchar(100) ,\n" +
-                "                activity_content varchar(100))");
+        db.execSQL("create table hongbao( hong_name varchar(100) NOT NULL PRIMARY KEY,\n" +
+                "                hong_thou varchar(100) ,\n" +
+                "                hong_three varchar(100) ,\n" +
+                "                hong_nametel varchar(100))");
 
         db.execSQL("create table information(information_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,\n" +
                 "                information_user varchar(100),\n" +

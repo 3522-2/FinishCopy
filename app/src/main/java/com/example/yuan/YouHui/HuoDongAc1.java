@@ -12,16 +12,18 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.yuan.Budge.MyDialog;
-import com.example.yuan.Dao.ActivityDAO;
+
+import com.example.yuan.Dao.HongBaoDAO;
 import com.example.yuan.MainActivity;
 import com.example.yuan.R;
-import com.example.yuan.modle.Activity;
+
+import com.example.yuan.modle.HongBao;
 import com.example.yuan.person.PersonMain;
 import com.example.yuan.person.login;
 
 public class HuoDongAc1 extends AppCompatActivity {
     private ImageView fanhui;
-    private EditText Name,Tel;
+    private EditText Name, Tel;
     private Button btn;
     private MyDialog myDialog;
 
@@ -32,12 +34,12 @@ public class HuoDongAc1 extends AppCompatActivity {
         /**
          * 返回上一个页面
          */
-        fanhui = (ImageView)findViewById(R.id.re);
+        fanhui = (ImageView) findViewById(R.id.re);
         fanhui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(HuoDongAc1.this,MainActivity.class);
+                intent.setClass(HuoDongAc1.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -47,23 +49,26 @@ public class HuoDongAc1 extends AppCompatActivity {
          */
 
 
-        Name = (EditText)findViewById(R.id.name) ;
-        Tel = (EditText)findViewById(R.id.tel);
+        Name = (EditText) findViewById(R.id.name);
+        Tel = (EditText) findViewById(R.id.tel);
         SharedPreferences sharedPreferences = getSharedPreferences("yonghu", 0);
-        final String zhuangTai = sharedPreferences.getString("用户名","");
-        btn = (Button)findViewById(R.id.btn);
-        final Activity activity = new Activity();
-        final ActivityDAO activityDAO = new ActivityDAO(HuoDongAc1.this);
+        final String zhuangTai = sharedPreferences.getString("用户名", "");
+        btn = (Button) findViewById(R.id.btn);
+        final HongBao hongBao = new HongBao();
+        final HongBaoDAO hongBaoDAO = new HongBaoDAO(HuoDongAc1.this);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = Name.getText().toString().trim();
                 String tel = Tel.getText().toString().trim();
-                String thou = "1000";
-                final int isthou = activityDAO.findthou(name,thou);//当is1==true时，表示领取了1000
-                if(zhuangTai.equals("未登录") || zhuangTai==null){//未登录
-                    myDialog=new MyDialog(HuoDongAc1.this,R.style.MyDialog);
+                Log.i("name的值", name);
+                HongBao hongBao1 = hongBaoDAO.find(name);
+                String thou = hongBao1.getHong_thou();
+                String three = hongBao1.getHong_three();
+                 Log.i("thou", thou);
+                if (zhuangTai.equals("未登录") || zhuangTai == null) {//未登录
+                    myDialog = new MyDialog(HuoDongAc1.this, R.style.MyDialog);
                     myDialog.setTitle("通知！");
                     myDialog.setMessage("您还未登录，请点击\"确认\"前往登录,点击\"取消\"忽略这条信息");
 
@@ -71,7 +76,7 @@ public class HuoDongAc1 extends AppCompatActivity {
                         @Override
                         public void onYesOnclick() {
                             Intent intent = new Intent();
-                            intent.setClass(HuoDongAc1.this,login.class);
+                            intent.setClass(HuoDongAc1.this, login.class);
                             startActivity(intent);
                             myDialog.dismiss();
                         }
@@ -84,20 +89,22 @@ public class HuoDongAc1 extends AppCompatActivity {
                         }
                     });
                     myDialog.show();
-                }else{//表示已经登录
-                    if(zhuangTai.equals(name)==false || name.equals("")){//用户名输入错误，或者用户名为空
-                        Toast.makeText(HuoDongAc1.this,"请检查用户名",Toast.LENGTH_SHORT).show();
-                    }else
-                       if (zhuangTai.equals(name)==true) { //用户名输入正确
-                        if (activityDAO.CheckIsDataAlreadyInDBorNot(name)==-1) {//该用户第一次领取红包,;另外一个也没有领
-                            Log.i("name:", name);
-                            Log.i("tel:", tel);
-                            Activity activity = new Activity();
-                            activity.setActivity_name(name);
-                            activity.setActivity_Thou("1000");
-                            activity.setActivity_UserNameTel(tel);
-                            ActivityDAO activityDAO1 = new ActivityDAO(HuoDongAc1.this);
-                            activityDAO1.add(activity);//插入
+                } else {//表示已经登录
+                    if (zhuangTai.equals(name) == false || name.equals("")) {//用户名输入错误，或者用户名为空
+                        Toast.makeText(HuoDongAc1.this, "请检查用户名", Toast.LENGTH_SHORT).show();
+                    } else if (zhuangTai.equals(name) == true) { //用户名输入正确
+
+                        if (thou.equals("0") && three.equals("0")) {//该用户领取1000红包,没有领300
+
+                            HongBao hongBao = new HongBao();
+                            String name1 = Name.getText().toString().trim();
+                            String tel1 = Tel.getText().toString().trim();
+                            hongBao.setHong_name(name1);
+                            hongBao.setHong_three("0");
+                            hongBao.setHong_thou("1000");
+                            hongBao.setHong_nametel(tel1);
+                            HongBaoDAO activityDAO1 = new HongBaoDAO(HuoDongAc1.this);
+                            activityDAO1.update(hongBao);//插入
                             myDialog = new MyDialog(HuoDongAc1.this, R.style.MyDialog);
                             myDialog.setTitle("温馨提示！");
                             myDialog.setMessage("领取成功，请前往“我的”查看");
@@ -118,46 +125,39 @@ public class HuoDongAc1 extends AppCompatActivity {
                                 }
                             });
                             myDialog.show();
-                        }else{//已经领取了一个
-//                            Activity activity1 = activityDAO.find(name);
-//                            activity1.getActivity_Thou();
+                        }else if (thou.equals("1000")) {
+                            Toast.makeText(HuoDongAc1.this, "您已领取", Toast.LENGTH_SHORT).show();
+                        } else if (thou.equals("0") && three.equals("300")) {//该用户领取1000红包,领了300
 
-                            if (isthou==1){//已经领取了1000
-                                Toast.makeText(HuoDongAc1.this,"您已领取", Toast.LENGTH_SHORT).show();
-                            } else if (isthou==-1){//没领1000
-                                Toast.makeText(HuoDongAc1.this,"没领1000", Toast.LENGTH_SHORT).show();
-                                Log.i("name:", name);
-                                Log.i("tel:", tel);
-                                Activity activity = new Activity();
+                            HongBao hongBao = new HongBao();
+                            String name1 = Name.getText().toString().trim();
+                            String tel1 = Tel.getText().toString().trim();
+                            hongBao.setHong_name(name1);
+                            hongBao.setHong_three("300");
+                            hongBao.setHong_thou("1000");
+                            hongBao.setHong_nametel(tel1);
+                            HongBaoDAO activityDAO1 = new HongBaoDAO(HuoDongAc1.this);
+                            activityDAO1.update(hongBao);//插入
+                            myDialog = new MyDialog(HuoDongAc1.this, R.style.MyDialog);
+                            myDialog.setTitle("温馨提示！");
+                            myDialog.setMessage("领取成功，请前往“我的”查看");
+                            myDialog.setYesOnclickListener("查看", new MyDialog.onYesOnclickListener() {
+                                @Override
+                                public void onYesOnclick() {
+                                    Intent intent = new Intent();
+                                    intent.setClass(HuoDongAc1.this, PersonMain.class);
+                                    startActivity(intent);
+                                    myDialog.dismiss();
+                                }
+                            });
+                            myDialog.setNoOnclickListener("取消", new MyDialog.onNoOnclickListener() {
+                                @Override
+                                public void onNoClick() {
 
-                                activity.setActivity_name(name);
-                                activity.setActivity_Thou("1000");
-                                activity.setActivity_Three("300");
-                                activity.setActivity_UserNameTel(tel);
-                                ActivityDAO activityDAO2 = new ActivityDAO(HuoDongAc1.this);
-                                activityDAO2.update(activity);
-                                myDialog = new MyDialog(HuoDongAc1.this, R.style.MyDialog);
-                                myDialog.setTitle("温馨提示！");
-                                myDialog.setMessage("领取成功，请前往“我的”查看");
-                                myDialog.setYesOnclickListener("查看", new MyDialog.onYesOnclickListener() {
-                                    @Override
-                                    public void onYesOnclick() {
-                                        Intent intent = new Intent();
-                                        intent.setClass(HuoDongAc1.this, PersonMain.class);
-                                        startActivity(intent);
-                                        myDialog.dismiss();
-                                    }
-                                });
-                                myDialog.setNoOnclickListener("取消", new MyDialog.onNoOnclickListener() {
-                                    @Override
-                                    public void onNoClick() {
-
-                                        myDialog.dismiss();
-                                    }
-                                });
-                                myDialog.show();
-                            }
-
+                                    myDialog.dismiss();
+                                }
+                            });
+                            myDialog.show();
                         }
                     }//用户名输入正确
                 }//用户已经登录

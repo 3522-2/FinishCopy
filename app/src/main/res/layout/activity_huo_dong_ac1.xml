@@ -39,7 +39,7 @@
         android:layout_marginLeft="15dp"
         android:layout_height="50dp"
         android:background="@drawable/shape"
-        android:hint=" 输入你的名字"/>
+        android:hint=" 输入用户名"/>
     <EditText
         android:id="@+id/tel"
         android:layout_marginTop="330dp"

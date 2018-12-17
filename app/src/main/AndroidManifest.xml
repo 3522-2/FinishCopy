@@ -5,9 +5,9 @@
 
     <application
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/main"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".person.PersonMain" />
         <activity android:name=".person.GengXinJinDu" />
-        <activity android:name=".person.regist"/>
+        <activity android:name=".person.regist" />
         <activity android:name=".person.AddCl" />
         <activity android:name=".person.AddScheme" />
         <activity android:name=".person.AddXiao" />
@@ -54,12 +54,13 @@
         <activity android:name=".CL.cl" />
         <activity android:name=".YouHui.HuoDongAc1" />
         <activity android:name=".YouHui.HuoDongAc2" />
-        <activity android:name=".CL.Search_Activity"/>
-        <activity android:name=".CL.lampActivity"/>
-        <activity android:name=".CL.oilActivity"/>
-        <activity android:name=".CL.cl_child_Activity"/>
-        <activity android:name=".XGT.XgtMain"/>
-
+        <activity android:name=".CL.Search_Activity" />
+        <activity android:name=".CL.lampActivity" />
+        <activity android:name=".CL.oilActivity" />
+        <activity android:name=".CL.cl_child_Activity" />
+        <activity android:name=".XGT.XgtMain" />
+        <activity android:name=".person.SheZhi" />
+        <activity android:name=".person.ShowHongBao"></activity>
     </application>
 
 </manifest>
