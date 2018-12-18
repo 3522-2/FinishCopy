@@ -118,29 +118,7 @@ public class HongBaoDAO {
         cursor.close();
         return -1;
     }
-    //验证是否领取了另一个
-    public int findthree(String username,String three) {
-        String sql = "select * from hongbao where hong_name=? and hong_three=?";
-        Cursor cursor = db.rawQuery(sql, new String[] {String.valueOf(username), String.valueOf(three)});
-        if (cursor.getCount() > 0) {
-            cursor.close();
-            return 1;
-        }
-        cursor.close();
-        return -1;
 
-    }
-    //验证是否领取了这一个
-    public int findthou(String username,String thou) {
-        String sql = "select * from hongbao where hong_name=? and hong_thou=?";
-        Cursor cursor = db.rawQuery(sql, new String[] {String.valueOf(username), String.valueOf(thou)});
-        if (cursor.getCount() > 0) {
-            cursor.close();
-            return 1;
-        }
-        cursor.close();
-        return -1;
-    }
     /**
      * 获得总活动数
      * @return

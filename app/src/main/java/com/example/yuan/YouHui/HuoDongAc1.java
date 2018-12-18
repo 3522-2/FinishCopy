@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.yuan.Budge.MyDialog;
@@ -26,7 +27,7 @@ public class HuoDongAc1 extends AppCompatActivity {
     private EditText Name, Tel;
     private Button btn;
     private MyDialog myDialog;
-
+    ListView lvinfo;// 创建ListView对象
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

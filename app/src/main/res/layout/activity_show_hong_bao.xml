@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/iteminfo"
+    android:orientation="vertical"
+    android:background="#fff"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".person.ShowHongBao">
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="38dp"
-        android:background="@color/person"
-        android:layout_alignParentTop="true">
+        android:background="@color/person">
 
         <ImageView
             android:id="@+id/re"
@@ -17,6 +16,94 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
             android:src="@mipmap/fanhui" />
-
+        <TextView android:text="我的优惠"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#8C6931"
+            />
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/OneR"
+        android:layout_marginTop="10dp"
+        android:layout_width="330dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="70dp"
+        android:background="#fff">
+        <TextView
+            android:id="@+id/TVthou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="30dp"/>
+        <TextView
+            android:id="@+id/TVthouH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="150dp"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/TVthouTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="130dp"
+            android:text=""
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/TwoR"
+        android:layout_marginTop="10dp"
+        android:layout_width="330dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="70dp"
+        android:background="#fff">
+        <TextView
+            android:id="@+id/TVthree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="30dp"/>
+        <TextView
+            android:id="@+id/TVthreeH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="150dp"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/TVthreeTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="130dp"
+            android:text=""
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <!--<LinearLayout android:id="@+id/linearLayout2"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_weight="0.94">-->
+        <!--<ListView android:id="@+id/schemeinfo"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scrollbarAlwaysDrawVerticalTrack="true"-->
+            <!--/>-->
+    <!--</LinearLayout>-->
 </LinearLayout>
