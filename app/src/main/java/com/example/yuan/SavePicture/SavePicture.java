@@ -22,6 +22,7 @@ public class SavePicture {
     public String savePicture(Bundle bundle, ImageView imageView){
         Bitmap bitmap = (Bitmap) bundle.get("data");// 获取返回的数据，并转换为Bitmap图片格式
         String name = DateFormat.format("yyyyMMdd_hhmmss", Calendar.getInstance(Locale.CHINA)) + ".jpg";//图片存储路径
+
         //保存图片
         FileOutputStream b = null;
         File file = new File("/sdcard/Image/");

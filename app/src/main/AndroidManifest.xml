@@ -73,8 +73,6 @@
         <activity android:name=".XGT.Firstactivity" />
         <activity android:name=".XGT.Secondactivity" />
         <activity android:name=".XGT.Thirdactivity" />
-        <activity android:name=".A_test.tupianTest" />
-        <activity android:name=".A_test.test2" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"

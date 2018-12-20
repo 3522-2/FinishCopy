@@ -27,7 +27,7 @@ import com.example.yuan.modle.Project;
 
 import java.util.Calendar;
 
-import static com.example.yuan.A_test.tupianTest.hasSdcard;
+
 
 public class GengXinJinDu extends AppCompatActivity {
     private ImageView fanhui;
@@ -54,6 +54,10 @@ public class GengXinJinDu extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+//                intent.addCategory(Intent.CATEGORY_OPENABLE);
+//                intent.setType("image/*");
+//                startActivityForResult(intent, PHOTO_REQUEST_CAMERA);
                 // TODO Auto-generated method stub
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(intent, PHOTO_REQUEST_CAMERA);
@@ -175,8 +179,9 @@ public class GengXinJinDu extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
-        if (hasSdcard()) {
+
             switch (requestCode) {
+
                 case PHOTO_REQUEST_CAMERA:  //拍照
                     if (resultCode == RESULT_OK) {  //如果拍好了照
 
@@ -229,9 +234,7 @@ public class GengXinJinDu extends AppCompatActivity {
             }
 
 
-        } else {
-            Toast.makeText(GengXinJinDu.this, "储存卡不可用", Toast.LENGTH_SHORT).show();
-        }
+
 ///**
 // * 提交评价
 // */
