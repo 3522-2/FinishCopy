@@ -3,11 +3,12 @@ package com.example.yuan.person;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -20,10 +21,13 @@ import android.widget.Toast;
 
 import com.example.yuan.Dao.ProjectDAO;
 import com.example.yuan.R;
+import com.example.yuan.SavePicture.SavePicture;
 import com.example.yuan.modle.Project;
 
 
 import java.util.Calendar;
+
+import static com.example.yuan.A_test.tupianTest.hasSdcard;
 
 public class GengXinJinDu extends AppCompatActivity {
     private ImageView fanhui;
@@ -33,11 +37,29 @@ public class GengXinJinDu extends AppCompatActivity {
     private final static int DATE_DIALOG = 0;
     private final static int DATE_DIALOG1 = 1;
     private Button tianJia,Jiao;
+    private ImageView imageView;
+    private ImageView view;//展示图片
+    public static final int PHOTO_REQUEST_CAMERA = 1;// 拍照
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         fuze = (EditText)findViewById(R.id.people) ;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_geng_xin_jin_du);
+        /**
+         * 测试添加图片
+         */
+        view = (ImageView)findViewById(R.id.imag);
+        imageView = findViewById(R.id.Tianjia);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, PHOTO_REQUEST_CAMERA);
+            }
+        });
+
 
         /**
          * 返回上一页
@@ -110,55 +132,7 @@ public class GengXinJinDu extends AppCompatActivity {
             }
         });
         //------------------------选择项目结束的时间----------------------------------
-/**
- * 提交评价
- */
-        tianJia = (Button)findViewById(R.id.button);
-        tianJia.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Project project = new Project();
-
-                EditText jieduan1 = (EditText)findViewById(R.id.jieduan) ;
-                String jieduan2 = jieduan1.getText().toString();
-                project.setProject_Name(jieduan2);
-
-                EditText fuZe1 = (EditText)findViewById(R.id.people) ;
-                String fuZe2 =fuZe1.getText().toString();
-                project.setProject_principle(fuZe2);
-
-                EditText sTime = (EditText)findViewById(R.id.StartET);
-                String sTime1 = sTime.getText().toString();
-                project.setProject_StartTime(sTime1);
-
-                EditText fTime = (EditText)findViewById(R.id.FinishET);
-                String fTime1 = fTime.getText().toString();
-                project.setProject_FinishTime(fTime1);
-
-                EditText Des = (EditText)findViewById(R.id.jindu);
-                String Des1 = Des.getText().toString();
-                project.setProject_Des(Des1);
-
-                ProjectDAO projectDAO = new ProjectDAO(GengXinJinDu.this);
-                projectDAO.add(project);
-
-                Toast.makeText(GengXinJinDu.this,"提交成功",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        /**
-         * 交流
-         */
-        Jiao = (Button)findViewById(R.id.button2);
-        Jiao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(GengXinJinDu.this,JiaoLiu.class);
-                startActivity(intent);
-            }
-        });
     }
     //-----------------------------------设置对话框----------------------------------------
     Calendar c = null;
@@ -198,5 +172,121 @@ public class GengXinJinDu extends AppCompatActivity {
         return dialog;
     }
     //-----------------------------------设置对话框----------------------------------------
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO Auto-generated method stub
+        super.onActivityResult(requestCode, resultCode, data);
+        if (hasSdcard()) {
+            switch (requestCode) {
+                case PHOTO_REQUEST_CAMERA:  //拍照
+                    if (resultCode == RESULT_OK) {  //如果拍好了照
+
+                        Bundle bundle = data.getExtras();
+                        SavePicture savePicture = new SavePicture();  //保存图片
+                        final String name = savePicture.savePicture(bundle, view);
+                        Log.i("更新进度的name",name);
+                        /**
+                         * 提交评价
+                         */
+                        tianJia = (Button)findViewById(R.id.button);
+                        tianJia.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                Project project = new Project();
+
+                                EditText jieduan1 = (EditText)findViewById(R.id.jieduan) ;
+                                String jieduan2 = jieduan1.getText().toString();
+                                project.setProject_Name(jieduan2);
+
+                                EditText fuZe1 = (EditText)findViewById(R.id.people) ;
+                                String fuZe2 =fuZe1.getText().toString();
+                                project.setProject_principle(fuZe2);
+
+                                EditText sTime = (EditText)findViewById(R.id.StartET);
+                                String sTime1 = sTime.getText().toString();
+                                project.setProject_StartTime(sTime1);
+
+                                EditText fTime = (EditText)findViewById(R.id.FinishET);
+                                String fTime1 = fTime.getText().toString();
+                                project.setProject_FinishTime(fTime1);
+
+                                EditText Des = (EditText)findViewById(R.id.jindu);
+                                String Des1 = Des.getText().toString();
+                                project.setProject_Des(Des1);
+
+                                project.setProject_photo(name);
+
+                                ProjectDAO projectDAO = new ProjectDAO(GengXinJinDu.this);
+                                projectDAO.add(project);
+
+                                Toast.makeText(GengXinJinDu.this,"提交成功",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                    }
+                    break;
+
+            }
+
+
+        } else {
+            Toast.makeText(GengXinJinDu.this, "储存卡不可用", Toast.LENGTH_SHORT).show();
+        }
+///**
+// * 提交评价
+// */
+//        tianJia = (Button)findViewById(R.id.button);
+//        tianJia.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Project project = new Project();
+//
+//                EditText jieduan1 = (EditText)findViewById(R.id.jieduan) ;
+//                String jieduan2 = jieduan1.getText().toString();
+//                project.setProject_Name(jieduan2);
+//
+//                EditText fuZe1 = (EditText)findViewById(R.id.people) ;
+//                String fuZe2 =fuZe1.getText().toString();
+//                project.setProject_principle(fuZe2);
+//
+//                EditText sTime = (EditText)findViewById(R.id.StartET);
+//                String sTime1 = sTime.getText().toString();
+//                project.setProject_StartTime(sTime1);
+//
+//                EditText fTime = (EditText)findViewById(R.id.FinishET);
+//                String fTime1 = fTime.getText().toString();
+//                project.setProject_FinishTime(fTime1);
+//
+//                EditText Des = (EditText)findViewById(R.id.jindu);
+//                String Des1 = Des.getText().toString();
+//                project.setProject_Des(Des1);
+//
+//                project.setProject_address(name);
+//
+//                ProjectDAO projectDAO = new ProjectDAO(GengXinJinDu.this);
+//                projectDAO.add(project);
+//
+//                Toast.makeText(GengXinJinDu.this,"提交成功",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+        /**
+         * 交流
+         */
+        Jiao = (Button)findViewById(R.id.button2);
+        Jiao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText fuZe1 = (EditText)findViewById(R.id.people) ;
+                String fuZe2 =fuZe1.getText().toString();
+                Intent intent = new Intent();
+                intent.setClass(GengXinJinDu.this,JiaoLiu.class);
+                intent.putExtra("更新人姓名",fuZe2);
+                startActivity(intent);
+            }
+        });
+    }
+
 }
 

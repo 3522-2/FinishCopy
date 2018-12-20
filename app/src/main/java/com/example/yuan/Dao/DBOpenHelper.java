@@ -51,7 +51,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                 "                project_Name varchar(100),\n" +
                 "                project_StartTime varchar(100),\n" +
                 "                project_FinishTime varchar(100),\n" +
-                "                proiect_photo blob,\n" +
+                "                project_photo varchar(100),\n" +
                 "                project_principle varchar(100) ,\n" +
                 "                project_UserEvaluation varchar(100),\n" +
                 "                project_UserAcceptance varchar(100),\n" +

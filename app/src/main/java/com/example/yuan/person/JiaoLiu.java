@@ -18,6 +18,7 @@ import java.util.List;
 public class JiaoLiu extends AppCompatActivity {
     private List<Msg> msgList = new ArrayList<>();
     private ImageView fanhui;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,23 +35,23 @@ public class JiaoLiu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        init();
 
-        final EditText inputText=(EditText)findViewById(R.id.input);
-        Button sendBtn=(Button)findViewById(R.id.send);
 
-        final RecyclerView msgRecyclerView=(RecyclerView)findViewById(R.id.msg);
-        LinearLayoutManager layoutManager=new LinearLayoutManager(this);
+        final EditText inputText = (EditText) findViewById(R.id.input);
+        Button sendBtn = (Button) findViewById(R.id.send);
+
+        final RecyclerView msgRecyclerView = (RecyclerView) findViewById(R.id.msg);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         msgRecyclerView.setLayoutManager(layoutManager);
 
-        final MsgAdapter adapter=new MsgAdapter(msgList);
+        final MsgAdapter adapter = new MsgAdapter(msgList);
         msgRecyclerView.setAdapter(adapter);
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String content=inputText.getText().toString();
-                if("".equals(content))
+                String content = inputText.getText().toString();
+                if ("".equals(content))
                     return;
 
                 msgList.add(new Msg(content, Msg.TYPE.SENT));
@@ -68,13 +69,7 @@ public class JiaoLiu extends AppCompatActivity {
         });
 
     }
-
-    /**
-     * 初始化消息数据
-     */
-    private void init() {
-
-
-    }
 }
+
+
 

@@ -7,7 +7,7 @@ public class Project {
     private String project_Name;//项目阶段
     private String project_StartTime;	//阶段开始时间
     private String project_FinishTime;	//阶段结束时间
-    private Byte proiect_photo;//	阶段后施工后效果图
+    private String project_photo;//	阶段后施工后效果图
     private String project_principle;//	阶段负责人
     private String project_UserEvaluation;//	用户评价
     private String project_UserAcceptance;//	用户验收
@@ -15,10 +15,11 @@ public class Project {
     private String project_Des;//	进度描述
     public Project(){super();}
 
-    public Project(String project_id, String project_Name, String project_StartTime, String project_FinishTime, String project_principle, String project_UserEvaluation, String project_UserAcceptance, String project_address, String project_Des) {
+    public Project(String project_id, String project_Name, String project_StartTime, String project_FinishTime,String project_photo, String project_principle, String project_UserEvaluation, String project_UserAcceptance, String project_address, String project_Des) {
         super();
         this.project_id = project_id;
         this.project_Name = project_Name;
+        this.project_photo = project_photo;
         this.project_StartTime = project_StartTime;
         this.project_FinishTime = project_FinishTime;
         this.project_Des = project_Des;
@@ -28,7 +29,6 @@ public class Project {
 
         this.project_address = project_address;
     }
-
 
     public String getProject_id() {
         return project_id;
@@ -62,20 +62,12 @@ public class Project {
         this.project_FinishTime = project_FinishTime;
     }
 
-    public String getProject_Des() {
-        return project_Des;
+    public String getProject_photo() {
+        return project_photo;
     }
 
-    public void setProject_Des(String project_Des) {
-        this.project_Des = project_Des;
-    }
-
-    public Byte getProiect_photo() {
-        return proiect_photo;
-    }
-
-    public void setProiect_photo(Byte proiect_photo) {
-        this.proiect_photo = proiect_photo;
+    public void setProject_photo(String project_photo) {
+        this.project_photo = project_photo;
     }
 
     public String getProject_principle() {
@@ -107,7 +99,14 @@ public class Project {
     }
 
     public void setProject_address(String project_address) {
-
         this.project_address = project_address;
+    }
+
+    public String getProject_Des() {
+        return project_Des;
+    }
+
+    public void setProject_Des(String project_Des) {
+        this.project_Des = project_Des;
     }
 }

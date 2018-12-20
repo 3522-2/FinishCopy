@@ -3,6 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.yuan">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    //允许装载和卸载文件系统权限
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    //允许程序写入外部存储权限
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    //允许使用摄像头权限
+    <uses-permission android:name="android.permission.CAMERA" />
+    //允许使用摄像头自动对焦权限
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="false"
         android:icon="@drawable/main"
@@ -11,10 +23,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-
-        <!-- &lt;!&ndash;使用安卓测试包&ndash;&gt; -->
-        <!-- <uses-library android:name="android.test.runner"/> -->
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +32,7 @@
         </activity>
         <activity android:name=".person.PersonMain" />
         <activity android:name=".person.GengXinJinDu" />
-        <activity android:name=".person.regist"/>
+        <activity android:name=".person.regist" />
         <activity android:name=".person.AddCl" />
         <activity android:name=".person.AddScheme" />
         <activity android:name=".person.AddXiao" />
@@ -43,28 +51,40 @@
         <activity android:name=".person.Show_ZhuangXiu" />
         <activity android:name=".person.User_JiaoLiu" />
         <activity android:name=".person.LianXi" />
-        <activity android:name=".person.SheZhi"/>
-        <activity android:name=".person.ShowHongBao"/>
-        <activity android:name=".YouHui.ShowYouHui"/>
-        <activity android:name=".YouHui.HuoDongAc1"/>
-        <activity android:name=".YouHui.HuoDongAc2"/>
+        <activity android:name=".person.SheZhi" />
+        <activity android:name=".person.ShowHongBao" />
+        <activity android:name=".YouHui.ShowYouHui" />
+        <activity android:name=".YouHui.HuoDongAc1" />
+        <activity android:name=".YouHui.HuoDongAc2" />
         <activity android:name=".ThreeD.ThreeShow" />
         <activity android:name=".ThreeD.Show0ne" />
         <activity android:name=".ThreeD.ShowTwo" />
         <activity android:name=".ThreeD.ShowThree" />
         <activity android:name=".CL.boardActivity" />
         <activity android:name=".Budge.ShowBudge" />
-        <activity android:name=".Budge.XiangBudge"/>
+        <activity android:name=".Budge.XiangBudge" />
         <activity android:name=".CL.brickActivity" />
         <activity android:name=".CL.cl" />
-        <activity android:name=".CL.lampActivity"/>
-        <activity android:name=".CL.oilActivity"/>
-        <activity android:name=".CL.cl_child_Activity"/>
-        <activity android:name=".CL.Search_Activity"/>
-        <activity android:name=".XGT.XgtMain"/>
-        <activity android:name=".XGT.Firstactivity"/>
-        <activity android:name=".XGT.Secondactivity"/>
-        <activity android:name=".XGT.Thirdactivity"/>
+        <activity android:name=".CL.lampActivity" />
+        <activity android:name=".CL.oilActivity" />
+        <activity android:name=".CL.cl_child_Activity" />
+        <activity android:name=".CL.Search_Activity" />
+        <activity android:name=".XGT.XgtMain" />
+        <activity android:name=".XGT.Firstactivity" />
+        <activity android:name=".XGT.Secondactivity" />
+        <activity android:name=".XGT.Thirdactivity" />
+        <activity android:name=".A_test.tupianTest" />
+        <activity android:name=".A_test.test2" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.xykj.customview.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
 
     </application>
 

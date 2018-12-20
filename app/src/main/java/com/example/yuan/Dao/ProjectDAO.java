@@ -31,7 +31,7 @@ public class ProjectDAO {
         values.put("project_Name",project.getProject_Name());
         values.put("project_StartTime",project.getProject_StartTime());
         values.put("project_FinishTime",project.getProject_FinishTime());
-        values.put("proiect_photo",project.getProiect_photo());
+        values.put("project_photo",project.getProject_photo());
         values.put("project_principle",project.getProject_principle());
         values.put("project_UserEvaluation",project.getProject_UserEvaluation());
         values.put("project_UserAcceptance",project.getProject_UserAcceptance());
@@ -42,11 +42,14 @@ public class ProjectDAO {
 
     }
     public void Insert(Project project,String id){
-
-        values.put("project_UserEvaluation",project.getProject_UserEvaluation());
-        values.put("project_UserAcceptance",project.getProject_UserAcceptance());
-        db.update("project",values,"project_id="+id,null);
-        db.close();
+//        db.execSQL("update hongbao set hong_three=?,hong_thou=?,hong_nametel=? where hong_name=?",
+//                new Object[]{hongbao.getHong_three(),hongbao.getHong_thou(),hongbao.getHong_nametel(),hongbao.getHong_name(),});
+//        values.put("project_UserEvaluation",project.getProject_UserEvaluation());
+//        values.put("project_UserAcceptance",project.getProject_UserAcceptance());
+//        db.update("project",values,"project_id="+id,null);
+//        db.close();
+        db.execSQL("update project set project_UserEvaluation=?, project_UserAcceptance=? where project_id=?",
+                new Object[]{project.getProject_UserEvaluation(),project.getProject_UserAcceptance(),project.getProject_id()});
     }
     /**
      *更新工期
@@ -57,7 +60,7 @@ public class ProjectDAO {
         values.put("project_Name",project.getProject_Name());
         values.put("project_StartTime",project.getProject_StartTime());
         values.put("project_FinishTime",project.getProject_FinishTime());
-        values.put("proiect_photo",project.getProiect_photo());
+        values.put("project_photo",project.getProject_photo());
         values.put("project_principle",project.getProject_principle());
         values.put("project_UserEvaluation",project.getProject_UserEvaluation());
         values.put("project_UserAcceptance",project.getProject_UserAcceptance());
@@ -96,8 +99,9 @@ public class ProjectDAO {
             String project_UserAcceptance = cursor.getString(6);
             String project_Address = cursor.getString(7);
             String project_Des = cursor.getString(8);
+            String project_photo = cursor.getString(9);
             list.add(new Project(project_id,project_Name,project_StartTime,project_FinishTime,project_Principle,
-                    project_UserEvaluation,project_UserAcceptance,project_Address,project_Des));
+                    project_UserEvaluation,project_UserAcceptance,project_Address,project_Des,project_photo));
         }
         cursor.close();
         db.close();
@@ -122,7 +126,7 @@ public class ProjectDAO {
                     cursor.getString(cursor.getColumnIndex("project_Name")),
                     cursor.getString(cursor.getColumnIndex("project_StartTime")),
                     cursor.getString(cursor.getColumnIndex("project_FinishTime")),
-
+                    cursor.getString(cursor.getColumnIndex("project_photo")),
                     cursor.getString(cursor.getColumnIndex("project_principle")),
                     cursor.getString(cursor.getColumnIndex("project_UserEvaluation")),
                     cursor.getString(cursor.getColumnIndex("project_UserAcceptance")),
@@ -150,7 +154,7 @@ public class ProjectDAO {
                     cursor.getString(cursor.getColumnIndex("project_Name")),
                     cursor.getString(cursor.getColumnIndex("project_StartTime")),
                     cursor.getString(cursor.getColumnIndex("project_FinishTime")),
-
+                    cursor.getString(cursor.getColumnIndex("project_photo")),
                     cursor.getString(cursor.getColumnIndex("project_principle")),
                     cursor.getString(cursor.getColumnIndex("project_UserEvaluation")),
                     cursor.getString(cursor.getColumnIndex("project_UserAcceptance")),
@@ -174,7 +178,7 @@ public class ProjectDAO {
                     cursor.getString(cursor.getColumnIndex("project_Name")),
                     cursor.getString(cursor.getColumnIndex("project_StartTime")),
                     cursor.getString(cursor.getColumnIndex("project_FinishTime")),
-
+                    cursor.getString(cursor.getColumnIndex("project_photo")),
                     cursor.getString(cursor.getColumnIndex("project_principle")),
                     cursor.getString(cursor.getColumnIndex("project_UserEvaluation")),
                     cursor.getString(cursor.getColumnIndex("project_UserAcceptance")),

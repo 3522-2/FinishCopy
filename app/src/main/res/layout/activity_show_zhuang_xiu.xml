@@ -19,91 +19,110 @@
             android:src="@mipmap/fanhui" />
 
     </LinearLayout>
+
+    <ScrollView
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="330dp"
+            android:layout_height="160dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="项目阶段:" />
+
+                <TextView
+                    android:id="@+id/jieduan"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFB6C1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="项目负责人:" />
+
+                <TextView
+                    android:id="@+id/people"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFB6C1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="项目阶段开始的时间:" />
+
+                <TextView
+                    android:id="@+id/StartET"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFB6C1" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="项目阶段结束的时间:" />
+
+                <TextView
+                    android:id="@+id/FinishET"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFB6C1" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
     <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="160dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="35dp"
-        >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="项目阶段:" />
-
-            <TextView
-                android:id="@+id/jieduan"
-                android:layout_width="100dp"
-                android:textColor="#FFB6C1"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="项目负责人:"/>
-            <TextView
-                android:id="@+id/people"
-                android:layout_width="100dp"
-                android:textColor="#FFB6C1"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="项目阶段开始的时间:"/>
-            <TextView
-                android:id="@+id/StartET"
-                android:layout_width="150dp"
-                android:textColor="#FFB6C1"
-                android:layout_height="wrap_content" />
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="项目阶段结束的时间:"/>
-            <TextView
-                android:id="@+id/FinishET"
-                android:layout_width="150dp"
-                android:textColor="#FFB6C1"
-                android:layout_height="wrap_content" />
-
-
-        </LinearLayout>
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="350dp"
+        android:layout_width="330dp"
         android:layout_height="130dp"
         android:background="@drawable/shape"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="208dp">
+        android:layout_marginTop="10dp">
         <TextView
             android:id="@+id/jindu"
             android:textColor="#FFB6C1"
@@ -113,39 +132,49 @@
 
             />
     </RelativeLayout>
+
     <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="130dp"
-        android:background="@drawable/shape"
+        android:layout_width="330dp"
+        android:layout_height="150dp"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="350dp">
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape">
 
         <TextView
-
+            android:id="@+id/tupain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:background="@null"
-            android:hint="图片"
-            />
+            android:hint="图片" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="183dp"
+            android:layout_height="126dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="73dp"
+            android:src="@drawable/a" />
+
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="350dp"
+        android:layout_width="330dp"
         android:layout_height="130dp"
         android:background="@drawable/shape"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="488dp">
+        android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/leftnum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="250dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="100dp"
             android:text="用户评价" />
 
         <EditText
@@ -156,32 +185,33 @@
             android:background="@null"
             android:hint="请输入" />
     </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="600dp">
 
-    </RelativeLayout>
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_marginTop="10dp">
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="131dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
 
-        android:layout_marginBottom="13dp"
-        android:layout_marginLeft="30dp"
-        android:text="点击验收" />
+            android:layout_marginBottom="13dp"
+            android:layout_marginLeft="30dp"
+            android:text="点击验收" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="131dp"
-        android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="13dp"
+            android:layout_marginLeft="40dp"
+            android:text="装修交流" />
+     </LinearLayout>
 
-        android:layout_alignTop="@+id/button1"
-       android:layout_marginLeft="200dp"
-        android:text="装修交流" />
-
-
-
+    </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

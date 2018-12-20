@@ -1,6 +1,10 @@
 package com.example.yuan.person;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,12 +19,16 @@ import com.example.yuan.Dao.ProjectDAO;
 import com.example.yuan.R;
 import com.example.yuan.modle.Project;
 
+import java.io.File;
+
 public class Show_ZhuangXiu extends AppCompatActivity {
 
     private  ImageView fanhui;
     private TextView jieduan,people,StartET,FinishET,Jindu;
     private EditText pinJia;
     private Button TiJiao,JiaoLiu;
+    private ImageView tu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -40,6 +48,13 @@ public class Show_ZhuangXiu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+       // -----------获取图片----------------------
+//        tu = (ImageView)findViewById(R.id.imageView2);
+//        String filePath="/sdcard/Image/20181220_010714.jpg";
+//       Log.i("图片的获取路径",filePath);
+//        Bitmap bm = BitmapFactory.decodeFile(filePath);
+//        tu.setImageBitmap(bm);
+
         final Intent intent = getIntent();
         final String name = intent.getStringExtra("id");
      //  Log.i("解析后的id",name);
@@ -48,6 +63,11 @@ public class Show_ZhuangXiu extends AppCompatActivity {
         final ProjectDAO projectDAO = new ProjectDAO(Show_ZhuangXiu.this);
         final Project project = projectDAO.find(name);
      //   Log.i("负责人描述：",project.getProject_Des());
+        tu = (ImageView)findViewById(R.id.imageView2);
+        String filePath = "/sdcard/Image/"+project.getProject_photo();
+        Log.i("图片的获取路径",filePath);
+        Bitmap bm = BitmapFactory.decodeFile(filePath);
+        tu.setImageBitmap(bm);
 
         jieduan.setText(project.getProject_Name());
         people.setText(project.getProject_principle());
@@ -81,8 +101,6 @@ public class Show_ZhuangXiu extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-
-
     }
 
     private void item() {
@@ -92,4 +110,6 @@ public class Show_ZhuangXiu extends AppCompatActivity {
         FinishET = (TextView)findViewById(R.id.FinishET);
         Jindu = (TextView)findViewById(R.id.jindu);
     }
+
+
 }
