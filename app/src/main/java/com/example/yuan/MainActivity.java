@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.yuan.A_test.test;
 import com.example.yuan.Budge.ShowBudge;
 import com.example.yuan.CL.cl;
 import com.example.yuan.ThreeD.ThreeShow;
@@ -139,6 +140,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,"案例", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,test.class);
+                startActivity(intent);
             }
         });
         textView3.setOnClickListener(new View.OnClickListener() {

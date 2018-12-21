@@ -81,7 +81,18 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                 "                effect_stytle varchar(100) NOT NULL,\n" +
                 "                effect_area varchar(100)NOT NULL,\n" +
                 "                effect_type varchar(100)NOT NULL,\n" +
-                "                effect_photo blob,\n" +
+                "                effect_keting varchar(100),\n" +
+                "                effect_woshi varchar(100),\n" +
+                "                effect_shufang varchar(100),\n" +
+                "                effect_canting varchar(100),\n" +
+                "                effect_weishengjian varchar(100),\n" +
+                "                effect_qita varchar(100),\n" +
+                "                effect_ketingDes varchar(100),\n" +
+                "                effect_woshiDes varchar(100),\n" +
+                "                effect_shufangDes varchar(100),\n" +
+                "                effect_cantingDes varchar(100),\n" +
+                "                effect_weishengjianDes varchar(100),\n" +
+                "                effect_qitaDes varchar(100),\n" +
                 "                effect_recommand boolean,\n" +
                 "                effect_UserSee boolean,\n" +
                 "                effect_describe varchar(100),\n" +

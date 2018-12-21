@@ -9,10 +9,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-
+        android:orientation="horizontal"
         android:layout_height="38dp"
         android:background="@color/person"
         android:layout_alignParentTop="true">
+
 
         <ImageView
             android:id="@+id/re"
@@ -20,9 +21,14 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
             android:src="@mipmap/fanhui" />
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="案例基本信息"
+            android:textSize="20dp"
+            android:gravity="center"/>
     </LinearLayout>
-    <android.support.v4.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_marginBottom="50dp"
         android:layout_height="match_parent">
@@ -36,7 +42,7 @@
                 android:background="@drawable/shape"
                 android:layout_width="300dp"
                 android:layout_marginLeft="40dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <TextView
@@ -57,7 +63,7 @@
             android:background="@drawable/shape"
             android:layout_width="300dp"
             android:layout_marginLeft="40dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
             <TextView
@@ -84,7 +90,7 @@
              android:background="@drawable/shape"
              android:layout_width="300dp"
              android:layout_marginLeft="40dp"
-             android:layout_height="50dp"
+             android:layout_height="40dp"
              android:gravity="center_vertical"
              android:orientation="horizontal">
              <TextView
@@ -112,7 +118,7 @@
                 android:background="@drawable/shape"
                 android:layout_width="300dp"
                 android:layout_marginLeft="40dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <TextView
@@ -139,7 +145,7 @@
                 android:background="@drawable/shape"
                 android:layout_width="300dp"
                 android:layout_marginLeft="40dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <TextView
@@ -161,7 +167,7 @@
                 android:background="@drawable/shape"
                 android:layout_width="300dp"
                 android:layout_marginLeft="40dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <TextView
@@ -183,7 +189,7 @@
                 android:background="@drawable/shape"
                 android:layout_width="300dp"
                 android:layout_marginLeft="40dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <TextView
@@ -205,7 +211,7 @@
                 android:background="@drawable/shape"
                 android:layout_width="300dp"
                 android:layout_marginLeft="40dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <TextView
@@ -226,7 +232,7 @@
                 android:background="@drawable/shape"
                 android:layout_width="300dp"
                 android:layout_marginLeft="40dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <TextView
@@ -242,76 +248,167 @@
                     android:layout_height="wrap_content"
                     android:hint="输入第五阶段费用"/>
             </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:layout_width="300dp"
-                android:layout_marginLeft="40dp"
-                android:layout_height="50dp"
-                android:gravity="center_vertical"
-                 android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="总费用："
-                android:layout_marginLeft="5dp"
-                android:textSize="17dp"/>
-
-                <EditText
-                    android:id="@+id/XiaoSum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="总费用" />
-        </LinearLayout>
 
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="10dp"
-                    android:orientation="horizontal">
-                    <!-- 网格显示图片 行列间距5dp 每列宽度90dp -->
-                    <GridView
-                        android:id="@+id/gridView1"
-                        android:layout_width="fill_parent"
-                        android:layout_height="200dp"
-                        android:layout_margin="10dp"
-                        android:background="#EFDFDF"
-                        android:horizontalSpacing="5dp"
-                        android:verticalSpacing="5dp"
-                        android:numColumns="4"
-                        android:columnWidth="90dp"
-                        android:stretchMode="columnWidth"
-                        android:gravity="center" >
-                    </GridView>
 
-                </LinearLayout>
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="(友情提示:只能添加9张图片,长按图片可以删除已添加图片)"
-            android:gravity="center" />
-            <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="40dp"
-                android:orientation="vertical"
-                android:background="@drawable/shape">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="效果图描述"
-                    android:layout_marginLeft="5dp"
-                    android:textSize="17dp"/>
-                <EditText
-                    android:id="@+id/XiaoDes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="描述"/>
-            </LinearLayout>
+
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_width="95dp"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/keting"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="70dp"-->
+                        <!--android:background="@drawable/main"/>-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/ketingB"-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="20dp"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="客厅"-->
+                        <!--android:textColor="#FF0000" />-->
+                <!--</LinearLayout>-->
+                <!--<LinearLayout-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_width="95dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/woshi"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="70dp"-->
+                        <!--android:background="@drawable/main"/>-->
+                    <!--<TextView-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="20dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="卧室"-->
+                        <!--android:textColor="#FF0000"/>-->
+                <!--</LinearLayout>-->
+                <!--<LinearLayout-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_width="95dp"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/shufang"-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="70dp"-->
+                        <!--android:background="@drawable/main"/>-->
+                    <!--<TextView-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="20dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="书房"-->
+                        <!--android:textColor="#FF0000"/>-->
+                <!--</LinearLayout>-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_width="95dp"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/canting"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="70dp"-->
+                        <!--android:background="@drawable/main"/>-->
+                    <!--<TextView-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="20dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="餐厅"-->
+                        <!--android:textColor="#FF0000"/>-->
+                <!--</LinearLayout>-->
+                <!--<LinearLayout-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_width="95dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/weishenjian"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="70dp"-->
+                        <!--android:background="@drawable/main"/>-->
+                    <!--<TextView-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="20dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text=" "-->
+                        <!--android:textColor="#FF0000"/>-->
+                <!--</LinearLayout>-->
+                <!--<LinearLayout-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_width="95dp"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/qita"-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="70dp"-->
+                        <!--android:background="@drawable/main"/>-->
+                    <!--<TextView-->
+
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="20dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="其他"-->
+                        <!--android:textColor="#FF0000"/>-->
+                <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="300dp"-->
+                <!--android:layout_height="200dp"-->
+                <!--android:layout_marginLeft="40dp"-->
+                <!--android:orientation="vertical"-->
+                <!--android:background="@drawable/shape">-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="效果图描述"-->
+                    <!--android:layout_marginLeft="5dp"-->
+                    <!--android:textSize="17dp"/>-->
+                <!--<EditText-->
+                    <!--android:id="@+id/XiaoDes"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@null"-->
+                    <!--android:hint="描述"/>-->
+            <!--</LinearLayout>-->
         <LinearLayout
             android:layout_marginTop="10dp"
             android:background="@drawable/shape"
@@ -331,5 +428,5 @@
                 android:textColor="#000000" />
         </LinearLayout>
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </ScrollView>
 </LinearLayout>

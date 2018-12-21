@@ -1,314 +1,400 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".person.AddXiao">
+    tools:context=".XGT.Firstactivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="30dp"
         android:background="@color/person"
         android:layout_alignParentTop="true">
 
         <ImageView
-            android:id="@+id/re"
+            android:id="@+id/return1"
             android:layout_width="25dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
-            android:src="@mipmap/fanhui" />
-
+            android:src="@mipmap/fanhui"/>
     </LinearLayout>
-    <android.support.v4.widget.NestedScrollView
+    <ScrollView
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="50dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:orientation="vertical">
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="5dp">
+                <EditText
+                    android:id="@+id/name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:background="@null"
+                    android:text="名字" />
+            </LinearLayout>
 
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/shape"
-                android:clickable="true"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="效果图名:"
-                    android:textSize="17dp"/>
+                    android:textSize="15sp"
+                    android:text="风格：" />
                 <EditText
-                    android:id="@+id/XiaoName"
+                    android:id="@+id/fengge1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:background="@null"
-                    android:hint="效果图名"/>
-            </LinearLayout>
-            <LinearLayout
-
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:clickable="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="效果图风格:"
-                    android:textSize="17dp"/>
-                <EditText
-                    android:id="@+id/XiaoFeng"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="效果图风格"/>
-                <!--<Spinner-->
-                    <!--android:entries="@array/fengGe"-->
-                    <!--android:id="@+id/spinnerF"-->
-                    <!--android:layout_width="40dp"-->
-                    <!--android:layout_height="30dp"-->
-                    <!--android:layout_marginLeft="20dp"/>-->
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:clickable="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="效果图面积:"
-                    android:textSize="17dp"/>
-                <EditText
-                    android:id="@+id/XiaoMian"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="效果图面积"/>
-                <!--<Spinner-->
-                    <!--android:entries="@array/area"-->
-                    <!--android:id="@+id/spinnerA"-->
-
-                    <!--android:layout_width="40dp"-->
-                    <!--android:layout_height="30dp"-->
-                    <!--android:layout_marginLeft="20dp"/>-->
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:clickable="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:text="效果图户型:"
-                    android:textSize="17dp"/>
-                <EditText
-                    android:id="@+id/XiaoHu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="效果图户型"/>
-                <!--<Spinner-->
-                    <!--android:entries="@array/housetype"-->
-                    <!--android:id="@+id/spinnerT"-->
-                    <!--android:layout_width="40dp"-->
-                    <!--android:layout_height="30dp"-->
-                    <!--android:layout_marginLeft="20dp"/>-->
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:clickable="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="第一阶段费用:"
-                    android:textSize="17dp"/>
-                <EditText
-                    android:id="@+id/XiaoOne"
-                    android:layout_width="wrap_content"
-                    android:background="@null"
-                    android:layout_height="wrap_content"
-                    android:hint="第一阶段费用"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:clickable="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="第二阶段费用:"
-                    android:textSize="17dp"/>
-                <EditText
-                    android:id="@+id/XiaoTwo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="第二阶段费用"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:clickable="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="第三阶段费用:"
-                    android:textSize="17dp"/>
-                <EditText
-                    android:id="@+id/XiaoThree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="第三阶段费用"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:clickable="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="第四阶段费用:"
-                    android:textSize="17dp"/>
-                <EditText
-                    android:id="@+id/XiaoFour"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="第四阶段费用"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:clickable="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="第五阶段费用:"
-                    android:textSize="17dp"/>
-                <EditText
-                    android:id="@+id/XiaoFive"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="第五阶段费用"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="40dp"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:clickable="true"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="总费用:"
-                    android:textSize="17dp"/>
-                <EditText
-                    android:id="@+id/XiaoSum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="总费用"/>
+                    android:textColor="#ff0000"
+                    android:text="新中式" />
             </LinearLayout>
 
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp"
-                android:orientation="horizontal">
-                <!-- 网格显示图片 行列间距5dp 每列宽度90dp -->
-                <GridView
-                    android:id="@+id/gridView1"
-                    android:layout_width="fill_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="10dp"
-                    android:background="#EFDFDF"
-                    android:horizontalSpacing="5dp"
-                    android:verticalSpacing="5dp"
-                    android:numColumns="4"
-                    android:columnWidth="90dp"
-                    android:stretchMode="columnWidth"
-                    android:gravity="center" >
-                </GridView>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="200dp"
                 android:layout_marginLeft="40dp"
-                android:orientation="vertical"
-                android:background="@drawable/shape">
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="效果图描述"
-                    android:textSize="17dp"/>
+                    android:textSize="15sp"
+                    android:text="面积：" />
                 <EditText
-                    android:id="@+id/XiaoDes"
-                    android:layout_width="match_parent"
+                    android:id="@+id/mainji1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:background="@null"
-                    android:hint="描述"/>
+                    android:textColor="#ff0000"
+                    android:text="120-145平米" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="户型：" />
+                <EditText
+                    android:id="@+id/huxing1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="四室" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="第一阶段费用：" />
+                <EditText
+                    android:id="@+id/one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="第一阶段费用" />
             </LinearLayout>
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="第二阶段费用：" />
+                <EditText
+                    android:id="@+id/two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="第二阶段费用" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="第三阶段费用：" />
+                <EditText
+                    android:id="@+id/three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="第三阶段费用" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="第四阶段费用：" />
+                <EditText
+                    android:id="@+id/four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="第四阶段费用" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="第五阶段费用：" />
+                <EditText
+                    android:id="@+id/five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="第五阶段费用" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="客厅：" />
+                <EditText
+                    android:id="@+id/ketingT1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="客厅" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:id="@+id/keting1"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卧室:" />
+                <EditText
+                    android:id="@+id/woshiT1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="卧室" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:id="@+id/woshi1"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="书房："
+                    />
+                <EditText
+                    android:id="@+id/shufangT1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="书房" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/shufang1"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="餐厅"
+                    />
+                <EditText
+                    android:id="@+id/cantingT1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="餐厅" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:id="@+id/canting1"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卫生间"
+                    />
+                <EditText
+                    android:id="@+id/weishengjianT1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="卫生间" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:id="@+id/weishengjian1"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="其他"
+                    />
+                <EditText
+                    android:id="@+id/qitaT1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="其他" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:id="@+id/qita1"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
 
@@ -316,7 +402,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/xiugai"
+                    android:id="@+id/xiugai1"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="80dp"
@@ -325,16 +411,16 @@
                     android:background="#CDCD00"
                     android:textColor="#000" />
                 <Button
-                    android:id="@+id/shanchu"
-                    android:layout_marginLeft="10dp"
+                    android:id="@+id/shanchu1"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:gravity="center"
-                    android:background="#CDCD00"
                     android:text="删除"
+                    android:layout_marginLeft="10dp"
+                    android:background="#CDCD00"
                     android:textColor="#000" />
             </LinearLayout>
-
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
-</LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

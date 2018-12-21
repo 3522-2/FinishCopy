@@ -77,8 +77,7 @@ public class ChangeXiao extends AppCompatActivity {
         int m = 0;// 定义一个开始标识
         for (Effect effect : listinfos) {// 遍历List泛型集合
             // 将收入相关信息组合成一个字符串，存储数组的相应位置
-            strInfos[m] =  effect.getEffect_id()+"    |    " +effect.getEffect_name()
-                        +"     "+effect.getEffect_describe();
+            strInfos[m] =  effect.getEffect_id()+"    |    " +effect.getEffect_name();
             m++;// 标识加1
         }
         // 使用字符串数组初始化ArrayAdapter对象

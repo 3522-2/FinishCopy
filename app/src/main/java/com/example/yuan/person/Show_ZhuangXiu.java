@@ -64,6 +64,7 @@ public class Show_ZhuangXiu extends AppCompatActivity {
         final Project project = projectDAO.find(name);
      //   Log.i("负责人描述：",project.getProject_Des());
         tu = (ImageView)findViewById(R.id.imageView2);
+
         String filePath = "/sdcard/Image/"+project.getProject_photo();
         Log.i("图片的获取路径",filePath);
         Bitmap bm = BitmapFactory.decodeFile(filePath);

@@ -37,14 +37,19 @@ public class EffectDAO {
         values.put("effect_stytle",effect.getEffect_stytle());
         values.put("effect_area",effect.getEffect_area());
         values.put("effect_type",effect.getEffect_type());
-        values.put("effect_photo",effect.getEffect_photo());
+        values.put("effect_keting",effect.getEffect_keting());
+        values.put("effect_woshi",effect.getEffect_woshi());
+        values.put("effect_shufang",effect.getEffect_shufang());
+        values.put("effect_canting",effect.getEffect_canting());
+        values.put("effect_weishengjian",effect.getEffect_weishengjian());
+        values.put("effect_qita",effect.getEffect_qita());
         values.put("effect_PriceOne",effect.getEffect_PriceOne());
         values.put("effect_PriceTwo",effect.getEffect_PriceTwo());
         values.put("effect_PriceThree",effect.getEffect_PriceThree());
         values.put("effect_PriceFour",effect.getEffect_PriceFour());
         values.put("effect_PriceFive",effect.getEffect_PriceFive());
         values.put("effect_PriceSum",effect.getEffect_PriceSum());
-        values.put("effect_describe",effect.getEffect_describe());
+
         db.insert("effect",null,values);
         db.close();
 
@@ -82,17 +87,53 @@ public class EffectDAO {
         values.put("effect_stytle",effect.getEffect_stytle());
         values.put("effect_area",effect.getEffect_area());
         values.put("effect_type",effect.getEffect_type());
-        values.put("effect_photo",effect.getEffect_photo());
+        values.put("effect_keting",effect.getEffect_keting());
+        values.put("effect_woshi",effect.getEffect_woshi());
+        values.put("effect_shufang",effect.getEffect_shufang());
+        values.put("effect_canting",effect.getEffect_canting());
+        values.put("effect_weishengjian",effect.getEffect_weishengjian());
+        values.put("effect_qita",effect.getEffect_qita());
         values.put("effect_PriceOne",effect.getEffect_PriceOne());
         values.put("effect_PriceTwo",effect.getEffect_PriceTwo());
         values.put("effect_PriceThree",effect.getEffect_PriceThree());
         values.put("effect_PriceFour",effect.getEffect_PriceFour());
         values.put("effect_PriceFive",effect.getEffect_PriceFive());
-        values.put("effect_describe",effect.getEffect_describe());
+        values.put("effect_PriceSum",effect.getEffect_PriceSum());
+
         db.update("effect",values,"effect_id="+effect.getEffect_id(),null);
         db.close();
     }
+    public void addKeting(Effect effect,String name) {
+        db.execSQL("update effect set effect_keting=? where effect_name=?",
+                new Object[]{effect.getEffect_keting(),name});
+    }
+    public void addwoshi(Effect effect,String name) {
+        db.execSQL("update effect set effect_woshi=? where effect_name=?",
+                new Object[]{effect.getEffect_woshi(),name});
+    }
 
+    public void addshufang(Effect effect,String name) {
+        db.execSQL("update effect set effect_shufang=? where effect_name=?",
+                new Object[]{effect.getEffect_shufang(),name});
+    }
+    public void addcanting(Effect effect,String name) {
+        db.execSQL("update effect set effect_canting=? where effect_name=?",
+                new Object[]{effect.getEffect_canting(),name});
+    }
+    public void addweishengjian(Effect effect,String name) {
+        db.execSQL("update effect set effect_weishengjian=? where effect_name=?",
+                new Object[]{effect.getEffect_weishengjian(),name});
+    }
+    public void addqita(Effect effect,String name) {
+        db.execSQL("update effect set effect_qita=? where effect_name=?",
+                new Object[]{effect.getEffect_qita(),name});
+    }
+    public void addDes(Effect effect,String name) {
+        db.execSQL("update effect set effect_ketingDes=?,effect_woshiDes=?,effect_shufangDes=?," +
+                        "effect_cantingDes=? ,effect_weishengjianDes=?,effect_qitaDes=? where effect_name=?",
+                new Object[]{effect.getEffect_ketingDes(),effect.getEffect_woshiDes(),effect.getEffect_shufangDes(),
+                       effect.getEffect_cantingDes(),effect.getEffect_weishengjianDes(), effect.getEffect_qitaDes(),name});
+    }
 //    public void update(Effect effect){
 //        //执行更新操作
 //        db.execSQL("update effect set effect_name=?,effect_stytle=?,effect_area=?,effect_type=?" +
@@ -119,19 +160,31 @@ public class EffectDAO {
             String effect_stytle = cursor.getString(2);
             String effect_area = cursor.getString(3);
             String effect_type = cursor.getString(4);
-            String effect_describe = cursor.getString(5);
-            byte[] effect_photo = cursor.getBlob(6);
-            String effect_recommand = cursor.getString(7);
-            String effect_UserSee = cursor.getString(8);
-            String effect_PriceOne = cursor.getString(9);
-            String effect_PriceTwo = cursor.getString(10);
-            String effect_PriceThree = cursor.getString(11);
-            String effect_PriceFour = cursor.getString(12);
-            String effect_PriceFive = cursor.getString(13);
-            String effect_PriceSum = cursor.getString(14);
-            list.add(new Effect(effect_id,effect_name,effect_stytle,effect_area,effect_type,effect_describe,
-                    effect_photo,effect_recommand,effect_UserSee,effect_PriceOne,effect_PriceTwo,effect_PriceThree,
-                    effect_PriceFour,effect_PriceFive,effect_PriceSum));
+            String effect_keting = cursor.getString(5);
+            String effect_woshi = cursor.getString(6);
+            String effect_shufang = cursor.getString(7);
+            String effect_canting = cursor.getString(8);
+            String effect_weishengjian = cursor.getString(9);
+            String effect_qita = cursor.getString(10);
+            String effect_recommand = cursor.getString(11);
+            String effect_UserSee = cursor.getString(12);
+            String effect_PriceOne = cursor.getString(13);
+            String effect_PriceTwo = cursor.getString(14);
+            String effect_PriceThree = cursor.getString(15);
+            String effect_PriceFour = cursor.getString(16);
+            String effect_PriceFive = cursor.getString(17);
+            String effect_PriceSum = cursor.getString(18);
+            String effect_ketingDes = cursor.getString(19);
+            String effect_woshiDes = cursor.getString(20);
+            String effect_shufangDes = cursor.getString(21);
+            String effect_cantingDes = cursor.getString(22);
+            String effect_weishengjianDes = cursor.getString(23);
+            String effect_qitaDes = cursor.getString(24);
+            list.add(new Effect(effect_id,effect_name,effect_stytle,effect_area,effect_type,
+                    effect_keting,effect_woshi,effect_shufang,effect_canting,effect_weishengjian,effect_qita,
+                    effect_recommand,effect_UserSee,effect_PriceOne,effect_PriceTwo,effect_PriceThree,
+                    effect_PriceFour,effect_PriceFive,effect_PriceSum,
+                    effect_ketingDes,effect_woshiDes,effect_shufangDes,effect_cantingDes,effect_weishengjianDes,effect_qitaDes));
         }
         cursor.close();
         db.close();
@@ -157,8 +210,18 @@ public class EffectDAO {
                     cursor.getString(cursor.getColumnIndex("effect_stytle")),
                     cursor.getString(cursor.getColumnIndex("effect_area")),
                     cursor.getString(cursor.getColumnIndex("effect_type")),
-                    cursor.getString(cursor.getColumnIndex("effect_describe")),
-                    cursor.getBlob(cursor.getColumnIndex("effect_photo")),
+                    cursor.getString(cursor.getColumnIndex("effect_keting")),
+                    cursor.getString(cursor.getColumnIndex("effect_woshi")),
+                    cursor.getString(cursor.getColumnIndex("effect_shufang")),
+                    cursor.getString(cursor.getColumnIndex("effect_canting")),
+                    cursor.getString(cursor.getColumnIndex("effect_weishengjian")),
+                    cursor.getString(cursor.getColumnIndex("effect_qita")),
+                    cursor.getString(cursor.getColumnIndex("effect_ketingDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_woshiDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_shufangDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_cantingDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_weishengjianDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_qitaDes")),
                     cursor.getString(cursor.getColumnIndex("effect_recommand")),
                     cursor.getString(cursor.getColumnIndex("effect_UserSee")),
                     cursor.getString(cursor.getColumnIndex("effect_PriceOne")),
@@ -194,8 +257,19 @@ public class EffectDAO {
                     cursor.getString(cursor.getColumnIndex("effect_stytle")),
                     cursor.getString(cursor.getColumnIndex("effect_area")),
                     cursor.getString(cursor.getColumnIndex("effect_type")),
-                    cursor.getString(cursor.getColumnIndex("effect_describe")),
-                    cursor.getBlob(cursor.getColumnIndex("effect_photo")),
+
+                    cursor.getString(cursor.getColumnIndex("effect_keting")),
+                    cursor.getString(cursor.getColumnIndex("effect_woshi")),
+                    cursor.getString(cursor.getColumnIndex("effect_shufang")),
+                    cursor.getString(cursor.getColumnIndex("effect_canting")),
+                    cursor.getString(cursor.getColumnIndex("effect_weishengjian")),
+                    cursor.getString(cursor.getColumnIndex("effect_qita")),
+                    cursor.getString(cursor.getColumnIndex("effect_ketingDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_woshiDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_shufangDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_cantingDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_weishengjianDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_qitaDes")),
                     cursor.getString(cursor.getColumnIndex("effect_recommand")),
                     cursor.getString(cursor.getColumnIndex("effect_UserSee")),
                     cursor.getString(cursor.getColumnIndex("effect_PriceOne")),

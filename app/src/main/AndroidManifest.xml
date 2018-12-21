@@ -84,6 +84,8 @@
                 android:resource="@xml/filepaths" />
         </provider>
 
+        <activity android:name=".A_test.test" />
+        <activity android:name=".person.XiaoPic"></activity>
     </application>
 
 </manifest>
