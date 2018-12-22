@@ -65,9 +65,7 @@ public class HuoDongAc1 extends AppCompatActivity {
                 String tel = Tel.getText().toString().trim();
                 Log.i("name的值", name);
                 HongBao hongBao1 = hongBaoDAO.find(name);
-                String thou = hongBao1.getHong_thou();
-                String three = hongBao1.getHong_three();
-                 Log.i("thou", thou);
+
                 if (zhuangTai.equals("未登录") || zhuangTai == null) {//未登录
                     myDialog = new MyDialog(HuoDongAc1.this, R.style.MyDialog);
                     myDialog.setTitle("通知！");
@@ -91,6 +89,9 @@ public class HuoDongAc1 extends AppCompatActivity {
                     });
                     myDialog.show();
                 } else {//表示已经登录
+                    String thou = hongBao1.getHong_thou();
+                    String three = hongBao1.getHong_three();
+                    Log.i("thou", thou);
                     if (zhuangTai.equals(name) == false || name.equals("")) {//用户名输入错误，或者用户名为空
                         Toast.makeText(HuoDongAc1.this, "请检查用户名", Toast.LENGTH_SHORT).show();
                     } else if (zhuangTai.equals(name) == true) { //用户名输入正确

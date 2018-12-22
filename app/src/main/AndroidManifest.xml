@@ -86,7 +86,8 @@
 
         <activity android:name=".A_test.test" />
         <activity android:name=".person.XiaoPic" />
-        <activity android:name=".person.XclPic"></activity>
+        <activity android:name=".person.XclPic" />
+        <activity android:name=".LiuChengShow.LiuChengShou"></activity>
     </application>
 
 </manifest>

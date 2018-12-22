@@ -1,6 +1,8 @@
 package com.example.yuan;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.PagerAdapter;
@@ -18,8 +20,11 @@ import android.widget.Toast;
 import com.example.yuan.A_test.test;
 import com.example.yuan.Budge.ShowBudge;
 import com.example.yuan.CL.cl;
+import com.example.yuan.LiuChengShow.LiuChengShou;
 import com.example.yuan.ThreeD.ThreeShow;
 
+import com.example.yuan.XGT.Firstactivity;
+import com.example.yuan.XGT.Secondactivity;
 import com.example.yuan.XGT.XgtMain;
 import com.example.yuan.YouHui.HuoDongAc1;
 import com.example.yuan.YouHui.HuoDongAc2;
@@ -30,11 +35,16 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private SharedPreferences sp;
+    private ImageView LiuCheng,gushi;
+    private LinearLayout tuijian1,tuijian2;
+    private ImageView MoreTuil;
+
     private ViewPager viewPager;
     private TextView tv_title;
     private LinearLayout ll_point_group;
 
-    private ImageView textView1,textView2,textView3,textView4;
+    private ImageView textView1,textView2,textView3,textView4;//四个导航栏
     private ImageView CL,budge,XGT,HuoDong1,HuoDong2;
 
     private ArrayList<ImageView> imageViews;
@@ -59,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         textView1 = (ImageView) findViewById(R.id.textview1);
         textView2 = (ImageView) findViewById(R.id.textview2);
         textView3 = (ImageView) findViewById(R.id.textview3);
@@ -104,6 +116,68 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         /**
+         * 调转到服务流程
+         */
+
+        LiuCheng = (ImageView)findViewById(R.id.liuCheng);
+        LiuCheng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,LiuChengShou.class);
+                startActivity(intent);
+            }
+        });
+        /**
+         * 调转到故事（未开通）
+         */
+        gushi = (ImageView)findViewById(R.id.gushi);
+        gushi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"该板块未开通，敬请期待",Toast.LENGTH_SHORT).show();
+            }
+        });
+        /**
+         * 推荐案例1
+         */
+        tuijian1 = (LinearLayout)findViewById(R.id.tuijian1);
+        tuijian1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, Firstactivity.class);
+                startActivity(intent);
+            }
+        });
+
+        /**
+         * 推荐案例2
+         */
+        tuijian2 = (LinearLayout)findViewById(R.id.tujian2);
+        tuijian2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, Secondactivity.class);
+                startActivity(intent);
+            }
+        });
+
+        /**
+         * 更多推荐
+         */
+        MoreTuil = (ImageView) findViewById(R.id.jaintou11);
+        MoreTuil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, XgtMain.class);
+                startActivity(intent);
+            }
+        });
+
+        /**
          * 跳转到优惠活动1
          */
         HuoDong1 = (ImageView)findViewById(R.id.huodong1);
@@ -113,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this,HuoDongAc1.class);
                 startActivity(intent);
-                finish();
+
             }
         });
 /**
@@ -126,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this,HuoDongAc2.class);
                 startActivity(intent);
-                finish();
+
             }
         });
         textView1.setOnClickListener(new View.OnClickListener() {
@@ -139,7 +213,6 @@ public class MainActivity extends AppCompatActivity {
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"案例", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this,test.class);
                 startActivity(intent);

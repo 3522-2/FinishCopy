@@ -7,6 +7,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
@@ -45,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="198dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal"
        >
 
@@ -74,22 +83,19 @@
             android:text="预算" />
     </LinearLayout>
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-       android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="270dp">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-
         <ImageView
+            android:id="@+id/liuCheng"
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/a" />
+            android:layout_marginTop="10dp"
+            android:src="@drawable/liucheng" />
+
         <LinearLayout
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
@@ -114,21 +120,85 @@
                 android:layout_marginRight="5dp"/>
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
+        <LinearLayout
             android:layout_marginTop="20dp"
-            android:background="@drawable/a"/>
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:weightSum="2">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="350dp"
+                android:layout_height="40dp">
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:text="推荐案例"
+                    android:textSize="25dp"/>
+                <ImageView
+                    android:id="@+id/jaintou11"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="100dp"
+                    android:background="@mipmap/jiantou"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/tuijian1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/example1_1"/>
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="传统风格与现代时尚元素的融合与碰撞"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tujian2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/example2_2"/>
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="沉稳不失格调与时尚"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
         <ImageView
+            android:id="@+id/gushi"
             android:layout_width="match_parent"
             android:layout_height="130dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="60dp"
-            android:background="@drawable/a"/>
+            android:src="@drawable/gushi"/>
+    </LinearLayout>
+
+
     </LinearLayout>
     </ScrollView>
-
-
     <LinearLayout
         android:id="@+id/tab_menu"
         android:layout_width="match_parent"
