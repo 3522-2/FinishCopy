@@ -25,7 +25,7 @@ public class XiaoPic extends AppCompatActivity {
     private ImageView fanhui;
     private ImageView keting,woshi,shufang,canting,weishenjian,qita;
     private EditText ketingT,woshiT,shufangT,cantingT,weishenjianT,qitaT;
-    private Button btn;
+    private ImageView btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +58,7 @@ public class XiaoPic extends AppCompatActivity {
         cantingT=(EditText)findViewById(R.id.cantingT);
         weishenjianT=(EditText)findViewById(R.id.weishengjianT);
         qitaT=(EditText)findViewById(R.id.qitaT);;
-        btn = (Button) findViewById(R.id.btn);
+        btn = (ImageView) findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

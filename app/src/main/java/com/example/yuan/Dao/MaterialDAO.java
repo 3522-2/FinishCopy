@@ -43,6 +43,14 @@ public class MaterialDAO {
         db.close();
 
     }
+    public void addPhoto(Material material,String name) {
+        db.execSQL("update material set material_photo=? where material_name=?",
+                new Object[]{material.getMaterial_photo(),name});
+    }
+    public void addPhotoDes(Material material,String name) {
+        db.execSQL("update material set material_photoDes=? where material_name=?",
+                new Object[]{material.getMaterial_photoDes(),name});
+    }
     /**
      * 根据id删除一条纪录
      * @param id
@@ -84,9 +92,11 @@ public class MaterialDAO {
             String material_price = cursor.getString(3);
             String material_provider = cursor.getString(4);
             String material_brand = cursor.getString(5);
-            byte[] material_photo = cursor.getBlob(6);
+            String material_photoDes = cursor.getString(6);
+            String material_photo = cursor.getString(7);
+
             list.add(new Material(material_id,material_name,gmaterial_type
-                    ,material_price,material_provider,material_brand,material_photo));
+                    ,material_price,material_provider,material_brand,material_photo,material_photoDes));
         }
         cursor.close();
         db.close();
@@ -112,7 +122,8 @@ public class MaterialDAO {
                     cursor.getString(cursor.getColumnIndex("material_price")),
                     cursor.getString(cursor.getColumnIndex("material_provider")),
                     cursor.getString(cursor.getColumnIndex("material_brand")),
-                    cursor.getBlob(cursor.getColumnIndex("material_photo")));
+                    cursor.getString(cursor.getColumnIndex("material_photoDes")),
+                    cursor.getString(cursor.getColumnIndex("material_photo")));
         }
         cursor.close();// 关闭游标
         return null;// 如果没有信息，则返回null
@@ -142,7 +153,8 @@ public class MaterialDAO {
                     cursor.getString(cursor.getColumnIndex("material_price")),
                     cursor.getString(cursor.getColumnIndex("material_provider")),
                     cursor.getString(cursor.getColumnIndex("material_brand")),
-                    cursor.getBlob(cursor.getColumnIndex("material_photo"))));
+                    cursor.getString(cursor.getColumnIndex("material_photoDes")),
+                    cursor.getString(cursor.getColumnIndex("material_photo"))));
 
         }
         cursor.close();// 关闭游标

@@ -9,10 +9,12 @@ public class Material {
     private String material_price;//	材料价格	varchar(10 )
     private String material_provider;	//材料供应商	varchar(10 )
     private String material_brand;	//材料品牌	varchar(225)
-    private byte[] material_photo;	//材料图片	blob
+    private String material_photo;	//材料图片	blob
+    private String material_photoDes;
 
     public Material(){super();}
-    public Material(int material_id, String material_name, String gmaterial_type, String material_price, String material_provider, String material_brand, byte[] material_photo){
+    public Material(int material_id, String material_name, String gmaterial_type, String material_price, String material_provider, String material_brand,
+                   String material_photoDes ,String material_photo){
         super();
         this.material_id = material_id;
         this.material_type = gmaterial_type;
@@ -20,7 +22,8 @@ public class Material {
         this.material_price = material_price;
         this.material_provider = material_provider;
         this.material_brand = material_brand;
-
+        this.material_photo = material_photo;
+        this.material_photoDes = material_photoDes;
     }
 
 
@@ -73,11 +76,19 @@ public class Material {
         this.material_brand = material_brand;
     }
 
-    public byte[] getMaterial_photo() {
+    public String getMaterial_photo() {
         return material_photo;
     }
 
-    public void setMaterial_photo(byte[] material_photo) {
+    public void setMaterial_photo(String material_photo) {
         this.material_photo = material_photo;
+    }
+
+    public String getMaterial_photoDes() {
+        return material_photoDes;
+    }
+
+    public void setMaterial_photoDes(String material_photoDes) {
+        this.material_photoDes = material_photoDes;
     }
 }

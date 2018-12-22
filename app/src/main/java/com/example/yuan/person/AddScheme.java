@@ -135,8 +135,11 @@ public class AddScheme extends AppCompatActivity {
                 String priceFiveC1 = priceFiveC.getText().toString();
                scheme.setScheme_pirceFiveMaterial(priceFiveC1);
 
-                String priceSum1 = priceSum.getText().toString();
-                scheme.setScheme_pirceSum(priceSum1);
+               float priceSum1 = Float.parseFloat(priceOne1)+Float.parseFloat(priceTwoW1)+Float.parseFloat(priceTwoC1)+
+                       Float.parseFloat(priceThreeW1)+Float.parseFloat(priceThreeC1)+Float.parseFloat(priceFourW1)+Float.parseFloat(priceFourC1)+
+                       Float.parseFloat(priceFiveW1)+Float.parseFloat(priceFiveC1);
+                String priceSum2 = String.valueOf(priceSum1);
+                scheme.setScheme_pirceSum(priceSum2);
                 schemeDAO.add(scheme);
 
                     Toast.makeText(AddScheme.this, "添加成功", Toast.LENGTH_SHORT).show();

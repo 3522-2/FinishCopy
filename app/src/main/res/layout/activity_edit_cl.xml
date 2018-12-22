@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".person.AddXiao_wuxiao">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +20,7 @@
             android:src="@mipmap/fanhui" />
 
     </LinearLayout>
-    <android.support.v4.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -31,148 +30,136 @@
 
             android:orientation="vertical">
             <LinearLayout
-                android:layout_marginTop="5dp"
-                android:background="@drawable/shape"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:layout_marginLeft="40dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="材料名"
-                    android:textSize="17dp"/>
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="5dp">
                 <EditText
                     android:id="@+id/CaiName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="25sp"
                     android:background="@null"
-                    android:hint="输入材料名"/>
+                    android:text="材料名" />
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="材料类型:"
-                    android:textSize="17dp"/>
+                    android:textSize="15sp"
+                    android:text="材料类型：" />
                 <EditText
-                    android:id="@+id/XiaoP"
-                    android:background="@null"
+                    android:id="@+id/CaiP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="材料类型"/>
+                    android:textSize="15sp"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="板材" />
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="材料品牌:"
-                    android:textSize="17dp"/>
+                    android:textSize="15sp"
+                    android:text="材料品牌：" />
                 <EditText
                     android:id="@+id/CaiPin"
-                    android:background="@null"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="材料品牌"/>
+                    android:textSize="15sp"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="你好" />
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="材料价格:"
-                    android:textSize="17dp"/>
+                    android:textSize="15sp"
+                    android:text="材料价格：" />
                 <EditText
                     android:id="@+id/CaiJ"
-                    android:background="@null"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="材料价格"/>
+                    android:textSize="15sp"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="100" />
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:background="@drawable/shape"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="材料供应商:"
-                    android:layout_marginLeft="50dp"
-                    android:textSize="17dp"/>
+                    android:textSize="15sp"
+                    android:text="材料供应商：" />
                 <EditText
-                    android:id="@+id/XiaoGong"
+                    android:id="@+id/CaiGong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:background="@null"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="输入材料供应商"/>
+                    android:textColor="#ff0000"
+                    android:text="宜家" />
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="描述：" />
+                <EditText
+                    android:id="@+id/CaiMiao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="#ff0000"
+                    android:text="描述" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
                 <ImageView
-                    android:id="@+id/album"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="添加图片"
-                    android:layout_marginLeft="50dp"
-                    android:textSize="17dp"/>
+                    android:id="@+id/CaiPic"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="10dp"
-                android:orientation="horizontal">
-                <!-- 网格显示图片 行列间距5dp 每列宽度90dp -->
-                <GridView
-                    android:id="@+id/gridView1"
-                    android:layout_width="fill_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="10dp"
-                    android:background="#EFDFDF"
-                    android:horizontalSpacing="5dp"
-                    android:verticalSpacing="5dp"
-                    android:numColumns="4"
-                    android:columnWidth="90dp"
-                    android:stretchMode="columnWidth"
-                    android:gravity="center" >
-                </GridView>
-
-            </LinearLayout>
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="(友情提示:只能添加9张图片,长按图片可以删除已添加图片)"
-                android:gravity="center" />
 
             <LinearLayout
+                android:layout_marginTop="20dp"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -199,5 +186,5 @@
             </LinearLayout>
 
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </ScrollView>
 </LinearLayout>

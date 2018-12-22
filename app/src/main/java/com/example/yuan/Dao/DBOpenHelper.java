@@ -45,7 +45,8 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                 "                material_price varchar(100) ,\n" +
                 "                material_provider varchar(100) ,\n" +
                 "                material_brand varchar(100),\n" +
-                "                material_photo blob)");
+                "                material_photoDes varchar(100),\n" +
+                "                material_photo varchar(100))");
 
         db.execSQL("create table project(project_id integer NOT NULL PRIMARY KEY AUTOINCREMENT,\n" +
                 "                project_Name varchar(100),\n" +
