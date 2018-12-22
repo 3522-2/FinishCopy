@@ -86,7 +86,6 @@ public class AddCl extends AppCompatActivity {
                 material.setMaterial_provider(CaiGong1);
                 material.setMaterial_price(CaiJ1);
 
-
                 materialDAO.add(material);
                 Toast.makeText(AddCl.this, "基本信息添加成功", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent();
