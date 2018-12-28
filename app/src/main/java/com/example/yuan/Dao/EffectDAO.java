@@ -200,12 +200,11 @@ public class EffectDAO {
     public Effect find(String id) {
 //		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
         Cursor cursor = db.rawQuery("select * from effect where effect_id=? ",
-                new String[] { String.valueOf(id) });// 根据编号查找支出信息，并存储到Cursor类中
+                new String[] {id});// 根据编号查找支出信息，并存储到Cursor类中
         // 遍历查找到的支出信息
 // 将遍历到的支出信息存储到Activity类中
         if (cursor.moveToNext()) {
-            return new Effect(
-                    cursor.getInt(cursor.getColumnIndex("effect_id")),
+            return new Effect( cursor.getInt(cursor.getColumnIndex("effect_id")),
                     cursor.getString(cursor.getColumnIndex("effect_name")),
                     cursor.getString(cursor.getColumnIndex("effect_stytle")),
                     cursor.getString(cursor.getColumnIndex("effect_area")),
@@ -245,19 +244,18 @@ public class EffectDAO {
     }
     public List<Effect> getScrollData(int start, int count) {
 
-        List<Effect> scheme = new ArrayList<Effect>();// 创建集合对象
+        List<Effect> effects = new ArrayList<Effect>();// 创建集合对象
 //		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
         // 获取所有收入信息
         Cursor cursor = db.rawQuery("select * from effect limit ? , ?",//limit表示范围
                 new String[] { String.valueOf(start), String.valueOf(count) });
         while (cursor.moveToNext()){// 遍历所有的收入信息
             // 将遍历到的收入信息添加到集合中
-            scheme.add(new Effect( cursor.getInt(cursor.getColumnIndex("effect_id")),
+            effects.add(new Effect( cursor.getInt(cursor.getColumnIndex("effect_id")),
                     cursor.getString(cursor.getColumnIndex("effect_name")),
                     cursor.getString(cursor.getColumnIndex("effect_stytle")),
                     cursor.getString(cursor.getColumnIndex("effect_area")),
                     cursor.getString(cursor.getColumnIndex("effect_type")),
-
                     cursor.getString(cursor.getColumnIndex("effect_keting")),
                     cursor.getString(cursor.getColumnIndex("effect_woshi")),
                     cursor.getString(cursor.getColumnIndex("effect_shufang")),
@@ -281,6 +279,53 @@ public class EffectDAO {
 
         }
         cursor.close();// 关闭游标
-        return scheme;// 返回集合
+        return effects;// 返回集合
+    }
+
+    //验证是否有查询结果
+    public boolean check(String fengge,String huxing,String mianji) {
+        String sql = "select * from effect where effect_stytle=? and effect_type=? and effect_area=?";
+        Cursor cursor = db.rawQuery(sql, new String[] {fengge, huxing,mianji});
+        if (cursor.moveToFirst()) {
+            cursor.close();
+            return true;
+        }
+        return false;
+    }
+    public Effect find1(String fengge,String huxing,String mianji) {
+//		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
+        Cursor cursor = db.rawQuery("select * from effect where  effect_stytle=? and effect_type=? and effect_area=?",
+                new String[] {fengge, huxing,mianji});// 根据编号查找支出信息，并存储到Cursor类中
+        // 遍历查找到的支出信息
+// 将遍历到的支出信息存储到Activity类中
+        if (cursor.moveToNext()) {
+            return new Effect( cursor.getInt(cursor.getColumnIndex("effect_id")),
+                    cursor.getString(cursor.getColumnIndex("effect_name")),
+                    cursor.getString(cursor.getColumnIndex("effect_stytle")),
+                    cursor.getString(cursor.getColumnIndex("effect_area")),
+                    cursor.getString(cursor.getColumnIndex("effect_type")),
+                    cursor.getString(cursor.getColumnIndex("effect_keting")),
+                    cursor.getString(cursor.getColumnIndex("effect_woshi")),
+                    cursor.getString(cursor.getColumnIndex("effect_shufang")),
+                    cursor.getString(cursor.getColumnIndex("effect_canting")),
+                    cursor.getString(cursor.getColumnIndex("effect_weishengjian")),
+                    cursor.getString(cursor.getColumnIndex("effect_qita")),
+                    cursor.getString(cursor.getColumnIndex("effect_ketingDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_woshiDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_shufangDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_cantingDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_weishengjianDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_qitaDes")),
+                    cursor.getString(cursor.getColumnIndex("effect_recommand")),
+                    cursor.getString(cursor.getColumnIndex("effect_UserSee")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceOne")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceTwo")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceThree")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceFour")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceFive")),
+                    cursor.getString(cursor.getColumnIndex("effect_PriceSum")));
+        }
+        cursor.close();// 关闭游标
+        return null;// 如果没有信息，则返回null
     }
 }

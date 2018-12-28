@@ -49,8 +49,6 @@ public class PersonMain extends AppCompatActivity {
         cirLog = (ImageView) findViewById(R.id.Cirimageview);
         SharedPreferences sharedPreferences1 = this.getSharedPreferences("yonghu", MODE_PRIVATE);
 
-
-
         fanhui = (ImageView)findViewById(R.id.re);
         listView=(ListView)findViewById(R.id.ListView);
         myListItem = new ArrayList<PersonListAdapt.ListItemModel>();

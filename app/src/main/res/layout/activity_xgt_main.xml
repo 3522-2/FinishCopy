@@ -8,9 +8,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@color/person"
-        android:layout_alignParentTop="true">
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/person">
 
         <ImageView
             android:id="@+id/return1"
@@ -20,134 +20,80 @@
             android:src="@mipmap/fanhui" />
     </LinearLayout>
 
-<LinearLayout
+    <LinearLayout
 
-    android:layout_marginTop="30dp"
         android:id="@+id/View1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/F"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="风格"
+            android:textSize="20dp" />
+
         <Spinner
-            android:entries="@array/fengGe"
-            android:layout_width="100dp"
+            android:id="@+id/style1"
+            android:layout_width="40dp"
             android:layout_height="45dp"
-            android:id="@+id/style1">
-        </Spinner>
+            android:entries="@array/fengGe"></Spinner>
+
+        <TextView
+            android:id="@+id/H"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="户型"
+            android:textSize="20dp" />
+
         <Spinner
-            android:entries="@array/housetype"
-            android:layout_width="100dp"
+            android:id="@+id/housetype"
+            android:layout_width="40dp"
             android:layout_height="45dp"
-            android:id="@+id/housetype">
-        </Spinner>
+            android:entries="@array/housetype"></Spinner>
+
+        <TextView
+            android:id="@+id/M"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="面积"
+            android:textSize="20dp" />
+
         <Spinner
-            android:entries="@array/area"
-            android:layout_width="100dp"
+            android:id="@+id/area"
+            android:layout_width="40dp"
             android:layout_height="45dp"
-            android:id="@+id/area">
-        </Spinner>
+            android:entries="@array/area"></Spinner>
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/search" />
+
     </LinearLayout>
+
     <View
         android:id="@+id/v_1"
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:background="#000000"
-        android:layout_below="@+id/View1"/>
+        android:layout_below="@+id/View1"
+        android:background="#000000" />
 
-    <RelativeLayout
+    <ListView
+        android:id="@+id/ListView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        android:layout_below="@+id/v_1">
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="90dp"></ListView>
 
-        <RelativeLayout
-            android:id="@+id/border1"
-            android:layout_width="320dp"
-            android:layout_height="150dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/tdshow">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="5dp"
-                android:text="142平新中式，传统风格与现代时尚元素的融合与碰撞" />
-
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="45dp"
-                android:background="@drawable/example1_3" />
-
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="180dp"
-                android:layout_marginTop="45dp"
-                android:background="@drawable/example1_4" />
-        </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/border2"
-        android:layout_width="320dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="180dp"
-        android:background="@drawable/tdshow">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="5dp"
-            android:text="152平美式风格，沉稳不失格调与时尚" />
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="45dp"
-            android:background="@drawable/example2_1" />
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="45dp"
-            android:background="@drawable/example2_3" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/border3"
-        android:layout_width="320dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="350dp"
-        android:background="@drawable/tdshow">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="5dp"
-            android:text="330平复式欧式风格，时尚优雅之作"
-            />
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="45dp"
-            android:background="@drawable/example3_1" />
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="180dp"
-            android:layout_marginTop="45dp"
-            android:background="@drawable/example3_4" />
-    </RelativeLayout>
-</RelativeLayout>
 </RelativeLayout>

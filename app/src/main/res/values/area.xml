@@ -2,12 +2,12 @@
 <resources>
     <string-array name="area">
         <item>面积</item>
-        <item>60平米以下</item>
-        <item>60-75平米</item>
-        <item>76-90平米</item>
-        <item>91-120平米</item>
-        <item>121-145平米</item>
-        <item>146-200平米</item>
-        <item>200平米以上</item>
+        <item>60</item>
+        <item>60-75</item>
+        <item>76-90</item>
+        <item>91-120</item>
+        <item>121-145</item>
+        <item>146-200</item>
+        <item>200</item>
     </string-array>
 </resources>

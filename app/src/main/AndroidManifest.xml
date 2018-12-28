@@ -87,7 +87,11 @@
         <activity android:name=".A_test.test" />
         <activity android:name=".person.XiaoPic" />
         <activity android:name=".person.XclPic" />
-        <activity android:name=".LiuChengShow.LiuChengShou"></activity>
+        <activity android:name=".LiuChengShow.LiuChengShou" />
+        <activity android:name=".XGT.ShowXGT" />
+        <activity android:name=".XGT.XGTBudge" />
+        <activity android:name=".XGT.XGTSou" />
+        <activity android:name=".XGT.XGTSouBudge"></activity>
     </application>
 
 </manifest>
