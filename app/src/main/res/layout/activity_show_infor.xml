@@ -61,7 +61,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="手机号码:"
+            android:text="房屋面积:"
             android:textSize="20dp"/>
         <TextView
             android:id="@+id/show_are"
@@ -81,7 +81,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="我的地址:"
+            android:text="电话号码:"
             android:textSize="20dp"/>
         <TextView
             android:id="@+id/show_tel"
@@ -101,7 +101,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="我的户型:"
+            android:text="我的地址:"
             android:textSize="20dp"/>
         <TextView
             android:id="@+id/show_adr"
@@ -121,7 +121,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="房屋面积:"
+            android:text="房屋类型:"
             android:textSize="20dp"/>
         <TextView
             android:id="@+id/show_type"

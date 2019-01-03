@@ -74,7 +74,11 @@ public class gaunliyuanReg extends AppCompatActivity {
 
                 } else if (regPwd1.equals(regIsPwd1) == false) {
                     Toast.makeText(gaunliyuanReg.this, "密码与确认密码不一致", Toast.LENGTH_SHORT).show();
-                } else {
+                } else if (regPwd1.length()<6) {
+                    Toast.makeText(gaunliyuanReg.this, "密码长度不能小于6位", Toast.LENGTH_SHORT).show();
+                }else if (regTel1.length()<11) {
+                    Toast.makeText(gaunliyuanReg.this, "请输入有效的手机号码", Toast.LENGTH_SHORT).show();
+                }else {
                     administrator.setAdministrator_name(regUsername1);
                     administrator.setAdministrator_password(regPwd1);
                     administrator.setAdministrator_telephone(regTel1);

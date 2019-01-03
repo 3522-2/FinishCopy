@@ -89,6 +89,10 @@ public class regist extends AppCompatActivity {
 
                 }else if(regPwd1.equals(regIsPwd1)==false){
                     Toast.makeText(regist.this,"密码与确认密码不一致",Toast.LENGTH_SHORT).show();
+                }else if (regPwd1.length()<6){
+                    Toast.makeText(regist.this,"密码长度不能小于6位",Toast.LENGTH_SHORT).show();
+                } else if (regTel1.length()<11) {
+                    Toast.makeText(regist.this, "请输入正确的手机号码", Toast.LENGTH_SHORT).show();
                 }else {
                     user.setUser_name(regUsername1);
                     user.setUser_password(regPwd1);
@@ -96,6 +100,7 @@ public class regist extends AppCompatActivity {
                     user.setUser_adr(regAdr1);
                     user.setUser_houseType(regStyle1);
                     user.setUser_houseArea(regAer1);
+                    user.setUser_touxiang("0");
                     userDAO.add(user);
                     HongBaoDAO hongBaoDAO = new HongBaoDAO(regist.this);
                     HongBao hongBao = new HongBao();

@@ -39,11 +39,15 @@ public class UserDAO {
             values.put("user_adr",user.getUser_adr());
             values.put("user_houseType",user.getUser_houseType());
             values.put("user_houseArea",user.getUser_houseArea());
+            values.put("user_touxiang",user.getUser_touxiang());
             db.insert("user",null,values);
             db.close();
 
         }
-
+    public void addtouxiang(String path, String name) {
+        db.execSQL("update user set user_touxiang=? where user_name=?",
+                new Object[]{path,name});
+    }
     /**
      * 根据name查找管理员信息
      *
@@ -52,8 +56,7 @@ public class UserDAO {
     public User find(String name) {
 //		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
         Cursor cursor = db.rawQuery(
-                "select *" +
-                        "from user where user_name=? ",
+                "select * from user where user_name=? ",
                 new String[]{String.valueOf(name)});// 根据编号查找支出信息，并存储到Cursor类中
         if (cursor.moveToNext()) {// 遍历查找到的支出信息
             // 将遍历到的支出信息存储到Activity类中
@@ -64,6 +67,7 @@ public class UserDAO {
                     cursor.getString(cursor.getColumnIndex("user_telephone")),
                     cursor.getString(cursor.getColumnIndex("user_adr")),
                     cursor.getString(cursor.getColumnIndex("user_houseType")),
+                    cursor.getString(cursor.getColumnIndex("user_touxiang")),
                     cursor.getString(cursor.getColumnIndex("user_houseArea")));
         }
         cursor.close();// 关闭游标
@@ -116,9 +120,10 @@ public class UserDAO {
                 String user_telephone = cursor.getString(3);
                 String user_adr = cursor.getString(4);
                 String user_houseType = cursor.getString(5);
-                String user_houseArea = cursor.getString(6);
+                String user_touxiang = cursor.getString(6);
+                String user_houseArea = cursor.getString(7);
                 list.add(new User(user_id,user_name,user_password,
-                        user_telephone,user_adr,user_houseType,user_houseArea));
+                        user_telephone,user_adr,user_houseType,user_touxiang,user_houseArea));
             }
             cursor.close();
             db.close();
@@ -139,6 +144,27 @@ public class UserDAO {
          *
          * @return
          */
+
+  public  boolean isCheckall(String name){
+      String sql = "select * from user where  user_name=?";
+      Cursor cursor = db.rawQuery(sql, new String[] {name});//游标
+      if (cursor.moveToFirst()) {
+          cursor.close();
+          return true;
+      }
+      return false;
+  }
+
+    public  boolean isCheck(String name){
+            String sql = "select user_touxiang from user where  user_name=?";
+            Cursor cursor = db.rawQuery(sql, new String[] {name});//游标
+            if (cursor.moveToFirst()) {
+                cursor.close();
+                return true;
+            }
+            return false;
+        }
+
         public User find(int id) {
 //		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
             Cursor cursor = db.rawQuery(
@@ -154,6 +180,7 @@ public class UserDAO {
                         cursor.getString(cursor.getColumnIndex("user_telephone")),
                         cursor.getString(cursor.getColumnIndex("user_adr")),
                         cursor.getString(cursor.getColumnIndex("user_houseType")),
+                        cursor.getString(cursor.getColumnIndex("user_touxiang")),
                         cursor.getString(cursor.getColumnIndex("user_houseArea")));
             }
             cursor.close();// 关闭游标

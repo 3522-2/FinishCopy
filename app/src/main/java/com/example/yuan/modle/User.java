@@ -9,12 +9,15 @@ public class User {
     private String user_adr;//	用户地址
     private String user_houseType;//	用户户型
     private String user_houseArea;//	房屋面积
+    private String user_touxiang;//	房屋面积
 
     public User(){
         super();
     };
 
-    public User(int user_id, String user_name, String user_password,String user_houseArea,  String user_telephone,String user_adr, String user_houseType){
+    public User(int user_id, String user_name, String user_password,
+                String user_telephone,String user_adr,String user_houseType,
+                String user_touxiang, String user_houseArea){
         super();
         this.user_id = user_id;
         this.user_name = user_name;
@@ -22,6 +25,7 @@ public class User {
         this.user_telephone = user_telephone;
         this.user_adr = user_adr;
         this.user_houseType = user_houseType;
+        this.user_touxiang = user_touxiang;
         this.user_houseArea = user_houseArea;
     }
 
@@ -79,5 +83,13 @@ public class User {
 
     public void setUser_houseArea(String user_houseArea) {
         this.user_houseArea = user_houseArea;
+    }
+
+    public String getUser_touxiang() {
+        return user_touxiang;
+    }
+
+    public void setUser_touxiang(String user_touxiang) {
+        this.user_touxiang = user_touxiang;
     }
 }
