@@ -44,6 +44,31 @@ public class UserDAO {
 
         }
 
+    /**
+     * 根据name查找管理员信息
+     *
+     * @return
+     */
+    public User find(String name) {
+//		db = helper.getWritableDatabase();// 初始化SQLiteDatabase对象
+        Cursor cursor = db.rawQuery(
+                "select *" +
+                        "from user where user_name=? ",
+                new String[]{String.valueOf(name)});// 根据编号查找支出信息，并存储到Cursor类中
+        if (cursor.moveToNext()) {// 遍历查找到的支出信息
+            // 将遍历到的支出信息存储到Activity类中
+            return new User(
+                    cursor.getInt(cursor.getColumnIndex("user_id")),
+                    cursor.getString(cursor.getColumnIndex("user_name")),
+                    cursor.getString(cursor.getColumnIndex("user_password")),
+                    cursor.getString(cursor.getColumnIndex("user_telephone")),
+                    cursor.getString(cursor.getColumnIndex("user_adr")),
+                    cursor.getString(cursor.getColumnIndex("user_houseType")),
+                    cursor.getString(cursor.getColumnIndex("user_houseArea")));
+        }
+        cursor.close();// 关闭游标
+        return null;// 如果没有信息，则返回null
+    }
         /**
          * 根据id删除一条纪录
          * @param id

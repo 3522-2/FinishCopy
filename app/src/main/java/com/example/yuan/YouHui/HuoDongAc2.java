@@ -63,10 +63,7 @@ public class HuoDongAc2 extends AppCompatActivity {
                 String name = Name.getText().toString().trim();
                 String tel = Tel.getText().toString().trim();
                 Log.i("name的值",name);
-                HongBao hongBao1= hongBaoDAO.find(name);
-                String three = hongBao1.getHong_three();
-                String thou = hongBao1.getHong_thou();
-                Log.i("name的值",three);
+
                 if(zhuangTai.equals("未登录") || zhuangTai==null){//未登录
                     myDialog=new MyDialog(HuoDongAc2.this,R.style.MyDialog);
                     myDialog.setTitle("通知！");
@@ -93,7 +90,10 @@ public class HuoDongAc2 extends AppCompatActivity {
                     if(zhuangTai.equals(name)==false || name.equals("")){//用户名输入错误，或者用户名为空
                         Toast.makeText(HuoDongAc2.this,"请检查用户名",Toast.LENGTH_SHORT).show();
                     }else if (zhuangTai.equals(name)==true) { //用户名输入正确
-
+                        HongBao hongBao1= hongBaoDAO.find(name);
+                        String three = hongBao1.getHong_three();
+                        String thou = hongBao1.getHong_thou();
+                        Log.i("name的值",three);
                         if (three.equals("0")&&thou.equals("0")) {//该用户领取300红包
 
                             HongBao hongBao = new HongBao();

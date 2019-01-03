@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,12 +32,13 @@ public class PersonMain extends AppCompatActivity {
     private TextView textView;
     private MyDialogPerson myDialog;
     private ListView listView;
+    private RelativeLayout relativeLayout;
     private int[] title = new int[]{R.mipmap.person1,R.mipmap.person3,R.mipmap.person4,R.mipmap.person5,R.mipmap.youhui3};
     private String[] Data = new String[]{"我的装修","更新装修进度","联系我们","设置","我的优惠"};
     private int[] imageld = new int[]{R.mipmap.jiantou,R.mipmap.jiantou,R.mipmap.jiantou,R.mipmap.jiantou,R.mipmap.jiantou};
     private List<PersonListAdapt.ListItemModel> myListItem;
     private PersonListAdapt adApter;
-    private ImageView fanhui,home;
+    private ImageView fanhui;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,8 @@ public class PersonMain extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.textView) ;
         SharedPreferences sharedPreferences = this.getSharedPreferences("yonghu", MODE_PRIVATE);
-        textView.setText(sharedPreferences.getString("用户名","未登录"));
+        final String name = sharedPreferences.getString("用户名","未登录");
+        textView.setText(name);
 
         cirLog = (ImageView) findViewById(R.id.Cirimageview);
         SharedPreferences sharedPreferences1 = this.getSharedPreferences("yonghu", MODE_PRIVATE);
@@ -73,6 +77,9 @@ public class PersonMain extends AppCompatActivity {
                 if(id == 0) {
                     if(zhuangTai.equals("未登录") || zhuangTai==null){
                         Toast.makeText(PersonMain.this,"请登录后查看",Toast.LENGTH_SHORT).show();
+                    }else
+                    if (zhuangTai.equals("你好，管理员")) {
+                        Toast.makeText(PersonMain.this, "管理员无法查看该内容", Toast.LENGTH_SHORT).show();
                     }else{
                         Intent intent = new Intent();
                         intent.setClass(PersonMain.this,My_ZhuangXiuList.class);
@@ -153,6 +160,24 @@ public class PersonMain extends AppCompatActivity {
                     }
                 });
                 myDialog.show();
+            }
+        });
+        /**
+         * 读取修改用户信息
+         */
+        relativeLayout = findViewById(R.id.imageView3);
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (name.equals("你好，管理员") || name.equals("未登录")){
+                    Toast.makeText(PersonMain.this,"只能用户修改信息",Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent();
+                    intent.setClass(PersonMain.this,ShowInfor.class);
+                    intent.putExtra("用户名",name);
+                    Log.i("name",name);
+                    startActivity(intent);
+                }
             }
         });
         /**

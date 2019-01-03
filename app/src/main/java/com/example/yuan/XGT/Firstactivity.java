@@ -1,11 +1,13 @@
 package com.example.yuan.XGT;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.yuan.MainActivity;
 import com.example.yuan.R;
 
 public class Firstactivity extends Activity {
@@ -18,6 +20,9 @@ public class Firstactivity extends Activity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Firstactivity.this, MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });

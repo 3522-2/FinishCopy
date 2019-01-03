@@ -23,13 +23,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".MainActivity">
+        <activity android:name=".welcome_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".person.PersonMain" />
         <activity android:name=".person.GengXinJinDu" />
         <activity android:name=".person.regist" />
@@ -91,7 +92,8 @@
         <activity android:name=".XGT.ShowXGT" />
         <activity android:name=".XGT.XGTBudge" />
         <activity android:name=".XGT.XGTSou" />
-        <activity android:name=".XGT.XGTSouBudge"></activity>
+        <activity android:name=".XGT.XGTSouBudge" />
+        <activity android:name=".person.ShowInfor"></activity>
     </application>
 
 </manifest>

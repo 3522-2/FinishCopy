@@ -46,6 +46,8 @@ public class XGTSou extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
         EffectDAO effectDAO = new EffectDAO(XGTSou.this);
         Effect effect = effectDAO.find1(feng,hu,mian);
 

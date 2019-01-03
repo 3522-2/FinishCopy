@@ -99,15 +99,15 @@
         android:src="@drawable/budgef">
 
         <TextView
-            android:id="@+id/sum2"
+            android:id="@+id/btn1111"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:gravity="center"
-
             android:background="#EEEE00"
+
+            android:gravity="center"
             android:text="获取总费用"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 </LinearLayout>

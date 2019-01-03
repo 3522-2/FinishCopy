@@ -5,28 +5,30 @@
     android:layout_height="match_parent"
     tools:context=".XGT.Secondactivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/person"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/return1"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/fanhui"/>
+    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         
     <LinearLayout
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/person"
-                android:layout_alignParentTop="true">
 
-                <ImageView
-                    android:id="@+id/return1"
-                    android:layout_width="25dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:src="@mipmap/fanhui"/>
-            </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

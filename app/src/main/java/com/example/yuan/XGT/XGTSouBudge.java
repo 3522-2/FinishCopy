@@ -21,6 +21,7 @@ public class XGTSouBudge extends AppCompatActivity {
     private EditText area;
     private TextView sum1,btn;
     private MyDialog myDialog;
+    private Float Main;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,9 +59,24 @@ public class XGTSouBudge extends AppCompatActivity {
 
                 String DanDudge = effect.getEffect_PriceSum();
                 String DanMian = effect.getEffect_area();
-
-                Float Main = Float.parseFloat(DanMian);
                 Float danSum = Float.parseFloat(DanDudge);
+
+                if (DanMian.equals("0-60")){
+                     Main =Float.parseFloat("60");
+                }if (DanMian.equals("60-75")) {
+                    Main = Float.parseFloat("75");
+                }if (DanMian.equals("76-90")) {
+                    Main = Float.parseFloat("90");
+                }if (DanMian.equals("91-120")) {
+                    Main = Float.parseFloat("120");
+                }if (DanMian.equals("121-145")) {
+                    Main = Float.parseFloat("145");
+                }if (DanMian.equals("146-200")) {
+                    Main = Float.parseFloat("200");
+                }if (DanMian.equals("200-")) {
+                    Main = Float.parseFloat("200");
+                }
+
 
                 area = findViewById(R.id.area6);
                 String getMain = area.getText().toString().trim();

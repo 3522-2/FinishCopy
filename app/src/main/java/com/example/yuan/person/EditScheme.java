@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yuan.Dao.SchemeDAO;
@@ -18,7 +19,8 @@ import com.example.yuan.modle.Scheme;
 
 public class EditScheme extends AppCompatActivity {
     private ImageView fanhui;
-    private EditText style,area,type,priceOne,priceTwoW,priceTwoC,priceThreeW,priceThreeC,priceFourW,priceFourC,priceFiveW,priceFiveC,priceSum;
+    private EditText style,area,type,priceOne,priceTwoW,priceTwoC,priceThreeW,priceThreeC,priceFourW,priceFourC,priceFiveW,priceFiveC;
+    private TextView priceSum;
     private Button xiugai,shanchu;
 //    private Spinner spinnerH,spinnerA,spinnerT;
 
@@ -192,8 +194,7 @@ public class EditScheme extends AppCompatActivity {
         priceFourC = (EditText) findViewById(R.id.FoureP1);
         priceFiveW = (EditText) findViewById(R.id.FourePm);
         priceFiveC = (EditText) findViewById(R.id.FineP);
-        priceSum = (EditText) findViewById(R.id.Sum);
-
+        priceSum = (TextView) findViewById(R.id.Sum);
     }
 
 }

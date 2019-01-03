@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.yuan.Dao.EffectDAO;
 import com.example.yuan.MainActivity;
 import com.example.yuan.R;
+import com.example.yuan.dialog.SouDia;
 import com.example.yuan.modle.Effect;
 import com.example.yuan.person.MyDialogPerson;
 
@@ -39,7 +40,7 @@ public class XgtMain extends AppCompatActivity {
     private XGTAdapt adApter;
     private ListView listView;
 
-    private MyDialogPerson myDialog;
+    private SouDia myDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -59,6 +60,7 @@ public class XgtMain extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(XgtMain.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -81,9 +83,9 @@ public class XgtMain extends AppCompatActivity {
         }
         myListItem = new ArrayList<XGTAdapt.ListItemModel>();
         for(int i = 0;i<m;i++){
-            Log.i("Data[m]的值", Data[i]);
-            Log.i(" imagel[m]的值",  imagel[i]);
-            Log.i("imager[m]的值", imager[i]);
+//            Log.i("Data[m]的值", Data[i]);
+//            Log.i(" imagel[m]的值",  imagel[i]);
+//            Log.i("imager[m]的值", imager[i]);
             XGTAdapt.ListItemModel listItemModel = new XGTAdapt.ListItemModel();
             listItemModel.setImagel( imagel[i]);
             listItemModel.setTitle(Data[i]);
@@ -106,13 +108,16 @@ public class XgtMain extends AppCompatActivity {
             }
         });
         F=findViewById(R.id.F);
+        /**
+         * 获取下拉框的值
+         */
         spinner1 = (Spinner)findViewById(R.id.style1);
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
               String resule = parent.getItemAtPosition(position).toString();
               F.setText(resule);
-            }
+        }
 
 
             @Override
@@ -163,14 +168,14 @@ public class XgtMain extends AppCompatActivity {
                 String mianji = M.getText().toString().trim();//面积
 
                 EffectDAO effectDAO1 = new EffectDAO(XgtMain.this);
-                boolean is = effectDAO1.check(fengge,huxing,mianji);
-                Log.i("是否存在",String.valueOf(effectDAO1.check(fengge,huxing,mianji)));
+                boolean is = effectDAO1.check(fengge,huxing,mianji);//
+//                Log.i("是否存在",String.valueOf(effectDAO1.check(fengge,huxing,mianji)));
                 if(is==false){
-                    myDialog=new MyDialogPerson(XgtMain.this,R.style.MyDialog);
+                    myDialog=new SouDia(XgtMain.this,R.style.MyDialog);
                     myDialog.setMessage("没有查询结果");
-                    myDialog.setYesOnclickListener("确定", new MyDialogPerson.onYesOnclickListener() {
+                    myDialog.setYesOnclickListener("确定", new SouDia.onYesOnclickListener() {
                         @Override
-                        public void onYesOnclick() {
+                        public void onYesOnclick(){
                             myDialog.dismiss();
                         }
                     });
@@ -182,6 +187,7 @@ public class XgtMain extends AppCompatActivity {
                     intent.putExtra("M",mianji);
                     intent.setClass(XgtMain.this,XGTSou.class);
                     startActivity(intent);
+                    finish();
                 }
 
             }

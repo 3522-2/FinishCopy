@@ -110,6 +110,8 @@ public class DBOpenHelper extends SQLiteOpenHelper {
                 "                user_telephone varchar(100),\n" +
                 "                user_adr varchar(100) ,\n" +
                 "                user_houseType varchar(100),\n" +
+                "                user_houseStyle varchar(100),\n" +
+                "                user_touxiang varchar(100),\n" +
                 "                user_houseArea varchar(100))");
 
         db.execSQL("create table communction(communction_id integer NOT NULL primary key autoincrement,\n" +

@@ -25,6 +25,7 @@ import com.example.yuan.ThreeD.ThreeShow;
 
 import com.example.yuan.XGT.Firstactivity;
 import com.example.yuan.XGT.Secondactivity;
+import com.example.yuan.XGT.Thirdactivity;
 import com.example.yuan.XGT.XgtMain;
 import com.example.yuan.YouHui.HuoDongAc1;
 import com.example.yuan.YouHui.HuoDongAc2;
@@ -48,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
     private ImageView CL,budge,XGT,HuoDong1,HuoDong2;
 
     private ArrayList<ImageView> imageViews;
-    private final int[] imageIds={R.drawable.a,
-            R.drawable.b,R.drawable.c,R.drawable.d,R.drawable.e};
-    private final String[] imageDescription = {"公司介绍","活动一","活动二","活动三","活动四"};
+    private final int[] imageIds={R.drawable.example1_1,R.drawable.example1_2,R.drawable.example1_3,
+            R.drawable.huodongjuan,R.drawable.youhui1};
+    private final String[] imageDescription = {"案例1","案例2","案例3","年末钜惠","新人优惠"};
     private Handler handler=new Handler(){
         public void handleMessage(Message msg){
             super.handleMessage(msg);
@@ -401,9 +402,37 @@ public class MainActivity extends AppCompatActivity {
                     int position = (int)v.getTag()%imageViews.size();
 
                     String text= imageDescription[position];
+                    if (text=="年末钜惠"){
+                        Intent intent = new Intent();
+                        intent.setClass(MainActivity.this,HuoDongAc1.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (text=="新人优惠"){
+                        Intent intent = new Intent();
+                        intent.setClass(MainActivity.this,HuoDongAc2.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (text=="案例1"){
+                        Intent intent = new Intent();
+                        intent.setClass(MainActivity.this,Firstactivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (text=="案例2"){
+                        Intent intent = new Intent();
+                        intent.setClass(MainActivity.this,Secondactivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (text=="案例3"){
+                        Intent intent = new Intent();
+                        intent.setClass(MainActivity.this,Thirdactivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
 
-                    //在此设置跳转意图
-                    Toast.makeText(MainActivity.this,"text=="+text, Toast.LENGTH_SHORT).show();
                 }
             });
             return imageView;

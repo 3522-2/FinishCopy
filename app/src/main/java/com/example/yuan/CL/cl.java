@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.yuan.MainActivity;
 import com.example.yuan.R;
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar;
 
@@ -84,7 +85,8 @@ public class cl extends Activity implements View.OnClickListener {
             @Override
             public void onClicked(View v, int action, String extra){
                 if(action==CommonTitleBar.ACTION_LEFT_TEXT||action==CommonTitleBar.ACTION_LEFT_BUTTON){
-                    onBackPressed();
+                    startActivity(new Intent(cl.this,MainActivity.class));
+                    finish();
                 }
                 if(action==CommonTitleBar.ACTION_RIGHT_TEXT||action==CommonTitleBar.ACTION_RIGHT_BUTTON){
                     startActivity(new Intent(cl.this,Search_Activity.class));

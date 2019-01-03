@@ -285,7 +285,7 @@ public class EffectDAO {
     //验证是否有查询结果
     public boolean check(String fengge,String huxing,String mianji) {
         String sql = "select * from effect where effect_stytle=? and effect_type=? and effect_area=?";
-        Cursor cursor = db.rawQuery(sql, new String[] {fengge, huxing,mianji});
+        Cursor cursor = db.rawQuery(sql, new String[] {fengge, huxing,mianji});//游标
         if (cursor.moveToFirst()) {
             cursor.close();
             return true;
